@@ -3,10 +3,10 @@ Version:1.0
 Description:Master index of all global data tables in the LastWarDataHub repository. Defines canonical file locations and retrieval order.
 
 [Global Tables]
-Level Upgrade Cost Table text version.txt
+LevelUpgradeCostTable.txt
 
 [Table Versions]
-Level Upgrade Cost Table = 1.0
+LevelUpgradeCostTable = 1.0
 
 [Notes]
 This index file defines the authoritative list of global data tables.
