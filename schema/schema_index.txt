@@ -3,10 +3,10 @@ Version:1.0
 Description:Master index of all schema files for the LastWarDataHub repository. Defines canonical schema locations, versions, and retrieval order.
 
 [Schema Files]
-File Format Specification Text Version.txt
+File Format Specification.txt
 
 [Schema Versions]
-1.0 = File Format Specification Text Version.txt
+1.0 = File Format Specification.txt
 
 [Notes]
 This index file defines the authoritative list of schema documents.
