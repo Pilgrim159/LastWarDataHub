@@ -4,10 +4,11 @@ Description:Master index of all global data tables in the LastWarDataHub reposit
 
 [Global Tables]
 LevelUpgradeCostTable.txt
+ResearchPrerequisites.txt
 
 [Table Versions]
 LevelUpgradeCostTable = 1.0
-
+ResearchPrerequisites = 1.0
 [Notes]
 This index file defines the authoritative list of global data tables.
 All tools and scripts should reference this index before loading any global data.
