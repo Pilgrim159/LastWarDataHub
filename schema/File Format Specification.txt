@@ -796,6 +796,21 @@ Validators must produce deterministic results for identical
 input files. No probabilistic or heuristic behavior is
 permitted.
 
+12.5 Rule Scoping and Precedence
+This rule establishes the hierarchy of logic within the Data Hub.
+• Global Specification: Defines structural and grammatical rules 
+  universal to all files.
+• File-Level Headers: Rules defined within a file's Header block 
+  (e.g., Rule: UpgradeTime = Ceiling(...)) are authoritative for 
+  the data contained within that specific file.
+• Priority: In the event of a conflict between a Global Rule and 
+  a File-Level Header Rule, the Header Rule takes precedence.
+
+12.6 Specific Calculation Arithmetic
+When a file header defines a mathematical operation (e.g., 
+Ceiling, Floor, Round), the validator must apply that operation 
+to every calculated instance in the data block to ensure 
+deterministic output.
 END OF SECTION 12
 END OF SPECIFICATION (VERSION 1.0)
 
