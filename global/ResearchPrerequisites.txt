@@ -1,0 +1,17 @@
+Header:Begin
+Name: Global Research Prerequisites
+FileType: ResearchData
+Scope: Global
+Rule: HQ levels 31-35 require the corresponding 'HQ Expansion' tech completion.
+Header:End
+
+Data:Begin
+# TargetHQ    RequiredResearchTree    RequiredTechNode        MinRequirement
+31            Special_Forces          SF_Completion_Rate      40%
+31            Age_of_Oil              Base_Expansion_I        1/1
+32            Age_of_Oil              Base_Expansion_I        1/1
+33            Age_of_Oil              Base_Expansion_I        1/1
+34            Age_of_Oil              Base_Expansion_I        1/1
+35            Age_of_Oil              Base_Expansion_I        1/1
+35            Age_of_Oil              Overall_Tree_Progress   46/145
+Data:End
