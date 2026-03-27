@@ -8,7 +8,8 @@ players/
 schema/
 
 [Global Files]
-global/Level Upgrade Cost Table text version.txt
+global/LevelCostTable.txt
+global/ResearchPrerequisites.txt
 
 [Schema Files]
 schema/File Format Specification Text Version.txt
