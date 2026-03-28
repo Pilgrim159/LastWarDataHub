@@ -5,6 +5,7 @@ FileType: BuildingData
 Scope: Global
 # Universal Rule: References 'Multiplier' from F1NE_BuffCalibration.txt
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
+Rule: Convert shorthand suffixes (G = 10^9, M = 10^6, K = 10^3) to integers.
 Header:End
 
 Data:Begin
