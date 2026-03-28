@@ -1,0 +1,17 @@
+Header:Begin
+Name: Global Building Data
+Version: 1.0
+FileType: BuildingData
+Scope: Global
+# Universal Rule: References 'Multiplier' from F1NE_BuffCalibration.txt
+Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
+Header:End
+
+Data:Begin
+# BuildingName      TargetLevel    OriginalTime    FoodCost    IronCost    CoinCost  OilCost  HeadquartersLevel
+Headquarters        31             111d 18:21:40   1.3G        1.3G        441.1M    1.2M     30
+Wall                30             101d 14:30:37   415.2M      1.2G        268.1M    0        30
+Tech_Center_1       31             97d 19:03:58    1.2G        1.2G        380.6M    700650   31
+Tank_Center         31             83d 19:46:15    346.0M      1.0G        216.2M    486563   31
+Emergency_Center    23             11d 17:42:01    73.5M       73.5M       12.1M     0        24 
+Data:End
