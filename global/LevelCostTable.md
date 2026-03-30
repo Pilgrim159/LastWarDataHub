@@ -5,6 +5,7 @@
 **Last Updated:** 2026-03-29 | 23:15:00  
 **Rule:** $\text{Total Cost} = \sum_{L+1}^{K} \text{Cost}_i$
 > **Data Schema:** Level (Integer) | Cost (Integer)
+
 | Level |      Cost |
 | ----: | --------: |
 |     1 |         0 |
