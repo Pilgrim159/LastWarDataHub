@@ -616,7 +616,7 @@ A file fails scope validation if:
 •	Conflicting account identifiers appear across files (future extension)
 END OF SECTION 10
 =========================================================
-SECTION 11 — FILE TYPE DEFINITIONS
+SECTION 11.0 — FILE TYPE DEFINITIONS
 =========================================================
 This section defines how specific file types are described within this specification. A file type is a named category of file with:
 •	Required header fields
@@ -627,7 +627,7 @@ This section defines how specific file types are described within this specifica
 •	Required semantic rules
 •	Optional extensions
 File types do not modify the universal rules defined in Sections 1–10. Instead, they apply additional constraints on top of those rules.
-11.1 Purpose of File Types
+11.0.1 Purpose of File Types
 File types allow this specification to define:
 •	Standardized structures for common Last War data
 •	Consistent validation rules
@@ -640,32 +640,32 @@ Examples of file types include:
 •	Resource Production Table
 •	Research Cost Table
 Each file type is defined in its own subsection.
-11.2 File Type Definition Structure
+11.0.2 File Type Definition Structure
 Each file type definition must include the following components:
-11.2.1 File Type Name
+11.0.2.1 File Type Name
 A unique name identifying the file type.
 Example:
 Code
 FileType:LevelCostTable
-11.2.2 Required Header Fields
+11.0.2.2 Required Header Fields
 A list of header fields that must appear in the file.
 Example:
 •	Name:
 •	Version:
 •	Scope:
 •	FileType:
-11.2.3 Required Scope
+11.0.2.3 Required Scope
 Each file type must specify whether it is:
 •	Global only
 •	Account only
 •	Allowed in either scope
-11.2.4 Required Data Structure
+11.0.2.4 Required Data Structure
 Each file type must specify the required data structure inside the Data Block.
 Examples:
 •	Must contain a Columnar Table
 •	Must contain exactly one table
 •	Must contain no additional data structures
-11.2.5 Required Columns
+11.0.2.5 Required Columns
 Each file type must define:
 •	Column names
 •	Column order (if required)
@@ -676,19 +676,19 @@ Code
 Columns:
 - Level:Integer
 - Cost:Integer
-11.2.6 Required Semantic Rules
+11.0.2.6 Required Semantic Rules
 Each file type may define semantic rules that apply specifically to that type.
 Examples:
 •	Level must be strictly increasing
 •	Cost must be non decreasing
 •	No row may exceed a maximum allowed value
-11.2.7 Optional Fields or Extensions
+11.0.2.7 Optional Fields or Extensions
 File types may define optional:
 •	Header fields
 •	Columns
 •	Semantic rules
 •	Metadata
-11.3 Validation Order for File Types
+11.0.3 Validation Order for File Types
 Validation for a file type occurs in the following order:
 1.	Structural validation (Sections 1–6)
 2.	Type validation (Section 7)
@@ -696,7 +696,7 @@ Validation for a file type occurs in the following order:
 4.	Scope validation (Section 10)
 5.	File type–specific validation (Section 11)
 A file is valid only if it passes all applicable validation stages.
-11.4 Error Conditions
+11.0.4 Error Conditions
 A file fails file type validation if:
 •	Required header fields are missing
 •	Required columns are missing
@@ -705,15 +705,16 @@ A file fails file type validation if:
 •	Required semantic rules are violated
 •	The file uses a scope not permitted for that file type
 •	The file contains additional structures not allowed by the file type
-11.5 Defining New File Types
+11.0.5 Defining New File Types
 New file types may be added in future subsections:
 •	11.1.x for global file types
 •	11.2.x for account specific file types
 •	11.3.x for hybrid file types
-Each new file type must follow the structure defined in Section 11.2.
-END OF SECTION 11
+Each new file type must follow the structure defined in Section 11.0.2.
+END OF SECTION 11.0
 ========================================================= 
-11.1 LEVEL COST TABLE =========================================================
+11.1 LEVEL COST TABLE 
+=========================================================
 The Level Cost Table defines the resource cost required to advance a game element from one level to the next. This file type uses a single Columnar Table with typed columns and mandatory semantic rules.
 This file type conforms to all universal rules defined in Sections 1–10.
 11.1.1 File Type Name
