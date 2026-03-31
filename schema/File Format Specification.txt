@@ -39,7 +39,7 @@ Header:End
 •	All header fields, if present, must appear between Header:Begin and Header:End.
 •	Header fields use the format:
 Tag:Value
-•	Tags must not be duplicated.
+•	Tags must not be duplicated within the Header Block, unless explicitly designated as a Repeatable Tag in their field definition.
 •	Values may contain spaces but not line breaks.
 2.2 Minimum Header Block
 Header:Begin
@@ -100,6 +100,7 @@ addition to those defined by the file type (Section 11) and the universal
 semantic rules (Section 8).
 
 Rules declared using the Rule: field must follow these requirements:
+• Type: Repeatable Tag. Multiple Rule: fields may appear in the Header Block. Parsers must evaluate all provided rules.
 • The value may contain spaces but must not contain line breaks.
 • Multiple Rule: fields may appear in the Header Block.
 • Each Rule: field defines one semantic rule.
