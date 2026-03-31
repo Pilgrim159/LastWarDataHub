@@ -5,7 +5,7 @@ Scope: Account
 FileType: Calibration
 PlayerName: F1NE
 Rule: Multiplier = OriginalTime / UpgradeTime
-# Verified Constant: 2.375 (Representing 137.5% Buff)
+CalibrationNote: Verified Constant 2.375
 Header:End
 
 Data:Begin
