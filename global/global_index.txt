@@ -7,11 +7,13 @@ Header:End
 
 Data:Begin
 [Global Tables]
-LevelUpgradeCostTable.txt
+BuildingData.txt
+HeroLevelCostTable.txt
 ResearchPrerequisites.txt
 
 [Table Versions]
-LevelUpgradeCostTable = 1.0
+BuildingData.txt = 1.0
+HeroLevelCostTable.txt = 1.0
 ResearchPrerequisites = 1.0
 
 [Notes]
