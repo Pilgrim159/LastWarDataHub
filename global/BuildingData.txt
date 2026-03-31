@@ -3,7 +3,6 @@ Name: Global Building Data
 Version: 1.0
 FileType: BuildingData
 Scope: Global
-# Universal Rule: References 'Multiplier' from F1NE_BuffCalibration.txt
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
 Header:End
 
