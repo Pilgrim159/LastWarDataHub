@@ -1,7 +1,11 @@
-Data:Global:Global Index
+Header:Begin
+Scope:Global
+Data:Global Index
 Version:1.0
 Description:Master index of all global data tables in the LastWarDataHub repository. Defines canonical file locations and retrieval order.
+Header:End
 
+Data:Begin
 [Global Tables]
 LevelUpgradeCostTable.txt
 ResearchPrerequisites.txt
@@ -14,3 +18,4 @@ ResearchPrerequisites = 1.0
 This index file defines the authoritative list of global data tables.
 All tools and scripts should reference this index before loading any global data.
 Future global tables should be added to [Global Tables] with explicit version numbers in [Table Versions].
+Data:End
