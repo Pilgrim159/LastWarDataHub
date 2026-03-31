@@ -445,7 +445,7 @@ Column: <column number or N/A>
 9.2.1 Required Fields
 •	ErrorType One of: Structural, Type, Semantic.
 •	Section The section number of this specification that defines the violated rule.
-•	Code A short, machine readable identifier (e.g., S001, T004, SEM12).
+•	A short, machine readable identifier (e.g., S001, T004, SEM12).
 •	Message A human readable explanation of the error.
 •	Line / Column If applicable, the location of the error in the file. If not applicable, use N/A.
 9.3 Error Codes
@@ -477,21 +477,18 @@ Severity levels do not change the meaning of the error categories.
 9.6 Examples
 9.6.1 Structural Error Example
 ErrorType: Structural
-Section: 6
 Code: S014
 Message: Duplicate column label 'Cost'
 Line: 3
 Column: N/A
 9.6.2 Type Error Example
 ErrorType: Type
-Section: 7
 Code: T003
 Message: Invalid integer value 'five'
 Line: 12
 Column: 2
 9.6.3 Semantic Error Example
 ErrorType: Semantic
-Section: 8
 Code: SEM001
 Message: Column 'Level' must be strictly increasing
 Line: 25
