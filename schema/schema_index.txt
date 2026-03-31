@@ -6,7 +6,7 @@ Description:Master index of all schema files for the LastWarDataHub repository. 
 File Format Specification.txt
 
 [Schema Versions]
-1.0 = File Format Specification.txt
+File Format Specification.txt = 1.0
 
 [Notes]
 This index file defines the authoritative list of schema documents.
