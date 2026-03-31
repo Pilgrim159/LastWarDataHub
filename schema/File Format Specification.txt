@@ -21,7 +21,6 @@ Version: 1.0 — Stable Structure for Word Storage and Chat Re use
 SECTION 1 — FILE STRUCTURE OVERVIEW
 =========================================================
 Every file in this format must contain the following four structural tags, in this exact order:
-Code
 Header:Begin
 Header:End
 Data:Begin
@@ -32,7 +31,6 @@ A file containing only these four lines is considered structurally valid.
 SECTION 2 — HEADER BLOCK
 =========================================================
 The header block is defined by:
-Code
 Header:Begin
 ... (optional header fields)
 Header:End
@@ -40,12 +38,10 @@ Header:End
 •	The header block may be empty.
 •	All header fields, if present, must appear between Header:Begin and Header:End.
 •	Header fields use the format:
-Code
 Tag:Value
 •	Tags must not be duplicated.
 •	Values may contain spaces but not line breaks.
 2.2 Minimum Header Block
-Code
 Header:Begin
 Header:End
 =========================================================
@@ -59,54 +55,43 @@ Standard header fields do not alter the structure of the Header Block. They foll
 •	Header fields may appear in any order
 The Scope: field is defined separately in Section 10.
 2.3.1 Name
-Code
 Name:<text>
 A human readable identifier for the file. The value may contain spaces but must not contain line breaks.
 Examples:
-Code
 Name:Level Cost Table
 Name:Main Account Hero Data
 2.3.2 Date
-Code
 Date:<YYYY-MM-DD>
 Represents the date the file was created, exported, or last updated. The required format is:
 •	Four digit year
 •	Two digit month
 •	Two digit day
 Example:
-Code
 Date:2025-12-24
 2.3.3 Time
-Code
 Time:<HH:MM:SS>
 Represents the time the file was created, exported, or last updated. The required format is 24 hour time:
 •	Hours (00–23)
 •	Minutes (00–59)
 •	Seconds (00–59)
 Example:
-Code
 Time:15:01:00
 2.3.4 Version
-Code
 Version:<text>
 Indicates the version of the file’s content, schema, or data set. The specification does not impose a versioning scheme; the value is free form.
 Examples:
-Code
 Version:1.0
 Version:2025.12.24
 Version:Beta-3
 2.3.5 FileType
-Code
 FileType:<identifier>
 Identifies the file type as defined in Section 11. This field is required for all files that implement a specific file type definition.
 Examples:
-Code
 FileType:LevelCostTable
 FileType:HeroExperienceTable
 2.3.6 Optional Standard Fields
 Future versions of this specification may define additional standard header fields. All such fields must follow the rules of Section 2.1 and must remain compatible with existing files.
 2.3.7 Rule
-Code
 Rule:<text>
 
 The Rule: field declares a semantic rule that applies to the file’s data.
@@ -124,7 +109,6 @@ Rules declared using the Rule: field must follow these requirements:
   violate structural or type requirements.
 
 Examples:
-Code
 Rule:Cost must not exceed 100000
 Rule:Incremental cost is equal to the Cost value of the higher Level
 Rule:Level must be strictly increasing
@@ -133,7 +117,6 @@ END OF SECTION 2.3
 SECTION 3 — DATA BLOCK
 =========================================================
 The data block is defined by:
-Code
 Data:Begin
 ... (optional data content)
 Data:End
@@ -142,14 +125,12 @@ Data:End
 •	All data content must appear between Data:Begin and Data:End.
 •	The structure of the data content will be defined in later sections (e.g., tables, lists, records).
 3.2 Minimum Data Block
-Code
 Data:Begin
 Data:End
 =========================================================
 SECTION 4 — MINIMUM VALID FILE
 =========================================================
 A file containing only the required structural tags is valid:
-Code
 Header:Begin
 Header:End
 Data:Begin
@@ -178,7 +159,6 @@ A Columnar Table consists of:
 2.	Zero or more data rows containing entries for each column
 The header row must be the first non empty line after Data:Begin.
 Example:
-Code
 Data:Begin
 ColumnA   ColumnB   ColumnC
 value1A   value1B   value1C
@@ -191,7 +171,6 @@ Data:End
 •	Labels must be unique.
 •	Labels are case sensitive.
 Valid examples:
-Code
 Level Cost
 Name Value Type
 Column1 Column2 Column3 Column4
@@ -208,14 +187,11 @@ Rules:
 •	Fields may not be empty unless future extensions explicitly allow empty fields.
 •	Rows must appear sequentially with no intervening non table content.
 Valid example:
-Code
 12   3400
 Invalid example:
-Code
 12   3400   extraField
 6.4 Empty Columnar Tables
 A Columnar Table may consist solely of the label row:
-Code
 Data:Begin
 Level Cost
 Data:End
@@ -223,7 +199,6 @@ This is valid.
 6.5 Multiple Tables
 The Data Block may contain at most one Columnar Table. Future data structures must not conflict with this rule.
 6.6 Minimum Valid Columnar Table
-Code
 Data:Begin
 <one or more column labels>
 Data:End
@@ -244,10 +219,8 @@ Typed Columns fully conform to Sections 1 through 6 of this specification and do
 Typed Columns are optional. If no types are declared, all fields are treated as untyped text strings.
 7.1 Declaring Column Types
 Column types are declared by appending a type annotation to each column label using the following syntax:
-Code
 Label:Type
 Examples:
-Code
 Level:Integer   Cost:Integer
 Name:String     Value:Float     Enabled:Boolean
 7.1.1 Type Annotation Rules
