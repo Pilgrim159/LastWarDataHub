@@ -2,7 +2,7 @@ Header:Begin
 Name: Level Cost Table
 Version: 1.0
 Scope: Global
-FileType: LevelCostTable
+FileType: HeroLevelCostTable
 Date: 2025-12-23
 Time: 12:45:00
 Rule: Upgrade cost from level L to K is the sum of the Cost values for levels L+1 through K
