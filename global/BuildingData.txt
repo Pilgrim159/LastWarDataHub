@@ -7,7 +7,7 @@ Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
 Header:End
 
 Data:Begin
-# BuildingName      TargetLevel:Integer    OriginalTime    FoodCost:ScaledInt    IronCost:ScaledInt    CoinCost:ScaledInt  OilCost:ScaledInt  HeadquartersLevel:Integer
+BuildingName:String TargetLevel:Integer    OriginalTime    FoodCost:ScaledInt    IronCost:ScaledInt    CoinCost:ScaledInt  OilCost:ScaledInt  HeadquartersLevel:Integer
 Headquarters        31                     111d 18:21:40   1.3G                  1.3G                  441.1M              1.2M               30
 Wall                30                     101d 14:30:37   415.2M                1.2G                  268.1M              0                  30
 Tech_Center_1       31                      97d 19:03:58   1.2G                  1.2G                  380.6M              700650             31
