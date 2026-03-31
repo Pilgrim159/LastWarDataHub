@@ -1,7 +1,11 @@
-Data:Global:Schema Index
+Header Begin:
+Scope:Global
+Data:Schema Index
 Version:1.0
 Description:Master index of all schema files for the LastWarDataHub repository. Defines canonical schema locations, versions, and retrieval order.
+Header End:
 
+Data Begin:
 [Schema Files]
 File Format Specification.txt
 
@@ -12,4 +16,4 @@ File Format Specification.txt = 1.0
 This index file defines the authoritative list of schema documents.
 All validation tools should reference this index before loading any schema file.
 Future schema versions should be added to [Schema Versions] with explicit version numbers.
-
+Data End:
