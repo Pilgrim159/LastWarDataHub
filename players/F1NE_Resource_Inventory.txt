@@ -9,7 +9,7 @@ Time: 18:30:00
 Header:End
 
 Data:Begin
-# Category:String    ItemName:String      Quantity:ScaledInt   Unit:String
+Category:String      ItemName:String      Quantity:ScaledInt   Unit:String
 
 Currency             Diamonds             496225               Points
 Resource             Food                 11769000000          Points
