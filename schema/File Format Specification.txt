@@ -252,7 +252,6 @@ Supported Formats:
 •	Shorthand K: Floating point followed by 'K' (e.g., 10K = 10,000).
 •	Standard Integer: Sequence of digits (e.g., 496225).
 •	Formatted Integer: Integers containing commas (e.g., 1,300,000,000).
-
 Processing and Validation Rules:
 •	Commas: All commas must be stripped before parsing.
 •	Shorthand Multipliers: G = 10^9, M = 10^6, K = 10^3.
@@ -277,7 +276,6 @@ Level:Integer   Cost:Integer
 1               500
 2               900
 Invalid:
-
 Level:Integer   Cost:Integer
 1               five
 7.4 Untyped Columns
