@@ -9,7 +9,7 @@ Rule: Upgrade cost from level L to K is the sum of the Cost values for levels L+
 Header:End
 
 Data:Begin
-# Level:Integer Cost:Integer
+Level:Integer Cost:Integer
 1   0
 2   100
 3   200
