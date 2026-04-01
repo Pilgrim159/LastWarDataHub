@@ -1,6 +1,6 @@
 Header:Begin
 Scope:Global
-Data:Global Master Index
+Name:Global Master Index
 Version:1.0
 Description:Master index of all data folders in the LastWarDataHub repository. Defines canonical file locations and retrieval order.
 Header:End
