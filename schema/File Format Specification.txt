@@ -26,7 +26,7 @@ Header:End
 Data:Begin
 Data:End
 These tags define the outer boundaries of the file. They must appear exactly as written, with matching capitalization and punctuation.
-A file containing only these four lines is considered structurally valid.
+A file with only these tags is an Empty File. It is considered structurally valid.
 =========================================================
 SECTION 2 — HEADER BLOCK
 =========================================================
@@ -137,6 +137,15 @@ Header:End
 Data:Begin
 Data:End
 This is the foundational skeleton upon which all future rules and structures will be built.
+A file containing only these four lines is an Empty File. It is considered structurally valid. 
+A file containing any additional content is a Populated File. 
+A Populated File must have these additional tags in the Header section:
+•	Name: (The identifier of the data table)
+•	Scope: (Global or Account)
+•	Version: (The schema version)
+If the Header section contains this optional tag:
+•	FileType: (The identifier of the file type)
+then additinal tags may be required by the FileType specification section.
 =========================================================
 SECTION 5 — EXTENSIBILITY
 =========================================================
