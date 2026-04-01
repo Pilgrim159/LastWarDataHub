@@ -1,6 +1,6 @@
 Header:Begin
 Scope:Global
-Data:Schema Index
+Name:Schema Index
 Version:1.0
 Description:Master index of all schema files for the LastWarDataHub repository. Defines canonical schema locations, versions, and retrieval order.
 Header:End
