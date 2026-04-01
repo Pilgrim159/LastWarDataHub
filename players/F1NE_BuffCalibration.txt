@@ -4,7 +4,7 @@ Version: 1.3
 Scope: Account
 FileType: Calibration
 PlayerName: F1NE
-Rule: Multiplier = OriginalTime / UpgradeTime
+Rule: Multiplier = 2.375
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
 CalibrationNote: Verified Constant 2.375
 Header:End
