@@ -583,7 +583,7 @@ The Schema tag enforces specific business logic and column requirements upon the
 For example, if a file declares Format: Table and Schema: BuildingData, it must pass both the generic table alignment checks AND possess the exact columns required for building data.
 Specific column requirements for individual schemas will be detailed in external schema definition files. 
 To locate these files, validators MUST reference the master schema registry located at schema/schema_index.txt. 
-The validator must look up the declared Schema name in this index to resolve the filepath of its definitio
+The validator must look up the declared Schema name in this index to resolve the filepath of its definition.
 END OF SECTION 11
 =========================================================
 SECTION 12 — VALIDATION BEHAVIOR RULES
