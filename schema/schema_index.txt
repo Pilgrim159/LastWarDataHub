@@ -1,6 +1,8 @@
 Header:Begin
-Scope:Global
 Name:Master Schema Registry
+Format: Index
+Schema: MasterIndex
+Scope:Global
 Version:1.0
 Header:End
 
