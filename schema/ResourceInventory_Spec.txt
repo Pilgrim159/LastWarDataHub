@@ -1,0 +1,28 @@
+========================================================= 
+RESOURCE INVENTORY TABLE 
+=========================================================
+Defines the format for the Resource Inventory Table
+
+1. Schema Name
+• Schema: ResourceInventory
+
+2. Required Header Fields
+• Name:
+• Version:
+• Scope: Account
+• Format: Table
+• Schema: ResourceInventory
+• PlayerName: 
+
+3. Column Definitions
+Source = String (Allowed: Loose, Inventory)
+Category = String (Allowed: Currency, Resource, Chest, Speedup)
+ItemName = String
+UnitSize = ScaledInt
+PacketCount = ScaledInt
+Unit = String
+
+4. Arithmetic & Semantic Rules
+• Rule: GrandTotal(Item) = Sum(UnitSize * PacketCount) for all rows of ItemName.
+• Rule: Loose entries represent liquid spendable balance.
+• Rule: Inventory entries represent unopened packets/chests.
