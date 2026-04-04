@@ -581,7 +581,7 @@ A file fails scope validation if:
 •	Conflicting account identifiers appear across files (future extension)
 END OF SECTION 10
 =========================================================
-SECTION 11.0 — FORMAT AND SCHEMA DEFINITIONS
+SECTION 11 — FORMAT AND SCHEMA DEFINITIONS
 =========================================================
 This section defines how the FORMAT and SCHEMA tags work together to dictate validation
 11.1 Format Binding
@@ -595,64 +595,7 @@ For example, if a file declares Format: Table and Schema: BuildingData, it must 
 Specific column requirements for individual schemas will be detailed in external schema definition files. 
 To locate these files, validators MUST reference the master schema registry located at schema/schema_index.txt. 
 The validator must look up the declared Schema name in this index to resolve the filepath of its definitio
-========================================================= 
-11.1 HERO LEVEL COST TABLE 
-=========================================================
-The Level Cost Table defines the resource cost required to advance a game element from one level to the next. This file type uses a single Columnar Table with typed columns and mandatory semantic rules.
-This file type conforms to all universal rules defined in Sections 1–10.
-11.1.1 File Type Name
-FileType:HeroLevelCostTable
-This value must appear in the Header Block.
-11.1.2 Required Header Fields
-The following header fields must appear:
-• Name: • Version: • Scope: • FileType:
-Optional standard fields (Section 2.3.6) may also appear.
-Example:
-Name:HeroLevel Cost Table
-Version:1.0
-Scope:Global
-FileType:LevelCostTable
-11.1.3 Required Scope
-The Level Cost Table is permitted in:
-• Global scope 
-11.1.4 Required Data Structure
-The Data Block must contain exactly one Columnar Table.
-Rules:
-• The table must follow all rules in Section 6. • No additional data structures may appear. • The table may contain zero or more data rows.
-11.1.5 Required Columns
-The Level Cost Table must contain the following columns in this exact order:
-1.	Level:Integer
-2.	Cost:ScaledInt
-Column Rules:
-• Both columns must be typed. • Column labels must match exactly, including case. • No additional required columns. • Optional columns may appear after the required columns.
-Example Label Row:
-Level:Integer   Cost:ScaledInt
-Optional Additional Columns:
-Level:Integer   Cost:ScaledInt   Notes:String
-Optional columns must follow all rules in Sections 6 and 7.
-11.1.6 Required Semantic Rules
-The Level Cost Table must satisfy the following semantic rules:
-Rule 1 — Level must increase by exactly 1 per row
-Level[n] - Level[n-1] = 1
-Rule 2 — Cost must be non-decreasing
-Cost[n] >= Cost[n-1]
-Rule 3 — Level must start at 1
-The first row must satisfy:
-Level = 1
-Rule 4 — Cost must be non-negative
-Cost >= 0
-These rules are enforced during semantic validation (Section 8).
-11.1.7 Optional Semantic Rules
-Optional rules may be declared in the header using Rule: fields.
-Examples:
-Rule:Cost must not exceed 100000
-Rule:Maximum level is 160
-Optional rules must not contradict required rules.
-11.1.8 Error Conditions
-A Level Cost Table is invalid if:
-• Required header fields are missing • Required columns are missing • Required columns appear in the wrong order • Required columns are untyped • A Level value does not increase by exactly 1 • The first Level is not 1 • A Cost value decreases • Any Cost value is negative • The Data Block contains more than one table • The table violates any structural or type rule
-Errors must be reported using the format defined in Section 9.
-END OF SECTION 11.1
+END OF SECTION 11
 =========================================================
 SECTION 12 — VALIDATION BEHAVIOR RULES
 =========================================================
