@@ -15,6 +15,7 @@ schema/File Format Specification.txt
 [Schema Locations]
 BuildingData = schema/BuildingData_Spec.txt
 HeroLevelCostTable = schema/HeroCost_Spec.txt
+BuffCalibration = schema/BuffCalibration_Spec.txt
 
 [Notes]
 This index file defines the authoritative list of schema documents.
