@@ -167,9 +167,9 @@ In particular, it respects the mandatory file skeleton, header/data block bounda
 A file may contain zero or one Columnar Table within the Data Block.
 6.1 Columnar Table Structure
 A Columnar Table consists of:
-1.	A header row containing column labels
+1.	A header row containing column labels. This is referred to as the Header Row.
 2.	Zero or more data rows containing entries for each column
-The header row must be the first non empty line after Data:Begin.
+The Header Row must be the first non empty line after Data:Begin.
 Example:
 Data:Begin
 ColumnA   ColumnB   ColumnC
@@ -177,19 +177,7 @@ value1A   value1B   value1C
 value2A   value2B   value2C
 Data:End
 6.2 Column Labels
-•	The first line after Data:Begin must contain one or more column labels.
-•	Each label must be a text string with no line breaks.
-•	Labels must be separated by one or more whitespace characters.
-•	Labels must be unique.
-•	Labels are case sensitive.
-Valid examples:
-Level Cost
-Name Value Type
-Column1 Column2 Column3 Column4
-Invalid examples:
-•	Duplicate labels: Value Value Type
-•	Empty label: Value Type
-•	Missing label row
+The Header Row contains the exact, case-sensitive names of the columns as defined in the associated Schema specification.
 6.3 Data Rows
 Each subsequent non empty line after the label row is interpreted as a data row.
 Rules:
@@ -203,21 +191,21 @@ Valid example:
 Invalid example:
 12   3400   extraField
 6.4 Empty Columnar Tables
-A Columnar Table may consist solely of the label row:
+A Table may consist solely of the label row:
 Data:Begin
 Level Cost
 Data:End
 This is valid.
 6.5 Multiple Tables
-The Data Block may contain at most one Columnar Table. Future data structures must not conflict with this rule.
+The Data Block may contain at most one Table. Future data structures must not conflict with this rule.
 6.6 Minimum Valid Columnar Table
 Data:Begin
-<one or more column labels>
+<Header Row>
 Data:End
 6.7 Error Conditions
 A Columnar Table is invalid if:
-•	The label row is missing
-•	The label row contains duplicate labels
+•	The Header Row is missing
+•	The Header Row contains duplicate labels
 •	A data row contains too few or too many fields
 •	A data row appears before the label row
 •	Non table content appears between table rows
@@ -226,20 +214,13 @@ END OF SECTION 6
 =========================================================
 SECTION 7 — TYPED COLUMNS
 =========================================================
-Typed Columns extend the Columnar Table Format by allowing each column to declare an expected data type. This section defines the rules governing column typing, type enforcement, and validation behavior.
-Typed Columns fully conform to Sections 1 through 6 of this specification and do not alter the required file skeleton, header/data boundaries, or Columnar Table structure.
-Typed Columns are optional. If no types are declared, all fields are treated as untyped text strings.
 7.1 Declaring Column Types
-Column types are declared by appending a type annotation to each column label using the following syntax:
-Label:Type
-Examples:
-Level:Integer   Cost:Integer
-Name:String     Value:Float     Enabled:Boolean
+Column types are dictated exclusively by the external Schema specification (e.g., schema_index.txt). The data file itself should only contain the column labels. 
+When a parser reads a column, it must look up that column's required type in the declared Schema and validate the data rows accordingly.
 7.1.1 Type Annotation Rules
 •	A type annotation must follow the column label with a single colon (:).
 •	Labels and types must not contain whitespace.
 •	If a label contains a colon, it must be escaped or avoided (future extension).
-•	If no type is provided, the column defaults to String.
 7.2 Supported Data Types
 The following primitive types are defined:
 String
@@ -256,6 +237,7 @@ Boolean
 o	true, false
 o	yes, no
 o	1, 0
+
 7.2.1 ScaledInt Type Definition
 The ScaledInt type is a specialized numeric type designed to handle the five specific formats used in Last War data display.
 Supported Formats:
@@ -274,8 +256,10 @@ LabelRow: Level:Integer   Food:ScaledInt   Iron:ScaledInt
 DataRow:   31              1.3G                1,300,000,000
 Future Types
 Additional types may be added in later sections without breaking compatibility.
+
 7.3 Data Row Type Enforcement
 Each field in a data row must conform to the type declared for its column.
+
 7.3.1 Validation Rules
 •	If a column is typed as Integer, the field must be a valid integer.
 •	If typed as Float, the field must be a valid floating point number.
