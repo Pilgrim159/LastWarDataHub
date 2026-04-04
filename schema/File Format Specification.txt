@@ -40,7 +40,7 @@ Header:End
 •	Header fields use the format:
 Tag:Value
 •	Tags must not be duplicated within the Header Block, unless explicitly designated as a Repeatable Tag in their field definition.
-•	Values may contain spaces but not line breaks.
+•	Values may contain white space characters, e.g. tabs, spaces, but not line breaks.
 2.2 Minimum Header Block
 Header:Begin
 Header:End
@@ -83,14 +83,14 @@ Examples:
 Version:1.0
 Version:2025.12.24
 Version:Beta-3
-2.3.5 FileType
-FileType:<identifier>
-Identifies the file type as defined in Section 11. This field is required for all files that implement a specific file type definition.
-Examples:
-FileType:LevelCostTable
-FileType:HeroExperienceTable
-2.3.6 Optional Standard Fields
-Future versions of this specification may define additional standard header fields. All such fields must follow the rules of Section 2.1 and must remain compatible with existing files.
+2.3.5 Format
+Type: Standard Tag
+Description: Defines the structural parsing rules for the Data Block.
+Valid Values: Table, Tree
+2.3.6 Schema
+Type: Standard Tag
+Description: Defines the semantic domain and required contents of the file. Represents a subclass of the declared Format.
+Valid Values: HeroLevelCostTable, BuildingData
 2.3.7 Rule
 Rule:<text>
 
@@ -113,6 +113,8 @@ Examples:
 Rule:Cost must not exceed 100000
 Rule:Incremental cost is equal to the Cost value of the higher Level
 Rule:Level must be strictly increasing
+2.3.8 Optional Standard Fields
+Future versions of this specification may define additional standard header fields. All such fields must follow the rules of Section 2.1 and must remain compatible with existing files.
 END OF SECTION 2.3
 =========================================================
 SECTION 3 — DATA BLOCK
@@ -136,13 +138,15 @@ Header:Begin
 Header:End
 Data:Begin
 Data:End
-This is the foundational skeleton upon which all future rules and structures will be built.
-A file containing only these four lines is an Empty File. It is considered structurally valid. 
+This is the minimal structurally valid format. As such, it is the foundational skeleton upon which all future rules and structures will be built.
+A file containing only these four lines is an Empty File.
 A file containing any additional content is a Populated File. 
 A Populated File must have these additional tags in the Header section:
 •	Name: (The identifier of the data table)
 •	Scope: (Global or Account)
-•	Version: (The schema version)
+•	Version: (The version of this file)
+•	Format: (The basic formatting instructions)
+•	Schema: (File specific parsing instructions)
 If the Header section contains this optional tag:
 •	FileType: (The identifier of the file type)
 then additinal tags may be required by the FileType specification section.
@@ -152,7 +156,7 @@ SECTION 5 — EXTENSIBILITY
 This specification is designed to be expanded over time. Future sections may define:
 •	Required header fields
 •	Optional header fields
-•	Data table formats
+•	Data formats
 •	Validation rules
 •	Versioning rules
 •	Error handling
@@ -577,100 +581,20 @@ A file fails scope validation if:
 •	Conflicting account identifiers appear across files (future extension)
 END OF SECTION 10
 =========================================================
-SECTION 11.0 — FILE TYPE DEFINITIONS
+SECTION 11.0 — FORMAT AND SCHEMA DEFINITIONS
 =========================================================
-This section defines how specific file types are described within this specification. A file type is a named category of file with:
-•	Required header fields
-•	Required scope
-•	Required data structures
-•	Required column definitions
-•	Required types
-•	Required semantic rules
-•	Optional extensions
-File types do not modify the universal rules defined in Sections 1–10. Instead, they apply additional constraints on top of those rules.
-11.0.1 Purpose of File Types
-File types allow this specification to define:
-•	Standardized structures for common Last War data
-•	Consistent validation rules
-•	Predictable behavior across accounts
-•	Clear separation between global and account specific data
-Examples of file types include:
-•	Level Cost Table
-•	Hero Experience Table
-•	Building Upgrade Table
-•	Resource Production Table
-•	Research Cost Table
-Each file type is defined in its own subsection.
-11.0.2 File Type Definition Structure
-Each file type definition must include the following components:
-11.0.2.1 File Type Name
-A unique name identifying the file type.
-Example:
-FileType:LevelCostTable
-11.0.2.2 Required Header Fields
-A list of header fields that must appear in the file.
-Example:
-•	Name:
-•	Version:
-•	Scope:
-•	FileType:
-11.0.2.3 Required Scope
-Each file type must specify whether it is:
-•	Global only
-•	Account only
-•	Allowed in either scope
-11.0.2.4 Required Data Structure
-Each file type must specify the required data structure inside the Data Block.
-Examples:
-•	Must contain a Columnar Table
-•	Must contain exactly one table
-•	Must contain no additional data structures
-11.0.2.5 Required Columns
-Each file type must define:
-•	Column names
-•	Column order (if required)
-•	Whether columns must be typed
-•	Whether columns must be unique
-Example:
-Columns:
-- Level:Integer
-- Cost:Integer
-11.0.2.6 Required Semantic Rules
-Each file type may define semantic rules that apply specifically to that type.
-Examples:
-•	Level must be strictly increasing
-•	Cost must be non decreasing
-•	No row may exceed a maximum allowed value
-11.0.2.7 Optional Fields or Extensions
-File types may define optional:
-•	Header fields
-•	Columns
-•	Semantic rules
-•	Metadata
-11.0.3 Validation Order for File Types
-Validation for a file type occurs in the following order:
-1.	Structural validation (Sections 1–6)
-2.	Type validation (Section 7)
-3.	Semantic validation (Section 8)
-4.	Scope validation (Section 10)
-5.	File type–specific validation (Section 11)
-A file is valid only if it passes all applicable validation stages.
-11.0.4 Error Conditions
-A file fails file type validation if:
-•	Required header fields are missing
-•	Required columns are missing
-•	Columns appear in the wrong order (if order is required)
-•	Required types are not declared
-•	Required semantic rules are violated
-•	The file uses a scope not permitted for that file type
-•	The file contains additional structures not allowed by the file type
-11.0.5 Defining New File Types
-New file types may be added in future subsections:
-•	11.1.x for global file types
-•	11.2.x for account specific file types
-•	11.3.x for hybrid file types
-Each new file type must follow the structure defined in Section 11.0.2.
-END OF SECTION 11.0
+This section defines how the FORMAT and SCHEMA tags work together to dictate validation
+11.1 Format Binding
+The Format tag dictates the structural validation of the Data Block:
+•	Format: Table dictates that the Data Block MUST strictly adhere to all Table rules defined in Section 6.
+•	Format: Tree dictates that the Data Block MUST strictly adhere to all the Tree rules defined in Section 6.
+•	Format: Index dictates that the Data Block is a list of file references.
+11.2 Schema Binding
+The Schema tag enforces specific business logic and column requirements upon the chosen Format. 
+For example, if a file declares Format: Table and Schema: BuildingData, it must pass both the generic table alignment checks AND possess the exact columns required for building data.
+Specific column requirements for individual schemas will be detailed in external schema definition files. 
+To locate these files, validators MUST reference the master schema registry located at schema/schema_index.txt. 
+The validator must look up the declared Schema name in this index to resolve the filepath of its definitio
 ========================================================= 
 11.1 HERO LEVEL COST TABLE 
 =========================================================
