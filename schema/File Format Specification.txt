@@ -87,7 +87,7 @@ Version:Beta-3
 2.3.5 Format
 Type: Standard Tag
 Description: Defines the structural parsing rules for the Data Block.
-Valid Values: Table, Tree
+Valid Values: Table, Index
 2.3.6 Schema
 Type: Standard Tag
 Description: Defines the semantic domain and required contents of the file. Represents a subclass of the declared Format.
@@ -396,7 +396,7 @@ rules must be evaluated in the following order:
 
 8.6.1 File-Declared Rules (Highest Precedence)
 Rules declared within the Header Block using the format:
-    Rule:<rule text>
+Rule:<rule text>
 take precedence over all other semantic rules. These rules may refine,
 extend, or override file-type or universal semantic rules, provided
 they do not violate structural or type requirements.
@@ -404,10 +404,8 @@ they do not violate structural or type requirements.
 8.6.2 Schema Required Semantic Rules
 Rules defined within an external schema specification apply after all format-declared rules
 
-8.6.3 Universal Semantic Rules (Lowest Precedence)rules and
-file-type rules have been evaluated. Universal rules serve as a
-general semantic framework and must not override file-declared or
-file-type rules.
+8.6.3 Universal Semantic Rules (Lowest Precedence)
+Universal rules serve as a general semantic framework and must not override file-declared or schema-declared rules.
 
 8.6.4 Conflict Resolution
 If two rules at the same precedence level conflict, the file is
@@ -579,7 +577,6 @@ This section defines how the FORMAT and SCHEMA tags work together to dictate val
 11.1 Format Binding
 The Format tag dictates the structural validation of the Data Block:
 •	Format: Table dictates that the Data Block MUST strictly adhere to all Table rules defined in Section 6.
-•	Format: Tree dictates that the Data Block MUST strictly adhere to all the Tree rules defined in Section 6.
 •	Format: Index dictates that the Data Block is a list of file references.
 11.2 Schema Binding
 The Schema tag enforces specific business logic and column requirements upon the chosen Format. 
