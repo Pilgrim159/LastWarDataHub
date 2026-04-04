@@ -159,9 +159,11 @@ This specification is designed to be expanded over time. Future sections may def
 •	Semantic constraints
 All expansions must remain compatible with the core structure defined in Sections 1–4.
 =========================================================
-SECTION 6 — COLUMNAR TABLE FORMAT
+SECTION 6 — TABLE FORMAT
 =========================================================
-The Columnar Table Format is an optional data structure that may appear within the Data:Begin and Data:End block. This format fully conforms to all structural and behavioral requirements defined in Sections 1 through 5 of this specification. In particular, it respects the mandatory file skeleton, header/data block boundaries, and extensibility rules previously established.
+The Columnar Table Format is an optional data structure that may appear within the Data:Begin and Data:End block. 
+This format fully conforms to all structural and behavioral requirements defined in Sections 1 through 5 of this specification. 
+In particular, it respects the mandatory file skeleton, header/data block boundaries, and extensibility rules previously established.
 A file may contain zero or one Columnar Table within the Data Block.
 6.1 Columnar Table Structure
 A Columnar Table consists of:
