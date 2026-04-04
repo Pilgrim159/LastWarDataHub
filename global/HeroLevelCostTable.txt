@@ -2,9 +2,10 @@ Header:Begin
 Name: Level Cost Table
 Version: 1.0
 Scope: Global
-FileType: HeroLevelCostTable
-Date: 2025-12-23
-Time: 12:45:00
+Format:Table
+Schema: HeroLevelCostTable
+Date: 2026-04-04
+Time: 11:34
 Header:End
 
 Data:Begin
