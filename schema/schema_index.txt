@@ -1,19 +1,21 @@
 Header:Begin
 Scope:Global
-Name:Schema Index
+Name:Master Schema Registry
 Version:1.0
-Description:Master index of all schema files for the LastWarDataHub repository. Defines canonical schema locations, versions, and retrieval order.
 Header:End
 
 Data:Begin
-[Schema Files]
-File Format Specification.txt
+Description:Master index of schema files. Maps Schema tags to their authoritative definition files
 
-[Schema Versions]
-File Format Specification.txt = 1.0
+[Format Specificatio File]
+schema/File Format Specification.txt
+
+[Schema Locations]
+BuildingData = schema/BuildingData_Spec.txt
+HeroLevelCostTable = schema/HeroCost_Spec.txt
 
 [Notes]
 This index file defines the authoritative list of schema documents.
 All validation tools should reference this index before loading any schema file.
-Future schema versions should be added to [Schema Versions] with explicit version numbers.
+Future schema versions shall be added to [Schema Locations].
 Data:End
