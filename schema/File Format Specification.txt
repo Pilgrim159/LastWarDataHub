@@ -56,7 +56,8 @@ Standard header fields do not alter the structure of the Header Block. They foll
 The Scope: field is defined separately in Section 10.
 2.3.1 Name
 Name:<text>
-A human readable identifier for the file. The value may contain spaces but must not contain line breaks.
+A human readable identifier for the file. The value may contain whitespace characters, e.g. tabs, and spaces,
+but must not contain line breaks.
 Examples:
 Name:Level Cost Table
 Name:Main Account Hero Data
@@ -95,13 +96,11 @@ Valid Values: HeroLevelCostTable, BuildingData
 Rule:<text>
 
 The Rule: field declares a semantic rule that applies to the file’s data.
-Rule declarations allow files to define their own semantic constraints in
-addition to those defined by the file type (Section 11) and the universal
-semantic rules (Section 8).
+Rule declarations allow files to define their own semantic constraints in addition to those defined by the declared Schema and the universal semantic rules (Section 8)."
 
 Rules declared using the Rule: field must follow these requirements:
 • Type: Repeatable Tag. Multiple Rule: fields may appear in the Header Block. Parsers must evaluate all provided rules.
-• The value may contain spaces but must not contain line breaks.
+• The value may contain whitespace, e.g. tabs, spaces, but must not contain line breaks.
 • Multiple Rule: fields may appear in the Header Block.
 • Each Rule: field defines one semantic rule.
 • Rule text is free-form and interpreted according to Section 8.6
@@ -147,9 +146,6 @@ A Populated File must have these additional tags in the Header section:
 •	Version: (The version of this file)
 •	Format: (The basic formatting instructions)
 •	Schema: (File specific parsing instructions)
-If the Header section contains this optional tag:
-•	FileType: (The identifier of the file type)
-then additinal tags may be required by the FileType specification section.
 =========================================================
 SECTION 5 — EXTENSIBILITY
 =========================================================
@@ -370,7 +366,7 @@ Example:
 Rule:Level must be strictly increasing
 Rule:Cost must be non-decreasing
 8.3.2 Specification Defined Rules
-Certain table types may have built in semantic rules defined in future sections of this specification.
+Certain schemas may have built in semantic rules defined in future sections of this specification.
 Example (future):
 Level Cost tables must enforce:
 - Level strictly increasing
@@ -405,14 +401,10 @@ take precedence over all other semantic rules. These rules may refine,
 extend, or override file-type or universal semantic rules, provided
 they do not violate structural or type requirements.
 
-8.6.2 File-Type Required Semantic Rules
-Rules defined within a file type specification (Section 11.x) apply
-after all file-declared rules. These rules define the mandatory
-semantic behavior for the file type and must not be overridden by
-universal rules.
+8.6.2 Schema Required Semantic Rules
+Rules defined within an external schema specification apply after all format-declared rules
 
-8.6.3 Universal Semantic Rules (Lowest Precedence)
-Rules defined in Section 8 apply only after file-declared rules and
+8.6.3 Universal Semantic Rules (Lowest Precedence)rules and
 file-type rules have been evaluated. Universal rules serve as a
 general semantic framework and must not override file-declared or
 file-type rules.
