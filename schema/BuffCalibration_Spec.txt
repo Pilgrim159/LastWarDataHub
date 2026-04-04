@@ -1,0 +1,27 @@
+========================================================= 
+BUFF CALIBRATION TABLE 
+=========================================================
+The Buff Calibration Table is used to track and verify player-specific time reduction multipliers based on their current buffs.
+This Buff Calibration Table subclasses the Table format section in the Specification.
+
+1. Schema Name
+• Schema: Buff Calibration
+
+2. Required Header Fields
+The following exact header fields must appear:
+• Name:
+• Version:
+• Scope:
+• Format: Table
+• Schema: BuffCalibration
+• PlayerName: 
+
+3. Column Definitions
+The Label Row must contain the following columns exactly, and validators must enforce these types:
+BuildingName = String
+Level = Integer
+OriginalTime = Duration
+UpgradeTime = Duration
+
+4. Semantic Rules
+• Rule: UpgradeTime must be mathematically less than or equal to OriginalTime.
