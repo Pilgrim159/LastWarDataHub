@@ -1,0 +1,1 @@
+BuildingName:String TargetLevel:Integer    OriginalTime    FoodCost:ScaledInt    IronCost:ScaledInt    CoinCost:ScaledInt  OilCost:ScaledInt  HeadquartersLevel:Integer
