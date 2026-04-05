@@ -20,15 +20,15 @@ The Label Row must contain the following columns exactly, and validators must en
 BuildingName = String
 TargetLevel = Integer
 OriginalTime = String
-FoodCost = ScaledInt
-IronCost = ScaledInt
-CoinCost = ScaledInt
-OilCost = ScaledInt
+Food = ScaledInt
+Iron = ScaledInt
+Coin = ScaledInt
+Oil = ScaledInt
 HeadquartersLevel = Integer
 
 4. Semantic Rules
 • Rule: TargetLevel must be greater than 0.
-• Rule: All resource costs (FoodCost, IronCost, CoinCost, OilCost) must be non-negative.
+• Rule: All resource costs (Food, Iron, Coin, Oil) must be non-negative.
 • Rule: HeadquartersLevel must be a valid integer.
 
 5. Optional Additional Columns:
