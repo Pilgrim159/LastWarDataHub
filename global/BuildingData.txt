@@ -9,7 +9,7 @@ Header:End
 Data:Begin
 BuildingName        TargetLevel            OriginalTime    FoodCost              IronCost              CoinCost            OilCost           HeadquartersLevel
 Headquarters        31                     111d 18:21:40   1.3G                  1.3G                  441.1M              1.2M               30
-Headquarters        32	                   122d 22:00:00   1.70G	               1.70G	               560.0M	             2.30M              31
+Headquarters        32	                   122d 22:00:00   1.70G                 1.70G	               560.0M	             2.30M              31
 Headquarters        33	                   135d 05:00:00   1.90G	               1.90G	               620.0M	             3.92M	            32
 Headquarters        34	                   141d 23:00:00   2.00G	               2.00G	               650.0M	             7.05M	            33
 Headquarters        35	                   149d 02:00:00   2.10G	               2.10G	               680.0M	             14.10M	            34
