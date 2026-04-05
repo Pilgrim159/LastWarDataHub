@@ -61,5 +61,5 @@ Inventory   Resource   3.0K_Oil             3.0K       35            Points
 Inventory   Resource   6.0K_Oil             6.0K       569           Points
 Inventory   Resource   10.0K_Oil            10.0K      21            Points
 
-Inventory   Speedup    Construction         1h         1711          Hours
+Inventory   Speedup    Construction         1.0K         1711          Hours
 Data:End
