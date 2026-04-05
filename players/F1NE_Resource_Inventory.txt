@@ -30,36 +30,36 @@ Inventory   Currency   Diamonds             50         463           Points
 Inventory   Chest      UR_Resource_Chest    1          536           Chests
 Inventory   Chest      SSR_Resource_Chest   1          1873          Chests
 Inventory   Chest      SR_Resource_Chest    1          6162          Chests
-Inventory   Chest      Resource_Chest       1          175,921       Chests
+Inventory   Chest      Resource_Chest       1          175921        Chests
 
-Inventory   Resource   Food Chest (UR)      4.06M      435           Points
-Inventory   Resource   Food Chest (SSR)     1.35M      3706          Points
-Inventory   Resource   Food Chest (SR)      169.2K     27184         Points
-Inventory   Resource   Food Chest (R)       16.92K     80            Points
-Inventory   Resource   50K Food             50.0K      4620          Points
-Inventory   Resource   10K Food             10.0K      1404          Points
-Inventory   Resource   1K Food              1.0K       13,102        Points
+Inventory   Resource   Food_Chest_(UR)      4.06M      435           Points
+Inventory   Resource   Food_Chest_(SSR)     1.35M      3706          Points
+Inventory   Resource   Food_Chest_(SR)      169.2K     27184         Points
+Inventory   Resource   Food_Chest_(R)       16.92K     80            Points
+Inventory   Resource   50K_Food             50.0K      4620          Points
+Inventory   Resource   10K_Food             10.0K      1404          Points
+Inventory   Resource   1K_Food              1.0K       13102         Points
 
-Inventory   Resource   Iron Chest (UR)      4.06M      542           Points
-Inventory   Resource   Iron Chest (SSR)     1.35M      3873          Points
-Inventory   Resource   Iron Chest (SR)      169.2K     9585          Points
-Inventory   Resource   Iron Chest (R)       16.92K     2             Points
-Inventory   Resource   50K Iron             50.0K      187           Points
-Inventory   Resource   10K Iron             10.0K      12            Points
-Inventory   Resource   1K Iron              1.0K       94            Points
+Inventory   Resource   Iron_Chest_(UR)      4.06M      542           Points
+Inventory   Resource   Iron_Chest_(SSR)     1.35M      3873          Points
+Inventory   Resource   Iron_Chest_(SR)      169.2K     9585          Points
+Inventory   Resource   Iron_Chest_(R)       16.92K     2             Points
+Inventory   Resource   50K_Iron             50.0K      187           Points
+Inventory   Resource   10K_Iron             10.0K      12            Points
+Inventory   Resource   1K_Iron              1.0K       94            Points
 
-Inventory   Resource   Coin Chest (UR)      2.43M      809           Points
-Inventory   Resource   Coin Chest (SSR)     812.16K    1373          Points
-Inventory   Resource   Coin Chest (SR)      101.52K    294           Points
-Inventory   Resource   Coin Chest (R)       10.15K     3             Points
-Inventory   Resource   300K Coins           300.0K     3             Points
-Inventory   Resource   30K Coins            30.0K      176           Points
-Inventory   Resource   6K Coins             6.0K       6             Points
-Inventory   Resource   600 Coins            600       164            Points
+Inventory   Resource   Coin_Chest_(UR)      2.43M      809           Points
+Inventory   Resource   Coin_Chest_(SSR)     812.16K    1373          Points
+Inventory   Resource   Coin_Chest_(SR)      101.52K    294           Points
+Inventory   Resource   Coin_Chest_(R)       10.15K     3             Points
+Inventory   Resource   300K_Coins           300.0K     3             Points
+Inventory   Resource   30K_Coins            30.0K      176           Points
+Inventory   Resource   6K_Coins             6.0K       6             Points
+Inventory   Resource   600_Coins            600        164           Points
 
-Inventory   Resource   3.0K Oil             3.0K       35            Points
-Inventory   Resource   6.0K Oil             6.0K       569           Points
-Inventory   Resource   10.0K Oil            10.0K      21            Points
+Inventory   Resource   3.0K_Oil             3.0K       35            Points
+Inventory   Resource   6.0K_Oil             6.0K       569           Points
+Inventory   Resource   10.0K_Oil            10.0K      21            Points
 
 Inventory   Speedup    Construction         1h         1711          Hours
 Data:End
