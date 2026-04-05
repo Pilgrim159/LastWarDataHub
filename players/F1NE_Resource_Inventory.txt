@@ -1,10 +1,9 @@
 Header:Begin
 Name: F1NE Resource Inventory
 Version: 2.0
-Scope: Account
-Format: Table
+Scope: Account: F1NE
+Format: Table 
 Schema: ResourceInventory
-PlayerName: F1NE
 Date: 2026-04-04
 Time: 17:30:00
 Header:End
