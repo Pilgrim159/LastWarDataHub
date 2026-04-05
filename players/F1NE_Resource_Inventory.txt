@@ -17,7 +17,7 @@ Loose       Resource   Coin                 1          765.6M        Points
 Loose       Resource   Oil                  1          3.4M          Points
 Loose       Currency   Diamonds             1          151.3K        Points
 
-Inventory   Currency   Diamonds             25K        26            Points
+Inventory   Currency   Diamonds             5K         26            Points
 Inventory   Currency   Diamonds             10K        1             Points
 Inventory   Currency   Diamonds             100        1073          Points
 Inventory   Currency   Diamonds             200        1             Points
