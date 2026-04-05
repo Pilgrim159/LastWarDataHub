@@ -66,4 +66,32 @@ Inventory   Speedup    General              1         1842           Hours
 Inventory   Speedup    General              15        3              Minutes
 Inventory   Speedup    General              5         16704          Minutes
 Inventory   Speedup    General              1         18059          Minutes
+
+Inventory   Speedup    Construction         8         0              Hours
+Inventory   Speedup    Construction         3         0              Hours
+Inventory   Speedup    Construction         1         25             Hours
+Inventory   Speedup    Construction         15        139            Minutes
+Inventory   Speedup    Construction         5         20098          Minutes
+Inventory   Speedup    Construction         1         12980          Minutes
+
+Inventory   Speedup    Research         8         2                  Hours
+Inventory   Speedup    Research         3         0                  Hours
+Inventory   Speedup    Research         1         54                 Hours
+Inventory   Speedup    Research         15        5                  Minutes
+Inventory   Speedup    Research         5         9186               Minutes
+Inventory   Speedup    Research         1         15390              Minutes
+
+Inventory   Speedup    Training         8         26                 Hours
+Inventory   Speedup    Training         3         0                  Hours
+Inventory   Speedup    Training         1         69                 Hours
+Inventory   Speedup    Training         15        0                  Minutes
+Inventory   Speedup    Training         5         22356              Minutes
+Inventory   Speedup    Training         1         23707              Minutes
+
+Inventory   Speedup    Healing         8         28                 Hours
+Inventory   Speedup    Healing         3         0                  Hours
+Inventory   Speedup    Healing         1         89                 Hours
+Inventory   Speedup    Healing         15        0                  Minutes
+Inventory   Speedup    Healing         5         6861               Minutes
+Inventory   Speedup    Healing         1         2051               Minutes
 Data:End
