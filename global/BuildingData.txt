@@ -8,7 +8,7 @@ Header:End
 
 Data:Begin
 BuildingName        TargetLevel            OriginalTime    Food                  Iron                  Coin                Oil                BuildingRequirements 
-Headquarters        31                     111d 18:21:40   1.3G                  1.3G                  441.1M              1.2M          Headquarters:30;Tech_Center_1:30;Barracks:30;Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
+Headquarters        31                     111d 18:21:40   1.3G                  1.3G                  441.1M              1.2M              Headquarters:30;Tech_Center_1:30;Barracks:30;Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
 Headquarters        32	                   122d 22:00:00   1.70G                 1.70G	               560.0M              2.30M              Headquarters:31
 Headquarters        33	                   135d 05:00:00   1.90G                 1.90G	               620.0M              3.92M              Headquarters:32
 Headquarters        34	                   141d 23:00:00   2.00G                 2.00G	               650.0M              7.05M              Headquarters:33
