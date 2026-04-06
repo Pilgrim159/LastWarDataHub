@@ -25,6 +25,7 @@ Iron = ScaledInt
 Coin = ScaledInt
 Oil = ScaledInt
 HeadquartersLevel = Integer
+BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":")
 
 4. Semantic Rules
 • Rule: TargetLevel must be greater than 0.
