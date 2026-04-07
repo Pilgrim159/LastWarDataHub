@@ -38,3 +38,5 @@ Rule: Level-to-Level Dependency — Level N typically requires Level N−1 of th
 Rule: Entry Nodes — If a node is at the start of a branch with no internal prerequisites, TechRequirements must be "Tier 0".
 Rule: Cross-Tree Syntax — If a requirement resides in a different tree, use: TreeID.NodeID:Level.
 Rule: Global Gates — The TreeRequirement in the Header must be satisfied before any nodes in the Data:Begin block can be researched.
+Rule: The Safety Valve — The Notes column must be present in every row. If no special conditions exist, it must be recorded as None. 
+      If the EffectValue is a flat integer (e.g., +500 capacity) rather than the standard percentage, it must be explicitly noted here (e.g., "Flat Value").
