@@ -11,5 +11,7 @@ Header:End
 Data:Begin
 NodeID            NodeLevel   Purpose                          IsToggle   EffectValue   ResearchTime    Iron    Coin    Food    Oil     ValorMedals   TechRequirements   BuildingRequirements  Notes
 Unlock_Oil_Well   1           Enables Oil Well construction    True       0.0           0d 00:00:00     0       0       0        0      0             Tier 0             Tech_Center_1:30      None
-Food_Output_V     2           Boost Food Output                False      5.00          1d 22:00:00     1.9M    5.7M    1.9M     0      0             Unlock_Oil_Well:1  Tech_Center_1:30      None
+Food_Output_V     2           Boost Food Output                False      5.00          1d 21:40:40     1.9M    5.7M    1.9M     0      0             Unlock_Oil_Well:1  Tech_Center_1:30      None
+Iron_Output_V     2           Boost Iron Output                False      5.00          1d 21:40:40     1.9M    5.7M    1.9M     0      0             Unlock_Oil_Well:1  Tech_Center_1:30      None
+Coin_Output_V     3           Boost Coin Output                False      5.00          2d 15:56:56     3.4M    10.2M   3.4M     0      0             Unlock_Oil_Well:1  Tech_Center_1:30      None
 Data:End
