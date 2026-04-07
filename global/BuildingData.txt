@@ -15,9 +15,9 @@ Headquarters        32	                   122d 22:00:00   1.70G                 
 
 Headquarters        33	                   135d 05:00:00   1.90G                 1.90G	               620.0M              3.92M    Base_Expansion_I:1      Headquarters:32;Drill_Ground:32;Barracks:32;Hospital:32;[Tech_Center_1:32|Tech_Center_2:32|Tech_Center_3:32];[Tank_Center:32|Missile_Center:32|Aircraft_Center:32]
 
-Headquarters        34	                   141d 23:00:00   2.00G                 2.00G	               650.0M              7.05M     Base_Expansion_I:1     Headquarters:33;Alliance_Center:33;Wall:33;Barracks:33;[Tech_Center_1:33|Tech_Center_2:33|Tech_Center_3:33];[Tank_Center:33|Missile_Center:33|Aircraft_Center:33]
+Headquarters        34	                   141d 23:00:00   2.00G                 2.00G	               650.0M              7.05M    Base_Expansion_I:1      Headquarters:33;Alliance_Center:33;Wall:33;Barracks:33;[Tech_Center_1:33|Tech_Center_2:33|Tech_Center_3:33];[Tank_Center:33|Missile_Center:33|Aircraft_Center:33]
 
-Headquarters        35	                   149d 02:00:00   2.10G                 2.10G	               680.0M              14.10M     Base_Expansion_I:1    Headquarters:34;Drill_Ground:34;Barracks:34;Hospital:34;[Tech_Center_1:34|Tech_Center_2:34|Tech_Center_3:34];[Tank_Center:34|Missile_Center:34|Aircraft_Center:34]
+Headquarters        35	                   149d 02:00:00   2.10G                 2.10G	               680.0M              14.10M   Base_Expansion_I:1      Headquarters:34;Drill_Ground:34;Barracks:34;Hospital:34;[Tech_Center_1:34|Tech_Center_2:34|Tech_Center_3:34];[Tank_Center:34|Missile_Center:34|Aircraft_Center:34]
 
 Wall                30                     101d 14:30:37   415.2M                1.2G                  268.1M              0           -                    Headquarters:30;Wall:29
 Tech_Center_1       31                      97d 19:03:58   1.2G                  1.2G                  380.6M              700650      -                    Headquarters:31;Tech_Center_1:30
