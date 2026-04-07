@@ -2,7 +2,7 @@ Header:Begin
 Name: Global Building Data
 Format:Table
 Schema: BuildingData
-Version: 1.0
+Version: 1.1
 Scope: Global
 Header:End
 
