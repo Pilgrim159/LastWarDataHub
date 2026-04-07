@@ -24,8 +24,10 @@ Purpose = String (Description of the benefit)
 IsToggle = Boolean (True for "Activation" unlocks; False for "Percentage" boosts)
 EffectValue = Float (Numerical benefit at this level; 0.0 for Toggles)
 ResearchTime = String (Format: 00d 00:00:00)
+Iron = ScaledInt
 Gold = ScaledInt
-Oil = ScaledInt
+Coin = ScaledInt
+Food = ScaledInt
 ValorMedals = Integer
 TechRequirements = List(Pair(OptionalTreeID.NodeID, Level), sep=";", kv_sep=":", logic_op="|") or "Tier 0"
 BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|") or None
