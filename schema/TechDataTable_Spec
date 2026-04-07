@@ -27,6 +27,8 @@ ResearchTime = String (Format: 00d 00:00:00)
 Iron = ScaledInt
 Coin = ScaledInt
 Food = ScaledInt
+Oil = ScaledInt
+
 ValorMedals = Integer
 TechRequirements = List(Pair(OptionalTreeID.NodeID, Level), sep=";", kv_sep=":", logic_op="|") or "Tier 0"
 BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|") or None
