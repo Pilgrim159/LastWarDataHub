@@ -30,6 +30,7 @@ Food = ScaledInt
 ValorMedals = Integer
 TechRequirements = List(Pair(OptionalTreeID.NodeID, Level), sep=";", kv_sep=":", logic_op="|") or "Tier 0"
 BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|") or None
+Notes = String or None (Optional: Used to clarify non-percentage effects or special conditions)
 
 4. Semantic Rules
 Rule: Incremental Progression — NodeLevel must increase by 1 per row for a specific NodeID.
