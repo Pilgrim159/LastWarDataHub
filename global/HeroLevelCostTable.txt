@@ -5,7 +5,7 @@ Scope: Global
 Format:Table
 Schema: HeroLevelCostTable
 Date: 2026-04-04
-Time: 11:34
+Time: 11:34:00
 Header:End
 
 Data:Begin
