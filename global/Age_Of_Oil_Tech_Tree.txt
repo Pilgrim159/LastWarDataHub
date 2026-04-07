@@ -1,0 +1,15 @@
+Header:Begin
+Name: Age of Oil Tech Tree
+TreeID: Age_of_Oil
+TreeRequirement: Special_Forces:40%
+Format: Table
+Schema: TechData
+Version: 1.0
+Scope: Global
+Header:End
+
+Data:Begin
+NodeID            NodeLevel   Purpose                          IsToggle   EffectValue   ResearchTime    Gold    Oil     ValorMedals   TechRequirements   BuildingRequirements
+Unlock_Oil_Well   1           Enables Oil Well construction    True       0.0           0d 00:00:00     0       0       0             Tier 0             Tech_Center_1:30
+Food_Output_V     2           Boost Food Output                False      5.00          1d 22:00:00     5.7M    0       0             Unlock_Oil_Well:1  None
+Data:End
