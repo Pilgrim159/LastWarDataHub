@@ -13,10 +13,11 @@ Description:Master index of schema files. Maps Schema tags to their authoritativ
 schema/File Format Specification.txt
 
 [Schema Locations]
+BuffCalibration = schema/BuffCalibration_Spec.txt
 BuildingData = schema/BuildingData_Spec.txt
 HeroLevelCostTable = schema/HeroCost_Spec.txt
-BuffCalibration = schema/BuffCalibration_Spec.txt
 ResourceInventory = schema/ResourceInventory_Spec.txt
+TechDataTable = schema/TechDataTable_Spec.txt
 
 [Notes]
 This index file defines the authoritative list of schema documents.
