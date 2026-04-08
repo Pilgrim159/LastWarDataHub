@@ -57,4 +57,5 @@ Research_Adv_V    9           Increase res. speed             False      22.50  
 Research_Adv_V    10          Increase res. speed             False      25.00         27d 20:50:00   49.7M   149.1M  49.7M   680.0K   0             Research_Adv_V:9                           Tech_Center_1:30       Estimate:Base
 
 Unlock_Tech_Ctr_3 1           Unlock 3rd Tech Ctr             True       0.0           03d 21:39:49   4.7M    14.1M   4.7M    162.0K   0             Fast_Builder_V:1;Research_Adv_V:1          Tech_Center_1:31       Estimate:Buffed
+
 Data:End
