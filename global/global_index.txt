@@ -9,12 +9,10 @@ Data:Begin
 [Global Tables]
 BuildingData.txt
 HeroLevelCostTable.txt
-ResearchPrerequisites.txt
 
 [Table Versions]
 BuildingData.txt = 1.0
 HeroLevelCostTable.txt = 1.0
-ResearchPrerequisites = 1.0
 
 [Notes]
 This index file defines the authoritative list of global data tables.
