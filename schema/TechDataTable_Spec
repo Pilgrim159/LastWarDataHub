@@ -41,6 +41,12 @@ Rule: Cross-Tree Syntax — If a requirement resides in a different tree, use: T
 Rule: Global Gates — The TreeRequirement in the Header must be satisfied before any nodes in the Data:Begin block can be researched.
 Rule: The Safety Valve — The Notes column must be present in every row. If no special conditions exist, it must be recorded as None. 
       If the EffectValue is a flat integer (e.g., +500 capacity) rather than the standard percentage, it must be explicitly noted here (e.g., "Flat Value").
-Rule: The Confirmation Anchor — Any row containing the keyword "Confirmed" in the Notes column must be treated as absolute Ground Truth. 
-If neighboring levels (NodeLevel ± 1) are missing or require estimation, 
-the Advisor must use the "Confirmed" row as the baseline for all cost, time, and scaling calculations, prioritizing this data over any external web sources.
+Rule: The Confirmation Anchor — Any row containing the keyword "Confirmed" in the Notes column is prioritized Ground Truth. 
+      The Advisor must prioritize this data over all external or web-based sources to ensure the Hub reflects the specific game environment of the user.
+Rule: Data Standardization (Syntax-Specific) — Primary columns must always prioritize Raw Base Values (highest costs/longest times). 
+      The Notes column must use the following syntax for verification:
+            1. Base Only: Use "Confirmed:Base".
+            2. Buffed Only: Use "Confirmed:Buffed" (Note: Columns contain buffed values).
+            3. Dual Confirmation: Use "Confirmed:Base; Buffed: (Key = Value, Key = Value)". 
+               - Omit any keys where values are identical between Base and Buffed.
+         - The Advisor MUST use these pairs to calculate a "Buff Coefficient" to standardize all other entries in the tree.
