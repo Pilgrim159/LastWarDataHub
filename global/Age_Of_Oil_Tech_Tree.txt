@@ -69,7 +69,6 @@ Focused_Training_V  8         Increase training speed         False      8.00   
 Focused_Training_V  9         Increase training speed         False      9.00          50d 00:00:00   75.0M   225.0M  75.0M   0        0             Focused_Training_V:8                       Tech_Center_1:30       Estimate:Base
 Focused_Training_V  10        Increase training speed         False      10.00         60d 18:00:00   100.0M  300.0M  100.0M  0        0             Focused_Training_V:9                       Tech_Center_1:30       Estimate:Base
 
-
 Rapid_Field_Dressing_V 1      Increase healing speed          False      1.00          11d 00:07:00   4.7M    14.1M   4.7M    0        0             Unlock_Tech_Ctr_3:1                        Tech_Center_1:30       Confirmed:Buffed
 Rapid_Field_Dressing_V 2      Increase healing speed          False      2.00          13d 00:00:00   7.0M    21.0M   7.0M    0        0             Rapid_Field_Dressing_V:1                   Tech_Center_1:30       Estimate:Base
 Rapid_Field_Dressing_V 3      Increase healing speed          False      3.00          15d 12:00:00   10.0M   30.0M   10.0M   0        0             Rapid_Field_Dressing_V:2                   Tech_Center_1:30       Estimate:Base
