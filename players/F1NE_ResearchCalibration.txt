@@ -7,7 +7,7 @@ PlayerName: F1NE
 Format: Table
 Schema: ResearchCalibration
 Rule: Multiplier = 2.95
-Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
+Rule: UpgradeTime = Floor(OriginalTime / Multiplier)
 Header:End
 
 Data:Begin
