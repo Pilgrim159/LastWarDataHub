@@ -11,5 +11,5 @@ Header:End
 Data:Begin
 NodeID             NodeLevel   Purpose                        IsToggle   EffectValue   ResearchTime   Iron     Coin     Food     Oil      ValorMedals   TechRequirements        BuildingRequirements   Notes
 Attack_Boost_III   8           Increase attack power          False      2.54          23d 03:20:00   126.4M   379.3M   126.4M   0        2013          Advanced_Protection:1   Tech_Center_1:29       Confirmed:Base
-Advanced_Protection 1          Placeholder dependency         True       0.0           00d 00:00:00   0        0        0        0        0             Tier 0                  Tech_Center_1:1        Skeleton:Stub
+Advanced_Protection 1          Placeholder dependency         True       0.0           00d 00:00:00   0        0        0        0        0             EntryNode               Tech_Center_1:1        Skeleton:Stub
 Data:End
