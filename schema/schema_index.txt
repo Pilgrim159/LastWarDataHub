@@ -18,6 +18,7 @@ BuildingData = schema/BuildingData_Spec.txt
 HeroLevelCostTable = schema/HeroCost_Spec.txt
 ResourceInventory = schema/ResourceInventory_Spec.txt
 TechData = schema/TechDataTable_Spec.txt
+ResearchCalibration = schema/xxxx
 
 [Notes]
 This index file defines the authoritative list of schema documents.
