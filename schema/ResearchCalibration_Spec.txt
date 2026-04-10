@@ -11,7 +11,7 @@ research time reduction multipliers for various tech trees.
 • Name: String
 • ResearchID: Research_Calibration (Identifies this specific calibration document)
 • Version: String
-• Scope: Account                
+• Scope: Account: <AccountID>                
 • PlayerName: String            
 • Format: Table
 • Schema: ResearchCalibration
