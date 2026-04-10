@@ -30,7 +30,6 @@ BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_
 4. Semantic Rules
 • Rule: TargetLevel must be greater than 0.
 • Rule: All resource costs (Food, Iron, Coin, Oil) must be non-negative.
-• Rule: HeadquartersLevel must be a valid integer.
 
 5. Optional Additional Columns:
 • Notes: String
