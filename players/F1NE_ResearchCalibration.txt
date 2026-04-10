@@ -1,0 +1,19 @@
+Header:Begin
+Name: F1NE Research Calibration
+ResearchID: Research_Calibration
+Version: 1.0
+Scope: Account
+PlayerName: F1NE
+Format: Table
+Schema: ResearchCalibration
+Rule: Multiplier = 2.95
+Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
+Header:End
+
+Data:Begin
+TreeID         NodeID            NodeLevel   OriginalTime   UpgradeTime
+Age_of_Oil     Food_Output_V     2           05d 14:45:00   01d 21:40:40
+Age_of_Oil     Coin_Output_V     3           07d 20:39:00   02d 15:56:56
+Age_of_Oil     Oil_Output_III    7           38d 13:33:00   13d 01:44:44
+Age_of_Oil     Base_Expansion_I  1           55d 12:47:00   18d 19:47:27
+Data:End
