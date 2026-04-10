@@ -4,31 +4,28 @@ RESEARCH CALIBRATION TABLE SPECIFICATION
 The Research Calibration Table is used to track and verify player-specific 
 research time reduction multipliers for various tech trees.
 
-This Research Calibration Table subclasses the Table format section in the Specification.
-
 1. Schema Name
 • Schema: ResearchCalibration
 
 2. Required Header Fields
-The following exact header fields must appear to identify the player and calculation rules:
 • Name: String
-• TreeID: Research_Calibration
+• ResearchID: Research_Calibration (Identifies this specific calibration document)
 • Version: String
-• Scope: Account
+• Scope: Account                
+• PlayerName: String            
 • Format: Table
 • Schema: ResearchCalibration
-• PlayerName: String
 • Rule: Multiplier = Float
-• Rule: UpgradeTime = Calculation (e.g., Ceiling(OriginalTime / Multiplier))
+• Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
 
 3. Column Definitions
 The Label Row must contain the following columns exactly:
-• TreeID = String (The unique identifier for the tech tree, e.g., Age_of_Oil)
-• NodeID = String (Unique identifier for the research node)
-• NodeLevel = Integer (The specific level being upgraded to)
-• OriginalTime = Duration (The raw base research time)
-• UpgradeTime = Duration (The actual time reported in-game)
+• TreeID = String         (Identifies the source tree: e.g., Age_of_Oil)
+• NodeID = String         (The research node name)
+• NodeLevel = Integer     (The level being calibrated)
+• OriginalTime = Duration  (Base time from global tech files)
+• UpgradeTime = Duration   (Actual time from player tech center)
 
 4. Semantic Rules
 • Rule: UpgradeTime must be mathematically less than or equal to OriginalTime.
-• Rule: The Multiplier defined in the header must consistently resolve the difference between OriginalTime and UpgradeTime across all rows.
+• Rule: The Multiplier must resolve the UpgradeTime using the formula defined in the header.
