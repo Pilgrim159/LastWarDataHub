@@ -9,7 +9,7 @@ Defines the format for the Resource Inventory Table
 2. Required Header Fields
 • Name:
 • Version:
-• Scope: Account
+• Scope: Account: <AccountID> 
 • Format: Table
 • Schema: ResourceInventory
 • PlayerName: 
