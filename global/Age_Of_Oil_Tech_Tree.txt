@@ -11,17 +11,39 @@ Header:End
 Data:Begin
 NodeID            NodeLevel   Purpose                          IsToggle   EffectValue   ResearchTime    Iron    Coin    Food    Oil     ValorMedals   TechRequirements                                 BuildingRequirements  Notes
 Unlock_Oil_Well   1           Enables Oil Well construction   True       0.0           00d 00:00:00   0       0       0       0        0             Tier 0                                     Tech_Center_1:30       Confirmed
+
 Food_Output_V     1           Boost Food Output               False      2.50          00d 22:50:20   0.9M    2.8M    0.9M    0        0             Unlock_Oil_Well:1                          Tech_Center_1:30       Estimate:Buffed
 Food_Output_V     2           Boost Food Output               False      5.00          05d 14:45:00   1.9M    5.6M    1.9M    0        0             Food_Output_V:1                            Tech_Center_1:30       Confirmed:Base; Buffed: (Iron = 1.8M, Coin = 5.6M, Food = 1.8M)
 Food_Output_V     3           Boost Food Output               False      7.50          07d 20:39:00   3.4M    10.2M   3.4M    0        0             Food_Output_V:2                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     4           Boost Food Output               False     10.00          09d 12:00:00   5.1M    15.3M   5.1M    0        0             Food_Output_V:3                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     5           Boost Food Output               False     12.50          11d 06:00:00   7.6M    22.8M   7.6M    0        0             Food_Output_V:4                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     6           Boost Food Output               False     15.00          13d 18:00:00   11.4M   34.2M   11.4M   0        0             Food_Output_V:5                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     7           Boost Food Output               False     17.50          16d 12:00:00   17.1M   51.3M   17.1M   0        0             Food_Output_V:6                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     8           Boost Food Output               False     20.00          20d 00:00:00   25.6M   76.8M   25.6M   0        0             Food_Output_V:7                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     9           Boost Food Output               False     22.50          24d 06:00:00   38.4M   115.2M  38.4M   0        0             Food_Output_V:8                            Tech_Center_1:30       Estimate:Base
+Food_Output_V     10          Boost Food Output               False     25.00          29d 14:00:00   57.6M   172.8M  57.6M   0        0             Food_Output_V:9                            Tech_Center_1:30       Estimate:Base
 
 Iron_Output_V     1           Boost Iron Output               False      2.50          00d 22:50:20   0.9M    2.8M    0.9M    0        0             Unlock_Oil_Well:1                          Tech_Center_1:30       Estimate:Buffed
 Iron_Output_V     2           Boost Iron Output               False      5.00          05d 14:45:00   1.9M    5.7M    1.9M    0        0             Iron_Output_V:1                            Tech_Center_1:30       Confirmed:Base; Buffed: (Iron = 1.8M, Coin = 5.6M, Food = 1.8M)
 Iron_Output_V     3           Boost Iron Output               False      7.50          07d 20:39:00   3.4M    10.2M   3.4M    0        0             Iron_Output_V:2                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     4           Boost Iron Output               False     10.00          09d 12:00:00   5.1M    15.3M   5.1M    0        0             Iron_Output_V:3                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     5           Boost Iron Output               False     12.50          11d 06:00:00   7.6M    22.8M   7.6M    0        0             Iron_Output_V:4                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     6           Boost Iron Output               False     15.00          13d 18:00:00   11.4M   34.2M   11.4M   0        0             Iron_Output_V:5                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     7           Boost Iron Output               False     17.50          16d 12:00:00   17.1M   51.3M   17.1M   0        0             Iron_Output_V:6                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     8           Boost Iron Output               False     20.00          20d 00:00:00   25.6M   76.8M   25.6M   0        0             Iron_Output_V:7                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     9           Boost Iron Output               False     22.50          24d 06:00:00   38.4M   115.2M  38.4M   0        0             Iron_Output_V:8                            Tech_Center_1:30       Estimate:Base
+Iron_Output_V     10          Boost Iron Output               False     25.00          29d 14:00:00   57.6M   172.8M  57.6M   0        0             Iron_Output_V:9                            Tech_Center_1:30       Estimate:Base
 
 Coin_Output_V     1           Boost Coin Output               False      1.66          00d 21:18:58   1.1M    3.4M    1.1M    0        0             Unlock_Oil_Well:1                          Tech_Center_1:30       Estimate:Base
 Coin_Output_V     2           Boost Coin Output               False      3.33          05d 14:45:00   1.9M    5.6M    1.9M    0        0             Coin_Output_V:1                            Tech_Center_1:30       Confirmed:Buffed
 Coin_Output_V     3           Boost Coin Output               False      7.50          07d 20:39:00   3.4M    10.2M   3.4M    0        0             Coin_Output_V:2                            Tech_Center_1:30       Confirmed:Base
+Coin_Output_V     4           Boost Coin Output               False     6.66           09d 12:00:00   5.1M    15.3M   5.1M    0        0             Coin_Output_V:3                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     5           Boost Coin Output               False     8.32           11d 06:00:00   7.6M    22.8M   7.6M    0        0             Coin_Output_V:4                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     6           Boost Coin Output               False     10.00          13d 18:00:00   11.4M   34.2M   11.4M   0        0             Coin_Output_V:5                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     7           Boost Coin Output               False     11.66          16d 12:00:00   17.1M   51.3M   17.1M   0        0             Coin_Output_V:6                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     8           Boost Coin Output               False     13.33          20d 00:00:00   25.6M   76.8M   25.6M   0        0             Coin_Output_V:7                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     9           Boost Coin Output               False     15.00          24d 06:00:00   38.4M   115.2M  38.4M   0        0             Coin_Output_V:8                            Tech_Center_1:30       Estimate:Base
+Coin_Output_V     10          Boost Coin Output               False     16.66          29d 14:00:00   57.6M   172.8M  57.6M   0        0             Coin_Output_V:9                            Tech_Center_1:30       Estimate:Base
 
 Oil_Output_I      1           Boost Oil Well Output           False      1.00          02d 18:00:00   4.0M    12.0M   4.0M    0        0             Food_Output_V:1;Iron_Output_V:1;Coin_Output_V:1   Tech_Center_1:30       Estimate:Base
 Oil_Output_I      2           Boost Oil Well Output           False      2.00          03d 00:00:00   5.5M    16.5M   5.5M    0        0             Oil_Output_I:1                             Tech_Center_1:30       Estimate:Base
