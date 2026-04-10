@@ -24,7 +24,6 @@ Food = ScaledInt
 Iron = ScaledInt
 Coin = ScaledInt
 Oil = ScaledInt
-HeadquartersLevel = Integer
 ResearchRequirements = List(Pair(TechNode, Rank), sep=";", kv_sep=":", logic_op="|")
 BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|")
 
