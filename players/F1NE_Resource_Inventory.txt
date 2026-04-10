@@ -1,6 +1,5 @@
 Header:Begin
 Name: F1NE Resource Inventory
-PlayerName: F1NE
 Version: 2.0
 Scope: Account: F1NE
 Format: Table 
