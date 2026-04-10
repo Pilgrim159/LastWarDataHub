@@ -2,10 +2,9 @@ Header:Begin
 Name: F1NE Buff Calibration
 Version: 1.4
 Date:2026-04-04
-Scope: Account
+Scope: Account: F1NE
 Format: Table
 Schema: BuffCalibration
-PlayerName: F1NE
 Rule: Multiplier = 2.375
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
 CalibrationNote: Verified Constant 2.375
