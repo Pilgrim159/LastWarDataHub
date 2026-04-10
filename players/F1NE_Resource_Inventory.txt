@@ -60,7 +60,7 @@ Inventory   Resource   3.0K_Oil             3.0K       35            Points
 Inventory   Resource   6.0K_Oil             6.0K       599           Points
 Inventory   Resource   10.0K_Oil            10.0K      21            Points
 
-Inventory   Speedup    General              8         515             Hours
+Inventory   Speedup    General              8         15             Hours
 Inventory   Speedup    General              3         90             Hours
 Inventory   Speedup    General              1         2130           Hours
 Inventory   Speedup    General              15        3              Minutes
