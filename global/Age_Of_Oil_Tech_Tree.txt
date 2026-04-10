@@ -112,4 +112,43 @@ Emergency_Capacity_V 7        Increase emergency capacity     False      7.00   
 Emergency_Capacity_V 8        Increase emergency capacity     False      8.00          58d 12:00:00   82.0M   246.0M  82.0M   0        0             Emergency_Capacity_V:7                     Tech_Center_1:30       Estimate:Base
 Emergency_Capacity_V 9        Increase emergency capacity     False      9.00          72d 00:00:00   120.0M  360.0M  120.0M  0        0             Emergency_Capacity_V:8                     Tech_Center_1:30       Estimate:Base
 Emergency_Capacity_V 10       Increase emergency capacity     False      10.00         88d 12:00:00   175.0M  525.0M  175.0M  0        0             Emergency_Capacity_V:9                     Tech_Center_1:30       Estimate:Base
+
+More_Oil_Wells    1           Gain moreOil Wells              True       0.0           18d 14:21:00   7.6M    22.9M   7.6M    108.0K   0             Infirmary_Expansion_V:1;Emergency_Capacity_V:1 Tech_Center_1:30   Confirmed:Buffed
+
+Training_Cost_I   1           Reduce training costs           False     -0.50          18d 14:21:00   7.6M    22.9M   7.6M    0        0             More_Oil_Wells:1                           Tech_Center_1:30       Confirmed:Buffed
+Training_Cost_I   2           Reduce training costs           False     -1.00          21d 18:30:00   11.4M   34.3M   11.4M   0        0             Training_Cost_I:1                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   3           Reduce training costs           False     -1.50          25d 20:45:00   16.3M   49.1M   16.3M   0        0             Training_Cost_I:2                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   4           Reduce training costs           False     -2.00          31d 04:15:00   22.8M   68.7M   22.8M   0        0             Training_Cost_I:3                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   5           Reduce training costs           False     -2.50          37d 22:50:00   32.6M   98.1M   32.6M   0        0             Training_Cost_I:4                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   6           Reduce training costs           False     -3.00          46d 14:00:00   45.6M   137.3M  45.6M   0        0             Training_Cost_I:5                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   7           Reduce training costs           False     -3.50          57d 02:30:00   65.2M   196.2M  65.2M   0        0             Training_Cost_I:6                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   8           Reduce training costs           False     -4.00          69d 08:00:00   89.7M   269.9M  89.7M   0        0             Training_Cost_I:7                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   9           Reduce training costs           False     -4.50          83d 12:45:00   122.3M  368.1M  122.3M  0        0             Training_Cost_I:8                          Tech_Center_1:30       Estimate:Base
+Training_Cost_I   10          Reduce training costs           False     -5.00          101d 04:20:00  163.1M  490.8M  163.1M  0        0             Training_Cost_I:9                          Tech_Center_1:30       Estimate:Base
+
+Healing_Cost_II   1           Reduce healing costs            False     -0.50          18d 14:21:00   7.6M    22.9M   7.6M    0        0             More_Oil_Wells:1                           Tech_Center_1:30       Confirmed:Buffed
+Healing_Cost_II   2           Reduce healing costs            False     -1.00          21d 18:30:00   11.4M   34.3M   11.4M   0        0             Healing_Cost_II:1                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   3           Reduce healing costs            False     -1.50          25d 20:45:00   16.3M   49.1M   16.3M   0        0             Healing_Cost_II:2                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   4           Reduce healing costs            False     -2.00          31d 04:15:00   22.8M   68.7M   22.8M   0        0             Healing_Cost_II:3                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   5           Reduce healing costs            False     -2.50          37d 22:50:00   32.6M   98.1M   32.6M   0        0             Healing_Cost_II:4                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   6           Reduce healing costs            False     -3.00          46d 14:00:00   45.6M   137.3M  45.6M   0        0             Healing_Cost_II:5                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   7           Reduce healing costs            False     -3.50          57d 02:30:00   65.2M   196.2M  65.2M   0        0             Healing_Cost_II:6                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   8           Reduce healing costs            False     -4.00          69d 08:00:00   89.7M   269.9M  89.7M   0        0             Healing_Cost_II:7                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   9           Reduce healing costs            False     -4.50          83d 12:45:00   122.3M  368.1M  122.3M  0        0             Healing_Cost_II:8                          Tech_Center_1:30       Estimate:Base
+Healing_Cost_II   10          Reduce healing costs            False     -5.00          101d 04:20:00  163.1M  490.8M  163.1M  0        0             Healing_Cost_II:9                          Tech_Center_1:30       Estimate:Base
+
+Parts_Workshop    1           Unlock Drone Parts Workshop     True       0.0           22d 07:37:00   9.5M    28.7M   9.5M    162.0K   0             Training_Cost_I:1;Healing_Cost_II:1        Tech_Center_1:30       Confirmed:Buffed
+
+Oil_Output_III    1           Boost Oil Well Output           False      1.00          22d 07:37:00   9.5M    28.7M   9.5M    108.0K   0             Parts_Workshop:1                           Tech_Center_1:30       Confirmed:Buffed
+Oil_Output_III    2           Boost Oil Well Output           False      2.00          25d 00:00:00   12.0M   36.0M   12.0M   108.3K   0             Oil_Output_III:1                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    3           Boost Oil Well Output           False      3.00          27d 12:00:00   15.0M   45.0M   15.0M   108.6K   0             Oil_Output_III:2                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    4           Boost Oil Well Output           False      4.00          30d 06:00:00   18.5M   55.5M   18.5M   108.9K   0             Oil_Output_III:3                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    5           Boost Oil Well Output           False      5.00          33d 00:00:00   22.0M   66.0M   22.0M   109.2K   0             Oil_Output_III:4                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    6           Boost Oil Well Output           False      6.00          35d 18:00:00   26.0M   78.0M   26.0M   109.5K   0             Oil_Output_III:5                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    7           Boost Oil Well Output           False      7.00          38d 13:33:00   30.1M   90.3M   30.1M   109.8K   0             Oil_Output_III:6                           Tech_Center_1:30       Confirmed:Base
+Oil_Output_III    8           Boost Oil Well Output           False      8.00          42d 00:00:00   35.0M   105.0M  35.0M   110.1K   0             Oil_Output_III:7                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    9           Boost Oil Well Output           False      9.00          46d 06:00:00   41.0M   123.0M  41.0M   110.4K   0             Oil_Output_III:8                           Tech_Center_1:30       Estimate:Base
+Oil_Output_III    10          Boost Oil Well Output           False      10.00         51d 12:00:00   48.5M   145.5M  48.5M   110.7K   0             Oil_Output_III:9                           Tech_Center_1:30       Estimate:Base
+
+Base_Expansion_I   1          Unlock Base Expansion           True       0.0           55d 12:47:00   59.0M   177.0M  59.0M   549.0K   0             Oil_Output_III:10                          Tech_Center_1:30       Confirmed:Base
 Data:End
