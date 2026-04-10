@@ -9,8 +9,8 @@ Scope: Global
 Header:End
 
 Data:Begin
-NodeID            NodeLevel   Purpose                          IsToggle   EffectValue   ResearchTime    Iron    Coin    Food    Oil     ValorMedals   TechRequirements                                 BuildingRequirements  Notes
-Unlock_Oil_Well   1           Enables Oil Well construction   True       0.0           00d 00:00:00   0       0       0       0        0             Tier 0                                     Tech_Center_1:30       Confirmed
+NodeID            NodeLevel   Purpose                         IsToggle   EffectValue   ResearchTime   Iron    Coin    Food    Oil      ValorMedals   TechRequirements                           BuildingRequirements   Notes
+Unlock_Oil_Well   1           Enables Oil Well construction   True       0.0           00d 00:00:00   0       0       0       0        0             EntryNode                                  Tech_Center_1:30       Confirmed
 
 Food_Output_V     1           Boost Food Output               False      2.50          00d 22:50:20   0.9M    2.8M    0.9M    0        0             Unlock_Oil_Well:1                          Tech_Center_1:30       Estimate:Buffed
 Food_Output_V     2           Boost Food Output               False      5.00          05d 14:45:00   1.9M    5.6M    1.9M    0        0             Food_Output_V:1                            Tech_Center_1:30       Confirmed:Base; Buffed: (Iron = 1.8M, Coin = 5.6M, Food = 1.8M)
