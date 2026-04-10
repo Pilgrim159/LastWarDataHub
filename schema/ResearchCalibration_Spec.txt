@@ -12,7 +12,6 @@ research time reduction multipliers for various tech trees.
 • ResearchID: Research_Calibration (Identifies this specific calibration document)
 • Version: String
 • Scope: Account: <AccountID>                
-• PlayerName: String            
 • Format: Table
 • Schema: ResearchCalibration
 • Rule: Multiplier = Float
