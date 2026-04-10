@@ -2,7 +2,7 @@ Header:Begin
 Name: F1NE Research Calibration
 ResearchID: Research_Calibration
 Version: 1.0
-Scope: Account : F1NE
+Scope: Account: F1NE
 Format: Table
 Schema: ResearchCalibration
 Rule: Multiplier = 2.95
