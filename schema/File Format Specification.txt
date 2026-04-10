@@ -227,6 +227,7 @@ Parsers must evaluate the following standard primitive types exactly as defined:
 • Float: A numeric value containing a single decimal point. May be prefaced with a minus sign for negative values. (e.g., 1.5, 0.99, -2.5).
 • String: A sequence of characters. 
     Because Table formats use space-delimited columns, Strings containing spaces MUST be enclosed in quotes (e.g., "Headquarters Level 5"), or spaces must be replaced with underscores (e.g., Base_Expansion_I).
+    Exception: Custom types that explicitly require spaces (such as Duration) do not require quotes.
 • Boolean: Must be strictly the text True or False (case-insensitive).
 
 7.3 Game-Specific Custom Types
@@ -234,15 +235,19 @@ Parsers must evaluate the following custom data types exactly as defined:
 • ScaledInt: A highly specific integer representing large resource costs. 
 It consists of a positive integer or float followed immediately by a multiplier character (K = Thousands, M = Millions, G = Billions). Examples: 1.2K, 3M, 1.3G. 
 Parsers must be capable of expanding these to their raw numeric equivalents.
-• Duration: A time-string format used for upgrade timers. Formatted as [Days]d [Hours]:[Minutes]:[Seconds]. (e.g., 111d 18:21:40).
-  If the "Days" position is 0, it may be omitted. For example 18:21:40 is valid and is to be interpreted as 0 days, 18 hours, 21 minutes, 40 seconds. 
-  If BOTH Days and Hours are 0, they both be omitted, e.g. 21:40 is valid and is to be interpreted as 0 days, 0 hours, 21 miuntes 40 seconds.
+• Duration: A time-string format. Formatted as [Days]d [Hours]:[Minutes]:[Seconds]. (e.g., 111d 18:21:40).
+If the "Days" position is 0, it may be omitted.
+For example 18:21:40 is valid and is to be interpreted as 0 days, 18 hours, 21 minutes, 40 seconds.
+If BOTH Days and Hours are 0, they both may be omitted, e.g. 21:40 is valid and is to be interpreted as 0 days, 0 hours, 21 miuntes 40 seconds.
+PARSER EXCEPTION: Because this custom type inherently contains a space, parsers MUST treat the sequence of [Days]d and [Hours]:[Minutes]:[Seconds] as a single unified column value, 
+exempting it from standard space-delimited column splitting.
 END OF SECTION 7
 
 =========================================================
 SECTION 8 — SEMANTIC VALIDATION RULES
 =========================================================
-Semantic Validation Rules define constraints on the meaning and relationships of data values within a Columnar Table. These rules operate after structural validation (Sections 1–6) and type validation (Section 7). They do not alter the file skeleton, the Columnar Table structure, or the Typed Column system.
+Semantic Validation Rules define constraints on the meaning and relationships of data values within a Columnar Table. These rules operate after structural validation (Sections 1–6) and type validation (Section 7). 
+They do not alter the file skeleton, the Columnar Table structure, or the Typed Column system.
 Semantic Validation Rules are optional. If no semantic rules are defined for a table, only structural and type validation apply.
 8.1 Purpose of Semantic Validation
 Semantic validation ensures that:
