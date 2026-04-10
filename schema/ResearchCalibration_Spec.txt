@@ -16,7 +16,7 @@ research time reduction multipliers for various tech trees.
 • Format: Table
 • Schema: ResearchCalibration
 • Rule: Multiplier = Float
-• Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
+• Rule: UpgradeTime = Floor(OriginalTime / Multiplier)
 
 3. Column Definitions
 The Label Row must contain the following columns exactly:
