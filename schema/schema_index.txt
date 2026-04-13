@@ -4,10 +4,10 @@ Format: Index
 Schema: MasterIndex
 Scope:Global
 Version:1.0
+Description:Master index of schema files. Maps Schema tags to their authoritative definition files
 Header:End
 
 Data:Begin
-Description:Master index of schema files. Maps Schema tags to their authoritative definition files
 
 [Format Specification File]
 schema/File Format Specification.txt
