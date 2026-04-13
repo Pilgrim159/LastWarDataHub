@@ -12,6 +12,7 @@ Data:Begin
 schema/
 global/
 players/
+tools/
 
 [Notes]
 This index file defines the canonical structure of the repository.
