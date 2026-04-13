@@ -98,4 +98,19 @@ def run_master_summary(file_content):
             
             if cat == "Speedup":
                 mins = total if unit == "Minutes" else total * 60
-                cat_min_total +=
+                cat_min_total += mins
+                h, d = mins/60, mins/1440
+                print(f"  {item:<23} | {mins:,.0f}m / {h:,.1f}h / {d:,.2f}d")
+            else:
+                print(f"  {item:<23} | {format_value(total)} {unit}")
+        
+        if cat == "Speedup":
+            h_total = cat_min_total/60
+            d_total = cat_min_total/1440
+            print(f"  {'-- Category Total --':<23} | {cat_min_total:,.0f}m / {h_total:,.1f}h / {d_total:,.2f}d")
+        print("")
+
+# Example usage for local execution:
+# if __name__ == "__main__":
+#     with open('players/F1NE_Resource_Inventory.txt', 'r') as f:
+#         run_master_summary(f.read())
