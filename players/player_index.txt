@@ -1,0 +1,19 @@
+Header:Begin
+Scope:Global
+Name:Player Index
+Version:1.0
+Format: Index
+Schema: Index
+Description:Master index of all active player data files in the repository.
+Header:End
+
+Data:Begin
+[Active Players]
+F1NE_Resource_Inventory.txt
+F1NE_BuffCalibration.txt
+F1NE_ResearchCalibration.txt
+
+[Notes]
+This index file defines the authoritative list of player data files.
+Future accounts or renamed files should be registered here.
+Data:End
