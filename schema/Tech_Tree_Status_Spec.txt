@@ -1,0 +1,38 @@
+=========================================================
+TECH TREE STATUS SPECIFICATION
+=========================================================
+This schema records a player's research progression. It avoids redundant 
+data by only tracking the highest attained level and any active or 
+planned upgrades.
+
+1. Schema Name
+• Schema: TechTreeStatus
+
+2. Required Header Fields
+• Name: String (e.g., F1NE Tech Tree Status)
+• Version: String
+• Scope: Account: <AccountID>
+• Format: Table
+• Schema: TechTreeStatus
+
+3. Column Definitions
+The Label Row must contain the following columns exactly:
+• TreeID       = String  (Matches Global TreeID, e.g., Age_of_Oil)
+• NodeID       = String  (The specific research node identifier)
+• CurrentLevel = Integer (The highest level fully completed)
+• NextActivity = String  (Allowed: Upgrading, Planning, or None)
+• Notes        = String  (Required for the Safety Valve rule)
+
+4. Semantic Rules
+• Rule: Data Minimality — Only record the highest level achieved. Lower levels 
+  are assumed completed per the "Incremental Progression" rule in global files.
+• Rule: Activity Logic — If NextActivity is "Upgrading", the player is 
+  currently researching Level = CurrentLevel + 1. 
+• Rule: The Safety Valve — The Notes column must be present in every row. 
+  If no special conditions exist, it must be recorded as None.
+• Rule: The Confirmation Anchor — Any row containing "Confirmed" in the 
+  Notes column is prioritized as Ground Truth.
+• Rule: Validation — The CurrentLevel must not exceed the MaxLevel defined in 
+  the corresponding global tech tree file.
+=========================================================
+END OF TECH TREE STATUS SPECIFICATION
