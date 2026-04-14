@@ -1,0 +1,42 @@
+Header:Begin
+Name: F1NE Age of Oil Tech Tree Status
+Scope: Account: F1NE
+Version: 1.1.0
+Format: Table
+Schema: TechTreeStatus
+Header:End
+
+Data:Begin
+TreeID          NodeID                    CurrentLevel   NextActivity   Notes
+
+Age_of_Oil      Unlock_Oil_Well           1              None           Planning
+
+Age_of_Oil      Food_Output_V             1              None           Planning
+Age_of_Oil      Iron_Output_V             1              None           Planning
+Age_of_Oil      Coin_Output_V             2              None           Planning
+
+Age_of_Oil      Oil_Output_I              10             None           Planning
+
+Age_of_Oil      Fast_Builder_V            1              None           Planning
+Age_of_Oil      Research_Adv_V            1              None           Planning
+
+Age_of_Oil      Unlock_Tech_Ctr_3         1              None           Planning
+
+Age_of_Oil      Focused_Training_V        1              None           Planning
+Age_of_Oil      Rapid_Field_Dressing_V    1              None           Planning
+
+Age_of_Oil      Oil_Output_II             10             None           Planning
+
+Age_of_Oil      Infirmary_Expansion_V     1              None           Planning
+Age_of_Oil      Emergency_Capacity_I      1              None           Planning
+
+Age_of_Oil      More_Oil_Wells            1              None           Planning
+
+Age_of_Oil      Training_Cost_I           1              None           Planning
+Age_of_Oil      Healing_Cost_II           1              None           Planning
+
+Age_of_Oil      Parts_Workshop            1              None           Planning
+
+Age_of_Oil      Oil_Output_III            6              Upgrading      None
+
+Age_of_Oil      Base_Expansion_I          0              None           Planning
