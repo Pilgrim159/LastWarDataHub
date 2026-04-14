@@ -22,8 +22,8 @@ Headquarters        35	                   149d 02:00:00   2.10G                 
 Oil_Well            29                       9d 18:28:20    36.9M              111.8M                   24.0M              0         Unlock_Oil_Well:1      Headquarters:30
 Wall                30                     101d 14:30:37   415.2M                1.2G                  268.1M              0         -                      Headquarters:30;Wall:29
 Tech_Center_3       1                       00d 00:00:00   0                     0                     0                   0         Unlock_Tech_Ctr_3:1    Headquarters:20
-Tech_Center         31                      19d 04:06:37   215.0M                215.0M                69.6MM              0         -                      Headquarters:25;Tech_Center:30
-Tech_Center         25                      97d 19:03:58   1.2G                  1.2G                  380.6M              0         -                      Headquarters:31;Tech_Center:24
+Tech_Center         25                      19d 04:06:37   215.0M                215.0M                69.6M               0         -                      Headquarters:25;Tech_Center:24
+Tech_Center         31                      97d 19:03:58   1.2G                  1.2G                  380.6M              0         -                      Headquarters:31;Tech_Center:30
 Tank_Center         31                      83d 19:46:15   346.0M                1.0G                  216.2M              696600    -                      Headquarters:31;Tank_Center:30
 Emergency_Center    23                      11d 17:42:01   73.5M                 73.5M                 12.1M               0         -                      Headquarters:23;Emergency_Center:22
 Data:End
