@@ -9,7 +9,7 @@ Header:End
 Data:Begin
 BuildingName        TargetLevel            OriginalTime    Food                  Iron                  Coin                Oil      ResearchRequirements    BuildingRequirements 
 
-Headquarters        31                     111d 18:21:40    1.3G                  1.3G                  438.6M             1.2M     Base_Expansion_I:1      Headquarters:30;Barracks:30;[Tech_Center_1:30|Tech_Center_2:30|Tech_Center_3:30];[Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
+Headquarters        31                     111d 18:21:40    1.3G                  1.3G                 438.6M              1.2M     Base_Expansion_I:1      Headquarters:30;Barracks:30;[Tech_Center_1:30|Tech_Center_2:30|Tech_Center_3:30];[Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
 
 Headquarters        32	                   122d 22:00:00   1.70G                 1.70G	               560.0M              2.30M    Base_Expansion_I:1      Headquarters:31;Wall:31;Barracks:31;[Tech_Center_1:31|Tech_Center_2:31|Tech_Center_3:31];[Tank_Center:31|Missile_Center:31|Aircraft_Center:31]
 
