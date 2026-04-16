@@ -4,17 +4,30 @@ Version: 1.0
 Scope: Account: F1NE
 Format: Table
 Schema: BuildingStatus
-Date: 2026-04-15
+Date: 2026-04-16
 Header:End
 
 Data:Begin
-BuildingName      CurrentLevel   TargetLevel   Priority   Notes
-Headquarters      30             32            1          Currently upgrading to 31
-Wall              29             31            2          Required for HQ 32
-Tech_Center_1     30             31            3          Required for HQ 32
-Tank_Center       30             31            4          Required for HQ 32
-Barracks_1        30             31            5          Required for HQ 32
-Oil_Well_1        28             31            6          Critical Oil Economy
-Oil_Well_2        28             31            6          Critical Oil Economy
-Oil_Well_3        0              31            6          Unlocked at HQ 31
+BuildingName      CurrentLevel   TargetLevel   Status        TimeRemaining   Priority
+Headquarters      30             31            Upgrading     29d 23:07:15    1
+
+Barracks_1        17             20            Idle          -               7
+Barracks_2        20             24            Idle          -               7
+Barracks_3        24             27            Idle          -               7
+Barracks_4        30             31            Idle          -               5
+
+DrillGround_1     16             16            Idle          -               99
+DrillGround_2     18             18            Idle          -               99
+DrillGround_3     29             29            Idle          -               99
+
+Oil_Well_1        28             31            Idle          -               2
+Oil_Well_2        28             31            Idle          -               2
+Oil_Well_3        0              31            Not_Built     -               2
+
+Tank_Center       30             31            Idle          -               4
+
+Tech_Center_1     30             31            Idle          -               3
+Tech_Center_3     24             31            Idle          -               5
+
+Wall              29             31            Idle          -               2
 Data:End
