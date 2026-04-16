@@ -1,0 +1,20 @@
+Header:Begin
+Name: F1NE Building Status
+Version: 1.0
+Scope: Account: F1NE
+Format: Table
+Schema: BuildingStatus
+Date: 2026-04-15
+Header:End
+
+Data:Begin
+BuildingName      CurrentLevel   TargetLevel   Priority   Notes
+Headquarters      30             32            1          Currently upgrading to 31
+Wall              29             31            2          Required for HQ 32
+Tech_Center_1     30             31            3          Required for HQ 32
+Tank_Center       30             31            4          Required for HQ 32
+Barracks_1        30             31            5          Required for HQ 32
+Oil_Well_1        28             31            6          Critical Oil Economy
+Oil_Well_2        28             31            6          Critical Oil Economy
+Oil_Well_3        0              31            6          Unlocked at HQ 31
+Data:End
