@@ -7,11 +7,11 @@ Scope: Global
 Header:End
 
 Data:Begin
-BuildingName        TargetLevel            OriginalTime    Food                  Iron                  Coin                Oil      ResearchRequirements    BuildingRequirements 
+BuildingName        TargetLevel            OriginalTime    Food                   Iron                 Coin                Oil      ResearchRequirements    BuildingRequirements 
 
-Headquarters        31                     111d 18:21:40    1.3G                  1.3G                 438.6M              1.2M     Base_Expansion_I:1      Headquarters:30;Barracks:30;[Tech_Center_1:30|Tech_Center_2:30|Tech_Center_3:30];[Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
+Headquarters        31                     111d 18:21:40   1.3G                   1.3G                 438.6M              1.2M     Base_Expansion_I:1      Headquarters:30;Barracks:30;[Tech_Center_1:30|Tech_Center_2:30|Tech_Center_3:30];[Tank_Center:30|Missile_Center:30|Aircraft_Center:30]
 
-Headquarters        32	                   122d 22:00:00   1.70G                 1.70G	               560.0M              2.30M    Base_Expansion_I:1      Headquarters:31;Wall:31;Barracks:31;[Tech_Center_1:31|Tech_Center_2:31|Tech_Center_3:31];[Tank_Center:31|Missile_Center:31|Aircraft_Center:31]
+Headquarters        32	                   122d 22:35:50   1.4G                   1.4G	               481.6M              1.9M     Base_Expansion_I:1      Headquarters:31;Wall:31;Barracks:31;[Tech_Center_1:31|Tech_Center_2:31|Tech_Center_3:31];[Tank_Center:31|Missile_Center:31|Aircraft_Center:31] 
 
 Headquarters        33	                   135d 05:00:00   1.90G                 1.90G	               620.0M              3.92M    Base_Expansion_I:1      Headquarters:32;Drill_Ground:32;Barracks:32;Hospital:32;[Tech_Center_1:32|Tech_Center_2:32|Tech_Center_3:32];[Tank_Center:32|Missile_Center:32|Aircraft_Center:32]
 
@@ -19,11 +19,15 @@ Headquarters        34	                   141d 23:00:00   2.00G                 
 
 Headquarters        35	                   149d 02:00:00   2.10G                 2.10G	               680.0M              14.10M   Base_Expansion_I:1      Headquarters:34;Drill_Ground:34;Barracks:34;Hospital:34;[Tech_Center_1:34|Tech_Center_2:34|Tech_Center_3:34];[Tank_Center:34|Missile_Center:34|Aircraft_Center:34]
 
-Oil_Well            29                       9d 18:28:20    36.9M              111.8M                   24.0M              0         Unlock_Oil_Well:1      Headquarters:30
-Wall                30                     101d 14:30:37   415.2M                1.2G                  268.1M              0         -                      Headquarters:30;Wall:29
-Tech_Center_3       1                       00d 00:00:00   0                     0                     0                   0         Unlock_Tech_Ctr_3:1    Headquarters:20
-Tech_Center         25                      19d 04:06:37   215.0M                215.0M                69.6M               0         -                      Headquarters:25;Tech_Center:24
-Tech_Center         31                      97d 19:03:58   1.2G                  1.2G                  380.6M              0         -                      Headquarters:31;Tech_Center:30
-Tank_Center         31                      83d 19:46:15   346.0M                1.0G                  216.2M              696600    -                      Headquarters:31;Tank_Center:30
-Emergency_Center    23                      11d 17:42:01   73.5M                 73.5M                 12.1M               0         -                      Headquarters:23;Emergency_Center:22
+Oil_Well            29                       9d 18:28:20    36.9M              111.8M                   24.0M              0        Unlock_Oil_Well:1       Headquarters:30
+
+Wall                30                     101d 14:30:37   412.8M                1.2G                  266.6M              0        -                       Headquarters:30;Wall:29
+
+Tech_Center_3       1                       00d 00:00:00   0                     0                     0                   0        Unlock_Tech_Ctr_3:1     Headquarters:20
+Tech_Center         25                      19d 04:06:37   215.0M                215.0M                69.6M               0        -                       Headquarters:25;Tech_Center:24
+Tech_Center         31                      97d 19:03:58   1.2G                  1.2G                  378.4M              0        -                       Headquarters:31;Tech_Center:30
+
+Tank_Center         31                      83d 19:46:15   344.0M                1.0G                  215.0M              483750   -                       Headquarters:31;Tank_Center:30
+
+Emergency_Center    23                      11d 17:42:01   73.5M                 73.5M                 12.1M               0        -                       Headquarters:23;Emergency_Center:22
 Data:End
