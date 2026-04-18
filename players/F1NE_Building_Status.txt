@@ -20,7 +20,7 @@ Alliance_Sup_Hub  23             23            Idle          -               99
 Barracks_1        17             20            Idle          -               7
 Barracks_2        20             24            Idle          -               7
 Barracks_3        24             27            Idle          -               7
-Barracks_4        30             31            Idle          -               5
+Barracks_4        30             31            Idle          -               4
 
 Builders_Hut      20             20            Idle          -               99
 
@@ -77,9 +77,9 @@ Matl_Workshop_5   20             20            Idle          -               99
 
 Missile_Center    26             26            Idle          -               99
 
-Oil_Well_1        29             29            Idle          -               4
-Oil_Well_2        29             29            Idle          -               4
-Oil_Well_3        28             28            Idle          -               4
+Oil_Well_1        29             29            Idle          -               5
+Oil_Well_2        29             29            Idle          -               5
+Oil_Well_3        28             28            Idle          -               5
 
 Recon_Plane_1     16             16            Idle          -               99
 Recon_Plane_2     16             16            Idle          -               99
@@ -93,11 +93,11 @@ Smelter_5         20             20            Idle          -               99
 
 Tactical_Inst     20             20            Idle          -               99
 
-Tank_Center       30             31            Idle          -               2
+Tank_Center       30             31            Idle          -               3
 
 Tavern            16             16            Idle          -               99
 
-Tech_Center_1     30             31            Upgrading     29d 03:24:00    1
+Tech_Center_1     30             31            Upgrading     27d 00:00:00    1
 Tech_Center_3     24             31            Idle          -               5
 
 Training_Base_1   21             21            Idle          -               99
@@ -106,5 +106,5 @@ Training_Base_3   21             21            Idle          -               99
 Training_Base_4   21             21            Idle          -               99
 Training_Base_5   21             21            Idle          -               99
 
-Wall              29             31            Idle          -               3
+Wall              29             31            Upgrading     33d 20:00:00    2
 Data:End
