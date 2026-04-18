@@ -10,81 +10,81 @@ Header:End
 
 Data:Begin
 Source      Category   ItemName             UnitSize   PacketCount   Unit
-Loose       Resource   Food                 1          2.5G          Points
-Loose       Resource   Iron                 1          5.8M          Points
-Loose       Resource   Coin                 1          102.0K        Points
+Loose       Resource   Food                 1          2.4G          Points
+Loose       Resource   Iron                 1          1.0M          Points
+Loose       Resource   Coin                 1          41.4K         Points
 Loose       Resource   Oil                  1          1.9M          Points
-Loose       Currency   Diamonds             1          156.3K        Points
+Loose       Currency   Diamonds             1          154.5K        Points
 
-Loose       Resource   Hero_EXP             1          1.6G          Points
+Loose       Resource   Hero_EXP             1          1.7G          Points
 
 Inventory   Currency   Diamonds             5K         26            Points
 Inventory   Currency   Diamonds             10K        1             Points
 Inventory   Currency   Diamonds             100        1122          Points
 Inventory   Currency   Diamonds             200        1             Points
 Inventory   Currency   Diamonds             1.0K       15            Points
-Inventory   Currency   Diamonds             5          4092          Points
-Inventory   Currency   Diamonds             10         6683          Points
+Inventory   Currency   Diamonds             5          4093          Points
+Inventory   Currency   Diamonds             10         6686          Points
 Inventory   Currency   Diamonds             20         467           Points
-Inventory   Currency   Diamonds             50         562           Points
+Inventory   Currency   Diamonds             50         563           Points
 
 Inventory   Chest      UR_Resource_Chest    1          485           Chests
-Inventory   Chest      SSR_Resource_Chest   1          1953          Chests
+Inventory   Chest      SSR_Resource_Chest   1          1342          Chests
 Inventory   Chest      SR_Resource_Chest    1          2576          Chests
-Inventory   Chest      Resource_Chest       1          89472         Chests
+Inventory   Chest      Resource_Chest       1          89762         Chests
 
 Inventory   Chest      Hero_Exp_Chest_SSR   8.34M      224           Chests
 Inventory   Chest      Hero_EXP_Chest_R     1.04M      16727         Chests
 
 Inventory   Resource   Food_Chest_(UR)      4.23M      451           Points
 Inventory   Resource   Food_Chest_(SSR)     1.41M      3853          Points
-Inventory   Resource   Food_Chest_(SR)      176.4K     657           Points
+Inventory   Resource   Food_Chest_(SR)      176.4K     669           Points
 Inventory   Resource   Food_Chest_(R)       17.64K     5             Points
-Inventory   Resource   50K_Food             50.0K      168           Points
-Inventory   Resource   10K_Food             10.0K      43            Points
+Inventory   Resource   50K_Food             50.0K      170           Points
+Inventory   Resource   10K_Food             10.0K      44            Points
 Inventory   Resource   1K_Food              1.0K       420           Points
 
 Inventory   Resource   Iron_Chest_(UR)      4.23M      572           Points
-Inventory   Resource   Iron_Chest_(SSR)     1.41M      2766          Points
-Inventory   Resource   Iron_Chest_(SR)      176.4K     40            Points
+Inventory   Resource   Iron_Chest_(SSR)     1.41M      2655          Points
+Inventory   Resource   Iron_Chest_(SR)      176.4K     0             Points
 Inventory   Resource   Iron_Chest_(R)       17.64K     0             Points
-Inventory   Resource   50K_Iron             50.0K      0             Points
-Inventory   Resource   10K_Iron             10.0K      13            Points
-Inventory   Resource   1K_Iron              1.0K       36            Points
+Inventory   Resource   50K_Iron             50.0K      3             Points
+Inventory   Resource   10K_Iron             10.0K      0             Points
+Inventory   Resource   1K_Iron              1.0K       0             Points
 
-Inventory   Resource   Coin_Chest_(UR)      2.57M      93            Points
+Inventory   Resource   Coin_Chest_(UR)      2.57M      95            Points
 Inventory   Resource   Coin_Chest_(SSR)     0K         0             Points
-Inventory   Resource   Coin_Chest_(SR)      107.13K    46            Points
+Inventory   Resource   Coin_Chest_(SR)      107.13K    0             Points
 Inventory   Resource   Coin_Chest_(R)       10.15K     0             Points
-Inventory   Resource   300K_Coins           300.0K     2             Points
-Inventory   Resource   30K_Coins            30.0K      0             Points
-Inventory   Resource   6K_Coins             6.0K       12            Points
-Inventory   Resource   600_Coins            600        36            Points
+Inventory   Resource   300K_Coins           300.0K     0             Points
+Inventory   Resource   30K_Coins            30.0K      2             Points
+Inventory   Resource   6K_Coins             6.0K       0             Points
+Inventory   Resource   600_Coins            600        0             Points
 
 Inventory   Resource   3.0K_Oil             3.0K       35            Points
-Inventory   Resource   6.0K_Oil             6.0K       634           Points
+Inventory   Resource   6.0K_Oil             6.0K       640           Points
 Inventory   Resource   10.0K_Oil            10.0K      24            Points
 
 Inventory   Speedup    General              8         18             Hours
 Inventory   Speedup    General              3         43             Hours
-Inventory   Speedup    General              1         1493           Hours
+Inventory   Speedup    General              1         1266           Hours
 Inventory   Speedup    General              15        1              Minutes
-Inventory   Speedup    General              5         18786          Minutes
-Inventory   Speedup    General              1         21229           Minutes
+Inventory   Speedup    General              5         18787          Minutes
+Inventory   Speedup    General              1         15007           Minutes
 
 Inventory   Speedup    Construction         8         0              Hours
 Inventory   Speedup    Construction         3         0              Hours
 Inventory   Speedup    Construction         1         0              Hours
 Inventory   Speedup    Construction         15        0              Minutes
-Inventory   Speedup    Construction         5         12516          Minutes
-Inventory   Speedup    Construction         1         9232           Minutes
+Inventory   Speedup    Construction         5         12519          Minutes
+Inventory   Speedup    Construction         1         9282           Minutes
 
 Inventory   Speedup    Research             8         0              Hours
 Inventory   Speedup    Research             3         0              Hours
-Inventory   Speedup    Research             1         0              Hours
-Inventory   Speedup    Research             15        0              Minutes
-Inventory   Speedup    Research             5         9275           Minutes
-Inventory   Speedup    Research             1         10077          Minutes
+Inventory   Speedup    Research             1         2              Hours
+Inventory   Speedup    Research             15        1              Minutes
+Inventory   Speedup    Research             5         9276           Minutes
+Inventory   Speedup    Research             1         10107          Minutes
 
 Inventory   Speedup    Training             8         31             Hours
 Inventory   Speedup    Training             3         0              Hours
