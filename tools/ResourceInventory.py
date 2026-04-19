@@ -5,7 +5,7 @@ def parse_scaled_val(val_str):
     if not val_str or val_str == "":
         return 0.0
     val_str = val_str.upper().strip()
-    multipliers = {'K': 1_000, 'M': 1_000_000, 'B': 1_000_000_000}
+    multipliers = {'K': 1_000, 'M': 1_000_000, 'G': 1_000_000_000}
     
     if val_str[-1] in multipliers:
         return float(val_str[:-1]) * multipliers[val_str[-1]]
@@ -17,7 +17,7 @@ def parse_scaled_val(val_str):
 def format_value(total):
     """Standardizes large number formatting for reports."""
     if total >= 1_000_000_000:
-        return f"{total/1_000_000_000:>12.2f}B"
+        return f"{total/1_000_000_000:>12.2f}G"
     if total >= 1_000_000:
         return f"{total/1_000_000:>12.2f}M"
     if total >= 1_000:
