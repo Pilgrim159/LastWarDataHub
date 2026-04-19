@@ -16,35 +16,27 @@ H_005   Scarlett   UR      132    3.2   None   Shield   Tank      None      None
 H_006   Stetmann   UR      105    1.2   None   Damage   Tank      None      None     None
 H_007   Violet     UR      132    4.2   None   Shield   Tank      None      None     None
 H_008   Williams   UR      150    4.0   1      Shield   Tank      None      None     None
-
 H_011   Farhad     SSR     92     3.2   None   Damage   Tank      None      None     None
 H_009   Monica     SSR     115    4.1   None   Support  Tank      None      None     None
 H_010   Richard    SSR     90     3.1   None   Damage   Tank      None      None     None
-
 H_012   Gump       SR      100    3.0   None   Shield   Tank      None      None     None
 H_013   Loki       SR      71     4.2   None   Shield   Tank      None      None     None
-
 H_014   Adam       UR      124    2.0   3      Shield   Missile   None      None     None
 H_015   Fiona      UR      125    2.0   3      Damage   Missile   None      None     None
 H_016   McGregor   UR      124    2.1   3      Shield   Missile   None      None     None
 H_017   Swift      UR      132    3.0   3      Damage   Missile   None      None     None
 H_018   Tesla      UR      124    3.0   3      Damage   Missile   None      None     None
-
-H_021   Braz       SSR     100    3.2   None   Damage   Missile   None      None     None
-H_019   Elsa       SSR     108    3.2   None   Shield   Missile   None      None     None
-H_020   Venom      SSR     100    3.2   None   Damage   Missile   None      None     None
-
+H_019   Braz       SSR     100    3.2   None   Damage   Missile   None      None     None
+H_020   Elsa       SSR     108    3.2   None   Shield   Missile   None      None     None
+H_021   Venom      SSR     100    3.2   None   Damage   Missile   None      None     None
 H_022   Kane       SR      70     4.1   None   Damage   Missile   None      None     None
-
-H_022   Carlie     UR      128    3.0   2      Shield   Aircraft  None      None     None
-H_023   DVA        UR      150    4.1   2      Damage   Aircraft  None      None     None
-H_024   Lucius     UR      128    2.0   2      Shield   Aircraft  None      None     None
-H_025   Morrison   UR      128    2.0   2      Damage   Aircraft  None      None     None
-H_026   Schuyler   UR      128    3.0   2      Damage   Aircraft  None      None     None
-
-H_027   Cage       SSR     71     3.0   None   Shield   Aircraft  None      None     None
-H_028   Maxwell    SSR     100    3.2   None   Damage   Aircraft  None      None     None
-H_029   Sarah      SSR     100    3.3   None   Support  Aircraft  None      None     None
-
-H_030   Ambolt     SR      72     4.1   None   Damage   Aircraft  None      None     None
+H_023   Carlie     UR      128    3.0   2      Shield   Aircraft  None      None     None
+H_024   DVA        UR      150    4.1   2      Damage   Aircraft  None      None     None
+H_025   Lucius     UR      128    2.0   2      Shield   Aircraft  None      None     None
+H_026   Morrison   UR      128    2.0   2      Damage   Aircraft  None      None     None
+H_027   Schuyler   UR      128    3.0   2      Damage   Aircraft  None      None     None
+H_028   Cage       SSR     71     3.0   None   Shield   Aircraft  None      None     None
+H_029   Maxwell    SSR     100    3.2   None   Damage   Aircraft  None      None     None
+H_030   Sarah      SSR     100    3.3   None   Support  Aircraft  None      None     None
+H_031   Ambolt     SR      72     4.1   None   Damage   Aircraft  None      None     None
 Data:End
