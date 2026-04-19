@@ -61,6 +61,11 @@ def run_master_summary(file_content):
         # Calculation: GrandTotal = UnitSize * PacketCount
         val = parse_scaled_val(size_val) * parse_scaled_val(count_val)
         
+        if category == "Speedup":
+            if unit == "Hours":
+                val *= 60
+            unit = "Minutes" # Standardize unit name for aggregation
+        
         # Track for Section 1 (Individual entries)
         individual_items.append({
             "item": item,
