@@ -12,6 +12,9 @@ Data:Begin
 F1NE_Resource_Inventory.txt
 F1NE_BuffCalibration.txt
 F1NE_ResearchCalibration.txt
+F1NE_Building_Status.txt
+F1NE_Tech_Tree_Status.txt
+F1NE_Master_Hero_Registry.txt
 
 [Notes]
 This index file defines the authoritative list of player data files.
