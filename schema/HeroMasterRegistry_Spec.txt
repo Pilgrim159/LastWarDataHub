@@ -1,0 +1,73 @@
+===========================================================================
+SCHEMA SPECIFICATION: HeroMasterRegistry
+VERSION: 1.2.0
+===========================================================================
+
+1. Overview
+The HeroMasterRegistry schema acts as the central directory for a player's unlocked heroes. It utilizes a "Hub-and-Spoke" database architecture. 
+This file (the Hub) contains top-level summary data and primary keys, while detailed permutations (like Skills, Gear, and Exclusive Weapons) are delegated to external files (the Spokes) referenced via pointers.
+
+2. Header Requirements
+  * Name: [PlayerName] Master Hero Registry
+  * Scope: Account: [PlayerName]
+  * Version: Semantic versioning (e.g., 1.2.0)
+  * Format: Table
+  * Schema: HeroMasterRegistry
+
+3. Column Definitions (Strict Order)
+
+  Col 1: HeroID (Primary Key)
+    * Type: String
+    * Rules: MUST be a unique identifier formatted as 'H_' followed by a 3-digit number (e.g., H_001, H_002).
+
+  Col 2: Name (Natural Label)
+    * Type: String
+    * Rules: The in-game name of the hero. Provided for human readability. 
+
+  Col 3: Type (Natural Label)
+    * Type: Enum
+    * Allowed Values: Tank, Missile, Aircraft
+    * Rules: The combat classification of the hero. Provided for squad-building readability.
+
+  Col 4: Rarity
+    * Type: Enum
+    * Allowed Values: UR, SSR, SR, R
+
+  Col 5: Level
+    * Type: Integer
+    * Rules: The current overall level of the hero. Allowed range is 1 to 150.
+
+  Col 6: Tier
+    * Type: Float (Special Format)
+    * Rules: Represents the Hero's overall Tier (Star Level). The integer is the Star count (0-5). The decimal represents the sub-tier progression (0-4). Example: 5.1 means 5 Stars, Sub-Tier 1. 0.0 means unlocked but 0 stars.
+
+  Col 7: SkillRef (Pointer)
+    * Type: String
+    * Rules: The exact filename of the spoke file containing this hero's skill data. If none, record as 'None'.
+
+  Col 8: GearRef (Pointer)
+    * Type: String
+    * Rules: The exact filename of the spoke file containing this hero's equipment data. If none, record as 'None'.
+
+  Col 9: ExWeaponRef (Pointer)
+    * Type: String
+    * Rules: The exact filename of the spoke file containing this hero's Exclusive Weapon data. If none, record as 'None'.
+
+===========================================================================
+4. EXAMPLE FILE FORMAT
+===========================================================================
+Header:Begin
+Name: F1NE Master Hero Registry
+Scope: Account: F1NE
+Version: 1.2.0
+Format: Table
+Schema: HeroMasterRegistry
+Header:End
+
+Data:Begin
+HeroID  Name       Type      Rarity  Level  Tier  SkillRef             GearRef            ExWeaponRef
+H_001   Murphy     Tank      UR      150    5.0   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
+H_002   Kimberly   Tank      UR      150    5.1   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
+H_003   DVA        Aircraft  UR      145    4.2   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  None
+H_004   Mason      Tank      SSR     130    5.0   F1NE_HeroSkills.txt  None               None
+Data:End
