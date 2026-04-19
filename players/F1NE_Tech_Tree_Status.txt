@@ -37,6 +37,6 @@ Age_of_Oil      Healing_Cost_II           1              None           Planning
 
 Age_of_Oil      Parts_Workshop            1              None           Planning
 
-Age_of_Oil      Oil_Output_III            6              Upgrading      None
+Age_of_Oil      Oil_Output_III            10             None           Planning
 
-Age_of_Oil      Base_Expansion_I          0              None           Planning
+Age_of_Oil      Base_Expansion_I          1              None           Planning
