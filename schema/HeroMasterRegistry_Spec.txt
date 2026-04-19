@@ -1,6 +1,6 @@
 ===========================================================================
 SCHEMA SPECIFICATION: HeroMasterRegistry
-VERSION: 1.2.0
+VERSION: 1.4.0
 ===========================================================================
 
 1. Overview
@@ -10,7 +10,7 @@ This file (the Hub) contains top-level summary data and primary keys, while deta
 2. Header Requirements
   * Name: [PlayerName] Master Hero Registry
   * Scope: Account: [PlayerName]
-  * Version: Semantic versioning (e.g., 1.2.0)
+  * Version: Semantic versioning (e.g., 1.4.0)
   * Format: Table
   * Schema: HeroMasterRegistry
 
@@ -22,34 +22,44 @@ This file (the Hub) contains top-level summary data and primary keys, while deta
 
   Col 2: Name (Natural Label)
     * Type: String
-    * Rules: The in-game name of the hero. Provided for human readability. 
+    * Rules: The in-game name of the hero. Provided for human readability.
 
-  Col 3: Type (Natural Label)
-    * Type: Enum
-    * Allowed Values: Tank, Missile, Aircraft
-    * Rules: The combat classification of the hero. Provided for squad-building readability.
-
-  Col 4: Rarity
+  Col 3: Rarity
     * Type: Enum
     * Allowed Values: UR, SSR, SR, R
 
-  Col 5: Level
+  Col 4: Level
     * Type: Integer
     * Rules: The current overall level of the hero. Allowed range is 1 to 150.
 
-  Col 6: Tier
+  Col 5: Tier
     * Type: Float (Special Format)
     * Rules: Represents the Hero's overall Tier (Star Level). The integer is the Star count (0-5). The decimal represents the sub-tier progression (0-4). Example: 5.1 means 5 Stars, Sub-Tier 1. 0.0 means unlocked but 0 stars.
 
-  Col 7: SkillRef (Pointer)
+  Col 6: Squad
+    * Type: Enum
+    * Allowed Values: 1, 2, 3, 4, None
+    * Rules: The current squad the hero is assigned to. If unassigned, record as 'None'.
+
+  Col 7: Role (Natural Label)
+    * Type: Enum
+    * Allowed Values: Damage, Shield, Support
+    * Rules: The combat role of the hero. 'Shield' indicates front-row defenders, 'Damage' indicates attackers, 'Support' indicates healers/buffers.
+
+  Col 8: Type (Natural Label)
+    * Type: Enum
+    * Allowed Values: Tank, Missile, Aircraft
+    * Rules: The combat classification of the hero.
+
+  Col 9: SkillRef (Pointer)
     * Type: String
     * Rules: The exact filename of the spoke file containing this hero's skill data. If none, record as 'None'.
 
-  Col 8: GearRef (Pointer)
+  Col 10: GearRef (Pointer)
     * Type: String
     * Rules: The exact filename of the spoke file containing this hero's equipment data. If none, record as 'None'.
 
-  Col 9: ExWeaponRef (Pointer)
+  Col 11: ExWeaponRef (Pointer)
     * Type: String
     * Rules: The exact filename of the spoke file containing this hero's Exclusive Weapon data. If none, record as 'None'.
 
@@ -59,15 +69,16 @@ This file (the Hub) contains top-level summary data and primary keys, while deta
 Header:Begin
 Name: F1NE Master Hero Registry
 Scope: Account: F1NE
-Version: 1.2.0
+Version: 1.4.0
 Format: Table
 Schema: HeroMasterRegistry
 Header:End
 
 Data:Begin
-HeroID  Name       Type      Rarity  Level  Tier  SkillRef             GearRef            ExWeaponRef
-H_001   Murphy     Tank      UR      150    5.0   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
-H_002   Kimberly   Tank      UR      150    5.1   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
-H_003   DVA        Aircraft  UR      145    4.2   F1NE_HeroSkills.txt  F1NE_HeroGear.txt  None
-H_004   Mason      Tank      SSR     130    5.0   F1NE_HeroSkills.txt  None               None
+HeroID  Name       Rarity  Level  Tier  Squad  Role     Type      SkillRef             GearRef            ExWeaponRef
+H_001   Murphy     UR      150    5.0   1      Shield   Tank      F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
+H_002   Kimberly   UR      150    5.1   1      Damage   Tank      F1NE_HeroSkills.txt  F1NE_HeroGear.txt  F1NE_ExWeapons.txt
+H_003   Marshall   UR      145    4.2   1      Support  Tank      F1NE_HeroSkills.txt  F1NE_HeroGear.txt  None
+H_004   Mason      SSR     130    5.0   2      Damage   Tank      F1NE_HeroSkills.txt  None               None
+H_005   Violet     SSR     120    4.0   None   Shield   Tank      F1NE_HeroSkills.txt  None               None
 Data:End
