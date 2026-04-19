@@ -43,7 +43,7 @@ def run_master_summary(file_content):
 
     for row in data_rows:
         # Clean row: remove tags and normalize whitespace
-        clean_row = re.sub(r'\', '', row).strip()
+        clean_row = re.sub(r'<.*?>', '', row).strip()
         if not clean_row or clean_row.startswith('Source'):
             continue
         
