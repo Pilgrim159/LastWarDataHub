@@ -10,7 +10,7 @@ Data:Begin
 HeroID  Name       Rarity  Level  Tier  Squad  Role     Type      SkillRef  GearRef  ExWeaponRef
 H_001   Kimberly   UR      150    5.0   1      Damage   Tank      None      None     None
 H_002   Marshall   UR      150    4.2   1      Support  Tank      None      None     None
-H_003   Mason      UR      140    5.0   1      Damage   Tank      None      None     None
+H_003   Mason      UR      150    5.0   1      Damage   Tank      None      None     None
 H_004   Murphy     UR      150    5.0   1      Shield   Tank      None      None     None
 H_005   Scarlett   UR      132    3.2   None   Shield   Tank      None      None     None
 H_006   Stetmann   UR      105    1.2   None   Damage   Tank      None      None     None
