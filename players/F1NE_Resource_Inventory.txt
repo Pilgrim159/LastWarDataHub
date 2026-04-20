@@ -30,7 +30,7 @@ Inventory   Chest      SSR_Resource_Chest   1          1364          Chests
 Inventory   Chest      SR_Resource_Chest    1          2601          Chests
 Inventory   Chest      Resource_Chest       1          90520         Chests
 Inventory   Chest      Hero_Exp_Chest_SSR   8.34M      227           Chests
-Inventory   Chest      Hero_EXP_Chest_R     1.04M      17012         Chests
+Inventory   Chest      Hero_EXP_Chest_R     1.04M      16009         Chests
 Inventory   Resource   Food_Chest_(UR)      4.23M      651           Points
 Inventory   Resource   Food_Chest_(SSR)     1.41M      3904          Points
 Inventory   Resource   Food_Chest_(SR)      176.4K     1104          Points
