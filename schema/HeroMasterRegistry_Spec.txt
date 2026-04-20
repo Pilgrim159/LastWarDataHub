@@ -30,7 +30,7 @@ This file (the Hub) contains top-level summary data and primary keys, while deta
 
   Col 4: Level
     * Type: Integer
-    * Rules: The current overall level of the hero. Allowed range is 1 to 150.
+    * Rules: The current overall level of the hero. Allowed range is 1 to 175.
 
   Col 5: Tier
     * Type: Float (Special Format)
