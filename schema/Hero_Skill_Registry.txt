@@ -1,0 +1,67 @@
+===========================================================================
+SCHEMA SPECIFICATION: HeroSkillRegistry
+VERSION: 1.0
+===========================================================================
+
+1. Overview
+The HeroSkillRegistry schema acts as a "Spoke" file, detailing the specific skill progression permutations for a player's unlocked heroes. 
+It tracks the dynamic maximum skill cap, the integer-based levels of the primary scaling skills, and the boolean unlock state of the Expertise (Super Sensing) skill.
+
+2. Header Requirements
+  * Name: [PlayerName] Hero Skill Registry
+  * Scope: Account: [PlayerName]
+  * Version: Semantic versioning (e.g., 1.1.0)
+  * Format: Table
+  * Schema: HeroSkillRegistry
+
+3. Column Definitions (Strict Order)
+
+  Col 1: HeroID (Primary Key)
+    * Type: String
+    * Rules: MUST be a unique identifier formatted as 'H_' followed by a 3-digit number (e.g., H_001, H_002). MUST correspond to a valid HeroID in the HeroMasterRegistry.
+
+  Col 2: Name (Natural Label)
+    * Type: String
+    * Rules: The in-game name of the hero. Provided for human readability.
+
+  Col 3: Max_Skill_Level
+    * Type: Integer
+    * Rules: The current maximum achievable level for the hero's scaling skills (AutoAttack, Tactics, Passive). 
+      This cap dynamically increases based on the Hero's Star Tier and overall Level.
+
+  Col 4: AutoAttack_Level
+    * Type: Integer
+    * Rules: The current level of the hero's primary auto-attack skill. Cannot exceed Max_Skill_Level.
+
+  Col 5: Tactics_Level
+    * Type: Integer
+    * Rules: The current level of the hero's active tactical skill. Cannot exceed Max_Skill_Level.
+
+  Col 6: Passive_Level
+    * Type: Integer
+    * Rules: The current level of the hero's passive attribute skill. Cannot exceed Max_Skill_Level.
+
+  Col 7: Expertise_Unlocked
+    * Type: Boolean
+    * Allowed Values: True, False
+    * Rules: Represents whether the hero's Expertise (Super Sensing) passive toggle has been unlocked via tier progression.
+
+===========================================================================
+4. EXAMPLE FILE FORMAT
+===========================================================================
+Header:Begin
+Name: F1NE Hero Skill Registry
+Scope: Account: F1NE
+Version: 1.1.0
+Format: Table
+Schema: HeroSkillRegistry
+Header:End
+
+Data:Begin
+HeroID  Name       Max_Skill_Level  AutoAttack_Level  Tactics_Level  Passive_Level  Expertise_Unlocked
+H_001   Murphy     31               25                22             25             True
+H_002   Kimberly   35               30                30             28             True
+H_003   Marshall   25               20                18             20             False
+H_004   Mason      31               28                25             25             True
+H_005   Violet     20               15                15             15             False
+Data:End
