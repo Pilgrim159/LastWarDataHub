@@ -16,7 +16,7 @@ Defines the format for the Resource Inventory Table
 
 3. Column Definitions
 Source = String (Allowed: Loose, Inventory)
-Category = String (Allowed: Currency, Resource, Chest, Speedup, Material)
+Category = String (Allowed: Currency, Resource, Chest, Speedup)
 ItemName = String
 UnitSize = ScaledInt
 PacketCount = ScaledInt
