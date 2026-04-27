@@ -1,124 +1,187 @@
+#!/usr/bin/env python3
+"""
+Last War DataHub - Resource Inventory Auditor
+Compliant with File Format Specification v1.1.0 (Sections 4 & 5)
+"""
+
+import sys
+import os
 import re
+from typing import List, Dict, Tuple, Optional
 
-def parse_scaled_val(val_str):
-    """Converts Hub-scaled strings (e.g., 723.3M, 150.9K) to floats."""
-    if not val_str or val_str == "":
-        return 0.0
-    val_str = val_str.upper().strip()
-    multipliers = {'K': 1_000, 'M': 1_000_000, 'G': 1_000_000_000}
+class DataHubParser:
+    """Handles core structural and formatting logic defined in the Specification."""
     
-    if val_str[-1] in multipliers:
-        return float(val_str[:-1]) * multipliers[val_str[-1]]
-    try:
-        return float(val_str)
-    except ValueError:
-        return 0.0
+    def __init__(self):
+        self.explicit_delimiter: Optional[str] = None
+        self.in_data_block: bool = False
+        self.label_row_passed: bool = False
 
-def format_value(total):
-    """Standardizes large number formatting for reports."""
-    if total >= 1_000_000_000:
-        return f"{total/1_000_000_000:>12.2f}G"
-    if total >= 1_000_000:
-        return f"{total/1_000_000:>12.2f}M"
-    if total >= 1_000:
-        return f"{total/1_000:>12.2f}K"
-    return f"{total:>13.2f}"
+    def parse_header_tag(self, line: str) -> None:
+        """Extracts optional overrides from the Header block (Section 4.6)."""
+        if line.startswith("Delimiter:"):
+            val = line.split(":", 1)[1].strip().lower()
+            if val == "pipe":
+                self.explicit_delimiter = "|"
+            elif val == "whitespace":
+                self.explicit_delimiter = "space"
 
-def run_master_summary(file_content):
-    """
-    Parses a LastWarDataHub resource inventory file and provides:
-    1. Individual item breakdowns (Source, Total, Unit)
-    2. Category-level totals with Minutes, Hours, and Days for Speedups.
-    """
-    # 1. Extract Data Block using Hub Specification delimiters
-    data_match = re.search(r'Data:Begin\n(.*?)\nData:End', file_content, re.DOTALL)
-    if not data_match:
-        print("Error: No 'Data:Begin'/'Data:End' block found.")
-        return
-    
-    data_rows = data_match.group(1).strip().split('\n')
-    
-    individual_items = [] 
-    category_totals = {}
-
-    for row in data_rows:
-        # Clean row: remove tags and normalize whitespace
+    def process_data_row(self, row: str) -> Optional[List[str]]:
+        """
+        Applies structural and delimiter logic to a single row.
+        Returns a list of trimmed fields, or None if the row is skipped.
+        """
+        # Section 5.5: Internal/External tag stripping and whitespace normalization
         clean_row = re.sub(r'<.*?>', '', row).strip()
-        
-        # NEW LOGIC: Skip blank lines and lines starting with '#' (Section 13.1)
-        # Also continues to skip the 'Source' header row (Section 6.1)
-        if not clean_row or clean_row.startswith('#') or clean_row.startswith('Source'):
-            continue
+
+        # Section 4.4 (Blank Lines) and Section 4.5 (Comments)
+        if not clean_row or clean_row.startswith('#'):
+            return None
             
-        parts = clean_row.split()
-        if len(parts) < 5:
-            continue
+        # Section 5.2 (The Label Row) - Skip the first valid line after Data:Begin
+        if not self.label_row_passed:
+            self.label_row_passed = True
+            return None
 
-        source = parts[0]
-        category = parts[1]
-        item = parts[2]
-        size_val = parts[3]
-        count_val = parts[4]
-        unit = parts[5] if len(parts) > 5 else "Points"
-        
-        # Calculation: GrandTotal = UnitSize * PacketCount
-        val = parse_scaled_val(size_val) * parse_scaled_val(count_val)
-        
-        if category == "Speedup":
-            if unit == "Hours":
-                val *= 60
-            unit = "Minutes" # Standardize unit name for aggregation
-        
-        # Track for Section 1 (Individual entries)
-        individual_items.append({
-            "item": item,
-            "source": source,
-            "total": val,
-            "unit": unit
-        })
-        
-        # Track for Section 2 (Aggregated totals)
-        if category not in category_totals:
-            category_totals[category] = {}
-        if item not in category_totals[category]:
-            category_totals[category][item] = {"total": 0.0, "unit": unit}
-        category_totals[category][item]["total"] += val
-
-    # SECTION 1: Individual Item Summary (Row-by-Row breakdown)
-    print(f"{'Item Name':<20} | {'Source':<12} | {'Total Holding':<15} | {'Unit'}")
-    print("-" * 65)
-    for entry in individual_items:
-        print(f"{entry['item']:<20} | {entry['source']:<12} | {format_value(entry['total'])} | {entry['unit']}")
-
-    print("\n" + "="*75 + "\n")
-
-    # SECTION 2: Category Totals (Aggregated with Time Conversions)
-    print(f"{'Category/Item':<25} | {'Total Holding (m / h / d)':<40}")
-    print("-" * 75)
-
-    for cat, items in sorted(category_totals.items()):
-        print(f"[{cat.upper()}]")
-        cat_min_total = 0.0
-        
-        for item, data in sorted(items.items()):
-            total = data["total"]
-            unit = data["unit"]
-            
-            if cat == "Speedup":
-                mins = total if unit == "Minutes" else total * 60
-                cat_min_total += mins
-                h, d = mins/60, mins/1440
-                print(f"  {item:<23} | {mins:,.0f}m / {h:,.1f}h / {d:,.2f}d")
+        # Section 5.4 & 4.6: Delimiter Precedence and Overrides
+        if self.explicit_delimiter == "|":
+            return [p.strip() for p in clean_row.split('|')]
+        elif self.explicit_delimiter == "space":
+            return clean_row.split()
+        else:
+            # Auto-Detection Fallback
+            if '|' in clean_row:
+                return [p.strip() for p in clean_row.split('|')]
             else:
-                print(f"  {item:<23} | {format_value(total)} {unit}")
-        
-        if cat == "Speedup":
-            h_total = cat_min_total/60
-            d_total = cat_min_total/1440
-            print(f"  {'-- Category Total --':<23} | {cat_min_total:,.0f}m / {h_total:,.1f}h / {d_total:,.2f}d")
-        print("")
+                return clean_row.split()
 
-# Example usage for local execution:
-# if __name__ == "__main__":
-#     with open('players/F1NE_Resource_Inventory.txt', 'r') as f:
-#         run_master_summary(f.read())
+class ResourceAuditor:
+    """Handles the business logic of calculating Last War resource totals."""
+
+    @staticmethod
+    def parse_scaled_int(val_str: str) -> float:
+        """Converts game-type ScaledInt (Section 6.3) to a raw float."""
+        val_str = val_str.upper()
+        multiplier = 1.0
+        if val_str.endswith('K'):
+            multiplier = 1_000.0
+            val_str = val_str[:-1]
+        elif val_str.endswith('M'):
+            multiplier = 1_000_000.0
+            val_str = val_str[:-1]
+        elif val_str.endswith('G'):
+            multiplier = 1_000_000_000.0
+            val_str = val_str[:-1]
+        
+        try:
+            return float(val_str) * multiplier
+        except ValueError:
+            return 0.0
+
+    @staticmethod
+    def format_scaled_int(val: float) -> str:
+        """Converts a raw float back to a readable game-type ScaledInt."""
+        if val >= 1_000_000_000:
+            return f"{val / 1_000_000_000:.2f}G"
+        elif val >= 1_000_000:
+            return f"{val / 1_000_000:.2f}M"
+        elif val >= 1_000:
+            return f"{val / 1_000:.2f}K"
+        return str(int(val))
+
+    def run_audit(self, filepath: str):
+        """Executes the delta analysis on the specified inventory file."""
+        if not os.path.exists(filepath):
+            print(f"Error: File '{filepath}' not found.")
+            return
+
+        parser = DataHubParser()
+        totals: Dict[str, float] = {"Food": 0.0, "Iron": 0.0, "Coin": 0.0}
+
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    
+                    # Structural Boundaries (Section 4.1)
+                    if line == "Header:Begin":
+                        continue
+                    elif line == "Header:End":
+                        continue
+                    elif line == "Data:Begin":
+                        parser.in_data_block = True
+                        continue
+                    elif line == "Data:End":
+                        parser.in_data_block = False
+                        break
+
+                    # Route line to correct processor
+                    if not parser.in_data_block:
+                        parser.parse_header_tag(line)
+                    else:
+                        fields = parser.process_data_row(line)
+                        if fields:
+                            self._accumulate_resources(fields, totals)
+
+            self._print_summary(totals)
+
+        except Exception as e:
+            print(f"Audit Failed: {str(e)}")
+
+    def _accumulate_resources(self, fields: List[str], totals: Dict[str, float]):
+        """Maps parsed fields to resource accumulation logic."""
+        # Depending on your F1NE_Resource_Inventory.txt schema, you may need to 
+        # adjust the index mappings below. Assuming [Source, Resource, Amount, ...]
+        try:
+            # We look for keywords in the fields to safely extract values
+            # regardless of whether it is the old or new format.
+            res_type = None
+            amount_str = None
+            
+            for field in fields:
+                field_upper = field.upper()
+                if field_upper in ["FOOD", "IRON", "COIN"]:
+                    res_type = field.capitalize()
+                elif any(char.isdigit() for char in field) and any(suffix in field_upper for suffix in ['K', 'M', 'G']):
+                    amount_str = field
+                    
+            if res_type and amount_str:
+                totals[res_type] += self.parse_scaled_int(amount_str)
+        except IndexError:
+            pass # Malformed row safely ignored
+
+    def _print_summary(self, totals: Dict[str, float]):
+        """Outputs the strategic briefing."""
+        print("=" * 50)
+        print(" COMMANDER F1NE - RESOURCE AUDIT ".center(50, "="))
+        print("=" * 50)
+        for res, amount in totals.items():
+            formatted_amount = self.format_scaled_int(amount)
+            # Add strategic context based on our current goals
+            status = ""
+            if res == "Iron":
+                target = 1_000_000_000 # 1.0G target for Tank Center 31
+                if amount >= target:
+                    status = " [TARGET ACHIEVED: TANK CENTER 31 READY]"
+                else:
+                    deficit = self.format_scaled_int(target - amount)
+                    status = f" [FARMING: {deficit} Deficit]"
+            elif res == "Coin":
+                target = 215_000_000
+                if amount >= target:
+                    status = " [TARGET ACHIEVED]"
+                    
+            print(f" {res:<10} | {formatted_amount:>10} {status}")
+        print("=" * 50)
+
+
+if __name__ == "__main__":
+    # Point this to your actual file path
+    target_file = os.path.join("players", "F1NE_Resource_Inventory.txt")
+    
+    # Allow command line override
+    if len(sys.argv) > 1:
+        target_file = sys.argv[1]
+        
+    auditor = ResourceAuditor()
+    auditor.run_audit(target_file)
