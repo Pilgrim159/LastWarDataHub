@@ -1,27 +1,39 @@
-========================================================= 
-BUFF CALIBRATION TABLE 
-=========================================================
-The Buff Calibration Table is used to track and verify player-specific time reduction multipliers based on their current buffs.
-This Buff Calibration Table subclasses the Table format section in the Specification.
+Header:Begin
+FileVersion: 1.1.0
+FileType: Schema_Definition
+SchemaName: BuffCalibration
+Description: The Buff Calibration Table is used to calibrate building upgrade times.
+Header:End
 
-1. Schema Name
-• Schema: Buff Calibration
+Data:Begin
+# Validation Logic Binding (Section 5)
+# -----------------------------------
+# This schema defines the requirements for files declaring 'Schema: BuffCalibration'.
+# Structural interpretation is governed by Section 5 (Table Format & Delimiters).
 
-2. Required Header Fields
-The following exact header fields must appear:
-• Name:
-• Version:
-• Scope:
-• Format: Table
-• Schema: BuffCalibration
-• PlayerName: 
+# Required Header Fields (Section 4.3)
+# Target data files MUST include these exact header tags.
+Required_Header  | Field_Name   | Expected_Value_Type
+# ---------------|--------------|----------------------
+Required         | Name         | String
+Required         | Version      | String
+Required         | Scope        | String
+Required         | Format       | Table (Strict)
+Required         | Schema       | BuffCalibration
+Required         | PlayerName   | String
 
-3. Column Definitions
-The Label Row must contain the following columns exactly, and validators must enforce these types:
-BuildingName = String
-Level = Integer
-OriginalTime = Duration
-UpgradeTime = Duration
+# Required Data Block Columns (Section 5.1)
+# The data file's Label Row (Section 5.2) must contain these columns in this order.
+Column_Order     | Column_Name  | Data_Type
+# ---------------|--------------|-----------
+1                | BuildingName | String
+2                | Level        | Integer
+3                | OriginalTime | Duration
+4                | UpgradeTime  | Duration
 
-4. Semantic Rules
-• Rule: UpgradeTime must be mathematically less than or equal to OriginalTime.
+# Semantic Rules (Section 7)
+# --------------------------
+# Rule: Calibrated upgrade time cannot exceed the base original time.
+Rule             | Logic        | UpgradeTime <= OriginalTime
+Data:End
+
