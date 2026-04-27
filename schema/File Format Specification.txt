@@ -246,7 +246,8 @@ END OF SECTION 7
 =========================================================
 SECTION 8 — SEMANTIC VALIDATION RULES
 =========================================================
-Semantic Validation Rules define constraints on the meaning and relationships of data values within a Columnar Table. These rules operate after structural validation (Sections 1–6) and type validation (Section 7). 
+Semantic Validation Rules define constraints on the meaning and relationships of data values within a Columnar Table. 
+These rules operate after structural validation (Sections 1–6) and type validation (Section 7). 
 They do not alter the file skeleton, the Columnar Table structure, or the Typed Column system.
 Semantic Validation Rules are optional. If no semantic rules are defined for a table, only structural and type validation apply.
 8.1 Purpose of Semantic Validation
@@ -347,8 +348,10 @@ END OF SECTION 8
 =========================================================
 SECTION 9 — ERROR REPORTING AND DIAGNOSTICS
 =========================================================
-This section defines how a parser or validator must report errors encountered during structural validation (Sections 1–6), type validation (Section 7), and semantic validation (Section 8). These rules ensure that all errors are reported in a consistent, predictable, and machine readable manner.
-Error Reporting and Diagnostics do not modify the file skeleton, the Columnar Table Format, or Typed Column behavior. They describe how a validating system must communicate problems, not how files are structured.
+This section defines how a parser or validator must report errors encountered during structural validation (Sections 1–6), type validation (Section 7), 
+and semantic validation (Section 8). These rules ensure that all errors are reported in a consistent, predictable, and machine readable manner.
+Error Reporting and Diagnostics do not modify the file skeleton, the Columnar Table Format, or Typed Column behavior. 
+They describe how a validating system must communicate problems, not how files are structured.
 9.1 Error Categories
 All errors must be classified into one of the following categories:
 9.1.1 Structural Errors
@@ -438,8 +441,10 @@ END OF SECTION 9
 =========================================================
 SECTION 10 — SCOPE
 =========================================================
-Scope defines which game accounts a file’s data applies to. Because a player may maintain multiple accounts in Last War, each file must be interpreted within a defined scope so that global data and account specific data can coexist without conflict.
-Scope does not alter the file skeleton, the Columnar Table Format, Typed Columns, or validation rules. It determines how validated data is used, not how it is structured.
+Scope defines which game accounts a file’s data applies to. Because a player may maintain multiple accounts in Last War, 
+each file must be interpreted within a defined scope so that global data and account specific data can coexist without conflict.
+Scope does not alter the file skeleton, the Columnar Table Format, Typed Columns, or validation rules. 
+It determines how validated data is used, not how it is structured.
 10.1 Scope Categories
 Two scope categories are defined:
 10.1.1 Global Scope
@@ -511,7 +516,8 @@ The Format tag dictates the structural validation of the Data Block:
 •	Format: Index dictates that the Data Block is a list of file references.
 11.2 Schema Binding
 The Schema tag enforces specific business logic and column requirements upon the chosen Format. 
-For example, if a file declares Format: Table and Schema: BuildingData, it must pass both the generic table alignment checks AND possess the exact columns required for building data.
+For example, if a file declares Format: Table and Schema: BuildingData, 
+it must pass both the generic table alignment checks AND possess the exact columns required for building data.
 Specific column requirements for individual schemas will be detailed in external schema definition files. 
 To locate these files, validators MUST reference the master schema registry located at schema/schema_index.txt. 
 The validator must look up the declared Schema name in this index to resolve the filepath of its definition.
@@ -564,6 +570,33 @@ Ceiling, Floor, Round), the validator must apply that operation
 to every calculated instance in the data block to ensure 
 deterministic output.
 END OF SECTION 12
+
+=========================================================
+SECTION 13 — COMMENTS
+Comments allow for the inclusion of human-readable notes, documentation, and logic reminders within a data file without affecting structural or semantic validation.
+
+13.1 Comment Definition
+Any line where the first non-whitespace character is a hash symbol (#) is designated as a comment line.
+
+13.2 Parser and Validator Behavior
+• Parsers, validators, and AI assistants must completely ignore comment lines during processing.
+• Comment lines do not contribute to the structural integrity or data content of the file.
+• Comment lines appearing within a Columnar Table (Section 6) must not be interpreted as the Header Row or as data rows.
+
+13.3 Comment Placement
+Comment lines may be placed anywhere within a file, including:
+• Outside of the required structural tags.
+• Within the Header Block.
+• Within the Data Block.
+
+13.4 Inline Comments Prohibited
+To maintain parsing reliability and prevent conflicts with pipe delimiters or string values, comments must occupy their own line. 
+The hash symbol (#) appearing after valid data on a line is not interpreted as a comment.
+
+13.5 Formatting
+The text following the hash symbol (#) is free-form and is not subject to any validation rules or type checks defined in this specification.
+
+END OF SECTION 13
 END OF SPECIFICATION (VERSION 1.0)
 
 
