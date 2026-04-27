@@ -44,9 +44,12 @@ def run_master_summary(file_content):
     for row in data_rows:
         # Clean row: remove tags and normalize whitespace
         clean_row = re.sub(r'<.*?>', '', row).strip()
-        if not clean_row or clean_row.startswith('Source'):
-            continue
         
+        # NEW LOGIC: Skip blank lines and lines starting with '#' (Section 13.1)
+        # Also continues to skip the 'Source' header row (Section 6.1)
+        if not clean_row or clean_row.startswith('#') or clean_row.startswith('Source'):
+            continue
+            
         parts = clean_row.split()
         if len(parts) < 5:
             continue
