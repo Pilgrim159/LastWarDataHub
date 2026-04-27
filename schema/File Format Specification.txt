@@ -129,8 +129,9 @@ Data:End
 3.2 Minimum Data Block
 Data:Begin
 Data:End
+
 =========================================================
-SECTION 4 — STRUCTURAL CONTENT
+SECTION 4 — STRUCTURAL CONTENT & MINIMUM VALID FILE
 =========================================================
 4.1 Required Structural Tags (The Skeleton)
 All files must contain the following structural markers in pairs. Content outside of these markers is considered non-functional metadata or documentation.
@@ -147,23 +148,25 @@ A "Populated File" contains additional data and must include the following stand
 • Scope: (Global or Account)
 • Version: (The version of this file)
 • Format: (The basic formatting instructions)
-• Schema: (File-specific parsing instructions)
+• Schema: (The name of the schema definition file)
 
-4.4 Blank Lines (Visual Spacing)
-Empty lines or lines containing only whitespace characters (spaces/tabs) are permitted anywhere within the file to provide visual organization. 
-Parsers must explicitly skip these lines during processing.
+4.4 The FileType Tag
+The Header Block may include a 'FileType' tag to define the functional purpose of the file.
+• Data_Table: (Default) The file contains primary game data to be processed by tools. The Data Block is interpreted as a literal list of entries.
+• Schema_Definition: The file contains the rules, columns, and semantic constraints used to validate other files. The Data Block is interpreted as a set of requirement declarations.
 
-4.5 Comments (Documentation)
+4.5 Blank Lines (Visual Spacing)
+Empty lines or lines containing only whitespace characters are permitted anywhere in the file. Parsers must explicitly skip these lines during processing.
+
+4.6 Comments (Documentation)
 Any line where the first non-whitespace character is a hash symbol (#) is a comment. 
 • Parsers must completely ignore comment lines. 
-• Comments may be placed anywhere in the file. 
-• Inline comments (placing a # at the end of a valid data row) are prohibited and will not be interpreted as comments.
+• Inline comments (placing a # at the end of a valid data row) are prohibited.
 
-4.6 Optional Delimiter Override
-A Header Block may include a 'Delimiter' tag to force a specific parsing method for the Data Block.
+4.7 Optional Delimiter Override
+A Header Block may include a 'Delimiter' tag to force a specific parsing method.
 • Values: 'Pipe' or 'Whitespace'
-• Behavior: If present, the parser MUST ignore automated character detection (Section 6) 
-  and apply only the specified delimiter to the rows between Data:Begin and Data:End.
+• Behavior: If present, the parser MUST ignore automated detection (Section 5) and apply the specified delimiter.
 
 =========================================================
 SECTION 5 — TABLE FORMAT & DELIMITERS
