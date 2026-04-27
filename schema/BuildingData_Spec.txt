@@ -1,35 +1,53 @@
-========================================================= 
-BUILDING DATA TABLE 
-=========================================================
-The Building Data Table is used to estimate build times for the construction of buildings
-This Building Data Table subclasses the Table format section in the Specification.
+Header:Begin
+FileVersion: 1.1.0
+FileType: Schema_Definition
+SchemaName: BuildingData
+Description: Defines column requirements and semantic rules for global building construction data.
+Header:End
 
-1. Schema Name
-• Schema: BuildingData
+Data:Begin
+# Validation Logic Binding (Section 5)
+# -----------------------------------
+# Files declaring 'Schema: BuildingData' must adhere to the rules herein.
+# Structural interpretation is governed by Section 5 (Table Format & Delimiters).
 
-2. Required Header Fields
-The following exact header fields must appear:
-• Name:
-• Version:
-• Scope:
-• Format: Table
-• Schema: BuildingData
+# Required Header Fields (Section 4.3)
+# These fields MUST be present in the target data file's Header Block.
+# -----------------------------------------------------------
+Required_Header  | Field_Name   | Expected_Value_Type
+# ---------------|--------------|----------------------
+Required         | Name         | String
+Required         | Version      | String
+Required         | Scope        | Global
+Required         | Format       | Table
+Required         | Schema       | BuildingData
 
-3. Column Definitions
-The Label Row must contain the following columns exactly, and validators must enforce these types:
-BuildingName = String
-TargetLevel = Integer
-OriginalTime = String
-Food = ScaledInt
-Iron = ScaledInt
-Coin = ScaledInt
-Oil = ScaledInt
-ResearchRequirements = List(Pair(TechNode, Rank), sep=";", kv_sep=":", logic_op="|")
-BuildingRequirements = List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|")
+# Required Data Block Columns (Section 5.1)
+# The data file's Label Row (Section 5.2) must contain these columns in this order.
+# -----------------------------------------------------------
+Column_Order     | Column_Name          | Data_Type_Specification
+# ---------------|----------------------|---------------------------------------------------------
+1                | BuildingName         | String
+2                | TargetLevel          | Integer
+3                | OriginalTime         | String (Duration)
+4                | Food                 | ScaledInt
+5                | Iron                 | ScaledInt
+6                | Coin                 | ScaledInt
+7                | Oil                  | ScaledInt
+8                | ResearchRequirements | List(Pair(TechNode, Rank), sep=";", kv_sep=":", logic_op="|")
+9                | BuildingRequirements | List(Pair(BuildingID, Level), sep=";", kv_sep=":", logic_op="|")
 
-4. Semantic Rules
-• Rule: TargetLevel must be greater than 0.
-• Rule: All resource costs (Food, Iron, Coin, Oil) must be non-negative.
+# Optional Data Block Columns (Section 5.1)
+# -----------------------------------------------------------
+Column_Status    | Column_Name          | Data_Type
+# ---------------|----------------------|-----------
+Optional         | Notes                | String
 
-5. Optional Additional Columns:
-• Notes: String
+# Semantic Rules (Section 7)
+# --------------------------
+# Rule 1: TargetLevel must be a valid progression level.
+Rule             | Logic        | TargetLevel > 0
+
+# Rule 2: All resource costs must be non-negative.
+Rule             | Logic        | Food >= 0 AND Iron >= 0 AND Coin >= 0 AND Oil >= 0
+Data:End
