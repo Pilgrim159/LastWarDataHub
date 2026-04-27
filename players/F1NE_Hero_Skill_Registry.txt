@@ -39,4 +39,5 @@ H_028   Cage       10               1              1                 1          
 H_029   Maxwell    10               10             10                10             False
 H_030   Sarah      10               5              7                 7              False
 H_031   Ambolt     20               0              10                10             True
+H_032   Taylor     10               0              0                 0              False
 Data:End
