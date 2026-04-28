@@ -11,14 +11,11 @@ Data:Begin
 [Global Tables]
 BuildingData.txt
 HeroLevelCostTable.txt
-Age_Of_Oil_Tech_Tree.txt
-Special_Forces_Tech_tree.txt
 
 [Table Versions]
 BuildingData.txt = 1.0
 HeroLevelCostTable.txt = 1.0
-Age_Of_Oil_Tech_Tree.txt = 1.0
-Special_Forces_Tech_tree.txt = 1.0
+
 
 [Notes]
 This index file defines the authoritative list of global data tables.
