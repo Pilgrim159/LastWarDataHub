@@ -15,9 +15,9 @@ schema/File Format Specification.txt
 [Schema Locations]
 BuffCalibration = schema/BuffCalibration_Spec.txt
 BuildingData = schema/BuildingData_Spec.txt
+BuildingStatus = schema/Building_Status_Spec.txt
 HeroLevelCostTable = schema/HeroCost_Spec.txt
 ResourceInventory = schema/ResourceInventory_Spec.txt
-TechData = schema/TechDataTable_Spec.txt
 ResearchCalibration = schema/ResearchCalibration_Spec.txt
 HeroMasterRegistry = schema/HeroMasterRegistry_Spec.txt
 HeroSkillRegistry = schema/Hero_Skill_Registry_Spec.txt
