@@ -1,28 +1,38 @@
-========================================================= 
-RESOURCE INVENTORY TABLE 
-=========================================================
-Defines the format for the Resource Inventory Table
+Header:Begin
+FileVersion: 1.1.0
+FileType: Schema_Definition
+SchemaName: ResourceInventory
+Description: Defines the format for tracking player-specific resource inventories, including loose funds and chest stockpiles.
+Header:End
 
-1. Schema Name
-• Schema: ResourceInventory
+Data:Begin
+# Required Header Fields (Section 4.3)
+# -----------------------------------
+Required_Header  | Field_Name   | Expected_Value_Type
+# ---------------|--------------|----------------------
+Required         | Name         | String
+Required         | Version      | String
+Required         | Scope        | Account: <AccountID>
+Required         | Format       | Table (Strict)
+Required         | Schema       | ResourceInventory
+Required         | PlayerName   | String
 
-2. Required Header Fields
-• Name:
-• Version:
-• Scope: Account: <AccountID> 
-• Format: Table
-• Schema: ResourceInventory
-• PlayerName: 
+# Required Data Block Columns (Section 5.1)
+# ----------------------------------------
+Column_Order     | Column_Name  | Data_Type    | Constraints
+# ---------------|--------------|--------------|-----------------------------------------
+1                | Source       | String       | Allowed: Loose, Inventory
+2                | Category     | String       | Allowed: Currency, Resource, Chest, Speedup
+3                | ItemName     | String       | 
+4                | UnitSize     | ScaledInt    | 
+5                | PacketCount  | ScaledInt    | 
+6                | Unit         | String       | 
 
-3. Column Definitions
-Source = String (Allowed: Loose, Inventory)
-Category = String (Allowed: Currency, Resource, Chest, Speedup)
-ItemName = String
-UnitSize = ScaledInt
-PacketCount = ScaledInt
-Unit = String
-
-4. Arithmetic & Semantic Rules
-• Rule: GrandTotal(Item) = Sum(UnitSize * PacketCount) for all rows of ItemName.
-• Rule: Loose entries represent liquid spendable balance.
-• Rule: Inventory entries represent unopened packets/chests.
+# Semantic Rules (Section 7)
+# --------------------------
+Rule             | Logic
+# ---------------|-----------------------------------------------------------------------
+Source:Loose     | Entries represent liquid, immediately spendable balances.
+Source:Inventory | Entries represent unopened packets, chests, or stockpiled items.
+Item:GrandTotal  | Sum(UnitSize * PacketCount) for all rows of a specific ItemName.
+Data:End
