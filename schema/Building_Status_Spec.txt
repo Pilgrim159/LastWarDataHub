@@ -1,35 +1,18 @@
-========================================================= 
-BUILDING STATUS TABLE 
-=========================================================
-The Building Status Table is used to track the current state, target goals, and upgrade activity of buildings within a player's base.
-This Building Status Table subclasses the Table format section in the Specification.
+Header:Begin
+Name: Building Status Schema Specification
+Version: 1.6
+Scope: Global
+Format: Specification
+Schema: BuildingStatus
+FileType: Schema_Definition
+Header:End
 
-1. Schema Name
-• Schema: BuildingStatus
-
-2. Required Header Fields
-The following exact header fields must appear:
-• Name:
-• Version:
-• Scope:
-• Format: Table
-• Schema: BuildingStatus
-
-3. Column Definitions
-The Label Row must contain the following columns exactly, and validators must enforce these types:
-BuildingName = String
-CurrentLevel = Integer
-TargetLevel = Integer
-Status = String
-TimeRemaining = String
-Priority = Integer
-
-4. Semantic Rules
-• Rule: BuildingName must exactly match the naming convention used in the global BuildingData table.
-• Rule: TargetLevel must be greater than or equal to CurrentLevel.
-• Rule: Status must be one of the following exact string values: "Idle", "Upgrading", or "Not_Built".
-• Rule: If Status is "Idle" or "Not_Built", TimeRemaining must be "-". 
-• Rule: If Status is "Upgrading", TimeRemaining must follow the format 'Xd XX:XX:XX' (e.g., '29d 23:07:15').
-
-5. Optional Additional Columns:
-• Notes: String
+Data:Begin
+# Column | Requirement  | DataType | Logic/Format
+1        | BuildingName | String   | Match keys in global/BuildingData.txt
+2        | CurrentLevel | Integer  | Value >= 0
+3        | TargetLevel  | Integer  | Value >= CurrentLevel
+4        | Status       | String   | Valid: [Idle, Upgrading, Blocked]
+5        | TimeRemaining| Duration | Format: DDd HH:MM:SS or [-]
+6        | Priority     | Integer  | Range: 1-99
+Data:End
