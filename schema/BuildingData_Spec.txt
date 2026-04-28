@@ -2,25 +2,26 @@ Header:Begin
 FileVersion: 1.1.0
 FileType: Schema_Definition
 SchemaName: BuildingData
-Description: Defines column requirements and semantic rules for global building construction data.
+Description: The Building Data Table is used to estimate build times for the construction of buildings. This schema subclasses the Table format defined in the Master Specification.
 Header:End
 
 Data:Begin
 # Validation Logic Binding (Section 5)
 # -----------------------------------
-# Files declaring 'Schema: BuildingData' must adhere to the rules herein.
+# This schema defines the requirements for files declaring 'Schema: BuildingData'.
 # Structural interpretation is governed by Section 5 (Table Format & Delimiters).
 
 # Required Header Fields (Section 4.3)
-# These fields MUST be present in the target data file's Header Block.
+# Target data files MUST include these exact header tags.
 # -----------------------------------------------------------
 Required_Header  | Field_Name   | Expected_Value_Type
 # ---------------|--------------|----------------------
 Required         | Name         | String
 Required         | Version      | String
-Required         | Scope        | Global
+Required         | Scope        | Global (Strict)
 Required         | Format       | Table
 Required         | Schema       | BuildingData
+Required         | FileType     | Data_Table
 
 # Required Data Block Columns (Section 5.1)
 # The data file's Label Row (Section 5.2) must contain these columns in this order.
@@ -29,7 +30,7 @@ Column_Order     | Column_Name          | Data_Type_Specification
 # ---------------|----------------------|---------------------------------------------------------
 1                | BuildingName         | String
 2                | TargetLevel          | Integer
-3                | OriginalTime         | String (Duration)
+3                | OriginalTime         | Duration
 4                | Food                 | ScaledInt
 5                | Iron                 | ScaledInt
 6                | Coin                 | ScaledInt
@@ -45,9 +46,14 @@ Optional         | Notes                | String
 
 # Semantic Rules (Section 7)
 # --------------------------
-# Rule 1: TargetLevel must be a valid progression level.
-Rule             | Logic        | TargetLevel > 0
+# Rule 1: Progression Integrity
+Rule             | Logic        | TargetLevel must be Unique per BuildingName
+Rule             | Logic        | TargetLevel must be Strictly Increasing per BuildingName
 
-# Rule 2: All resource costs must be non-negative.
-Rule             | Logic        | Food >= 0 AND Iron >= 0 AND Coin >= 0 AND Oil >= 0
+# Rule 2: Resource Cost Integrity
+Rule             | Logic        | Food, Iron, Coin, Oil must be Non-decreasing per BuildingName
+Rule             | Logic        | All resource costs must be Non-negative (>= 0)
+
+# Rule 3: Oil Introduction
+Rule             | Logic        | If TargetLevel < 33 then Oil == 0
 Data:End
