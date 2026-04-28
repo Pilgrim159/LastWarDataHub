@@ -49,7 +49,6 @@ Iron_Mine_3       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_4       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_5       | 21           | 21          | Idle      | -              | 99
 Iron_Warehouse    | 16           | 16          | Idle      | -              | 99
-Smelter_1         | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_1   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_2   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_3   | 20           | 20          | Idle      | -              | 99
@@ -62,6 +61,7 @@ Oil_Well_3        | 28           | 28          | Idle      | -              | 6
 Recon_Plane_1     | 16           | 16          | Idle      | -              | 99
 Recon_Plane_2     | 16           | 16          | Idle      | -              | 99
 Recon_Plane_3     | 18           | 18          | Idle      | -              | 99
+Smelter_1         | 20           | 20          | Idle      | -              | 99
 Smelter_2         | 20           | 20          | Idle      | -              | 99
 Smelter_3         | 20           | 20          | Idle      | -              | 99
 Smelter_4         | 20           | 20          | Idle      | -              | 99
