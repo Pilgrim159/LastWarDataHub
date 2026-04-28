@@ -1,80 +1,80 @@
 Header:Begin
 Name: F1NE Building Status
 Version: 1.0
-Scope: Account: F1NE
+Scope: Account:F1NE
 Format: Table
 Schema: BuildingStatus
 Date: 2026-04-25
 Header:End
 
 Data:Begin
-BuildingName      CurrentLevel   TargetLevel   Status        TimeRemaining   Priority
-Headquarters      31             32            Idle          -               3
-Aircraft_Ctr      27             27            Idle          -               99
-Alert_Tower       24             24            Idle          -               99
-Alliance_Sup_Hub  23             23            Idle          -               99
-Barracks_1        17             20            Idle          -               7
-Barracks_2        20             24            Idle          -               7
-Barracks_3        24             27            Idle          -               7
-Barracks_4        30             31            Idle          -               4
-Builders_Hut      20             20            Idle          -               99
-Chip_Lab          20             20            Idle          -               99
-Coin_Vault        16             16            Idle          -               99
-Component_Factory 20             20            Idle          -               99
-Drill_Ground_1    16             16            Idle          -               99
-Drill_Ground_2    18             18            Idle          -               99
-Drill_Ground_3    29             29            Idle          -               99
-Drone_Parts_WShop 25             25            Idle          -               99
-Emergency_Ctr     23             23            Idle          -               99
-Farmland_1        20             20            Idle          -               99
-Farmland_2        20             20            Idle          -               99
-Farmland_3        20             20            Idle          -               99
-Farmland_4        20             20            Idle          -               99
-Farmland_5        20             20            Idle          -               99
-Food_Warehouse    16             16            Idle          -               99
-Gear_Factory      20             20            Idle          -               99
-Gold_Mine_1       22             22            Idle          -               99
-Gold_Mine_2       22             22            Idle          -               99
-Gold_Mine_3       22             22            Idle          -               99
-Gold_Mine_4       22             22            Idle          -               99
-Gold_Mine_5       22             22            Idle          -               99
-Hospital_1        16             16            Idle          -               99
-Hospital_2        16             16            Idle          -               99
-Hospital_3        16             16            Idle          -               99
-Hospital_4        25             25            Idle          -               99
-Iron_Mine_1       21             21            Idle          -               99
-Iron_Mine_2       21             21            Idle          -               99
-Iron_Mine_3       21             21            Idle          -               99
-Iron_Mine_4       21             21            Idle          -               99
-Iron_Mine_5       21             21            Idle          -               99
-Iron_Warehouse    16             16            Idle          -               99
-Smelter_1         20             20            Idle          -               99
-Matl_Workshop_1   20             20            Idle          -               99
-Matl_Workshop_2   20             20            Idle          -               99
-Matl_Workshop_3   20             20            Idle          -               99
-Matl_Workshop_4   20             20            Idle          -               99
-Matl_Workshop_5   20             20            Idle          -               99
-Missile_Center    26             26            Idle          -               99
-Oil_Well_1        29             29            Idle          -               6
-Oil_Well_2        29             29            Idle          -               6
-Oil_Well_3        28             28            Idle          -               6
-Recon_Plane_1     16             16            Idle          -               99
-Recon_Plane_2     16             16            Idle          -               99
-Recon_Plane_3     18             18            Idle          -               99
-Smelter_1         20             20            Idle          -               99
-Smelter_2         20             20            Idle          -               99
-Smelter_3         20             20            Idle          -               99
-Smelter_4         20             20            Idle          -               99
-Smelter_5         20             20            Idle          -               99
-Tactical_Inst     20             20            Idle          -               99
-Tank_Center       30             31            Idle          -               3
-Tavern            16             16            Idle          -               99
-Tech_Center_1     30             31            Upgrading     08d 03:15:00    2
-Tech_Center_3     24             31            Idle          -               5
-Training_Base_1   21             21            Idle          -               99
-Training_Base_2   21             21            Idle          -               99
-Training_Base_3   21             21            Idle          -               99
-Training_Base_4   21             21            Idle          -               99
-Training_Base_5   21             21            Idle          -               99
-Wall              29             31            Upgrading     20d 03:21:00    1
+BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Priority
+# ----------------|--------------|-------------|-----------|----------------|---------
+Headquarters      | 31           | 32          | Idle      | -              | 3
+Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
+Alert_Tower       | 24           | 24          | Idle      | -              | 99
+Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
+Barracks_1        | 17           | 20          | Idle      | -              | 7
+Barracks_2        | 20           | 24          | Idle      | -              | 7
+Barracks_3        | 24           | 27          | Idle      | -              | 7
+Barracks_4        | 30           | 31          | Idle      | -              | 4
+Builders_Hut      | 20           | 20          | Idle      | -              | 99
+Chip_Lab          | 20           | 20          | Idle      | -              | 99
+Coin_Vault        | 16           | 16          | Idle      | -              | 99
+Component_Factory | 20           | 20          | Idle      | -              | 99
+Drill_Ground_1    | 16           | 16          | Idle      | -              | 99
+Drill_Ground_2    | 18           | 18          | Idle      | -              | 99
+Drill_Ground_3    | 29           | 29          | Idle      | -              | 99
+Drone_Parts_WShop | 25           | 25          | Idle      | -              | 99
+Emergency_Ctr     | 23           | 23          | Idle      | -              | 99
+Farmland_1        | 20           | 20          | Idle      | -              | 99
+Farmland_2        | 20           | 20          | Idle      | -              | 99
+Farmland_3        | 20           | 20          | Idle      | -              | 99
+Farmland_4        | 20           | 20          | Idle      | -              | 99
+Farmland_5        | 20           | 20          | Idle      | -              | 99
+Food_Warehouse    | 16           | 16          | Idle      | -              | 99
+Gear_Factory      | 20           | 20          | Idle      | -              | 99
+Gold_Mine_1       | 22           | 22          | Idle      | -              | 99
+Gold_Mine_2       | 22           | 22          | Idle      | -              | 99
+Gold_Mine_3       | 22           | 22          | Idle      | -              | 99
+Gold_Mine_4       | 22           | 22          | Idle      | -              | 99
+Gold_Mine_5       | 22           | 22          | Idle      | -              | 99
+Hospital_1        | 16           | 16          | Idle      | -              | 99
+Hospital_2        | 16           | 16          | Idle      | -              | 99
+Hospital_3        | 16           | 16          | Idle      | -              | 99
+Hospital_4        | 25           | 25          | Idle      | -              | 99
+Iron_Mine_1       | 21           | 21          | Idle      | -              | 99
+Iron_Mine_2       | 21           | 21          | Idle      | -              | 99
+Iron_Mine_3       | 21           | 21          | Idle      | -              | 99
+Iron_Mine_4       | 21           | 21          | Idle      | -              | 99
+Iron_Mine_5       | 21           | 21          | Idle      | -              | 99
+Iron_Warehouse    | 16           | 16          | Idle      | -              | 99
+Smelter_1         | 20           | 20          | Idle      | -              | 99
+Matl_Workshop_1   | 20           | 20          | Idle      | -              | 99
+Matl_Workshop_2   | 20           | 20          | Idle      | -              | 99
+Matl_Workshop_3   | 20           | 20          | Idle      | -              | 99
+Matl_Workshop_4   | 20           | 20          | Idle      | -              | 99
+Matl_Workshop_5   | 20           | 20          | Idle      | -              | 99
+Missile_Center    | 26           | 26          | Idle      | -              | 99
+Oil_Well_1        | 29           | 29          | Idle      | -              | 6
+Oil_Well_2        | 29           | 29          | Idle      | -              | 6
+Oil_Well_3        | 28           | 28          | Idle      | -              | 6
+Recon_Plane_1     | 16           | 16          | Idle      | -              | 99
+Recon_Plane_2     | 16           | 16          | Idle      | -              | 99
+Recon_Plane_3     | 18           | 18          | Idle      | -              | 99
+Smelter_2         | 20           | 20          | Idle      | -              | 99
+Smelter_3         | 20           | 20          | Idle      | -              | 99
+Smelter_4         | 20           | 20          | Idle      | -              | 99
+Smelter_5         | 20           | 20          | Idle      | -              | 99
+Tactical_Inst     | 20           | 20          | Idle      | -              | 99
+Tank_Center       | 30           | 31          | Idle      | -              | 3
+Tavern            | 16           | 16          | Idle      | -              | 99
+Tech_Center_1     | 30           | 31          | Upgrading | 08d 03:15:00   | 2
+Tech_Center_3     | 24           | 31          | Idle      | -              | 5
+Training_Base_1   | 21           | 21          | Idle      | -              | 99
+Training_Base_2   | 21           | 21          | Idle      | -              | 99
+Training_Base_3   | 21           | 21          | Idle      | -              | 99
+Training_Base_4   | 21           | 21          | Idle      | -              | 99
+Training_Base_5   | 21           | 21          | Idle      | -              | 99
+Wall              | 29           | 31          | Upgrading | 20d 03:21:00   | 1
 Data:End
