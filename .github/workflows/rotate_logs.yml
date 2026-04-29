@@ -1,0 +1,48 @@
+name: Cloud Automation Test
+
+# Triggers: When should this run?
+on:
+  schedule:
+    # Standard nightly run at Midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allows you to click the "Run workflow" button manually on GitHub.com
+  push:
+    # Runs automatically every time you push code to the main branch
+    branches:
+      - main
+
+jobs:
+  test-and-rotate:
+    runs-on: ubuntu-latest
+    
+    # Giving the bot permission to write files back to your repository
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python Engine
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Execute Test Script
+        # This calls the script we just designed to create the timestamped test file
+        run: python tools/test_cron.py
+
+      - name: Commit and Push Test File
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage the logs directory where the new test file was created
+          git add logs/active/
+          
+          # Commit the changes; '|| exit 0' ensures the action doesn't "fail" if no changes exist
+          git commit -m "Automated Action: Created cloud-verification test file" || exit 0
+          
+          # Push the new file back to your repository
+          git push
