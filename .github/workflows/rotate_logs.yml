@@ -1,4 +1,4 @@
-name: Cloud Automation Test
+name: Daily Log Rotation
 
 # Triggers: When should this run?
 on:
@@ -6,17 +6,13 @@ on:
     # Standard nightly run at Midnight UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
-    # Allows you to click the "Run workflow" button manually on GitHub.com
-  push:
-    # Runs automatically every time you push code to the main branch
-    branches:
-      - main
+    # Allows you to click "Run workflow" manually on GitHub.com if needed
 
 jobs:
-  test-and-rotate:
+  rotate-logs:
     runs-on: ubuntu-latest
     
-    # Giving the bot permission to write files back to your repository
+    # Granting the bot permission to save files
     permissions:
       contents: write
 
@@ -29,20 +25,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Execute Test Script
-        # This calls the script we just designed to create the timestamped test file
-        run: python tools/test_cron.py
+      - name: Execute Log Rotator
+        # This executes your newly upgraded script with the 14-day threshold
+        run: python tools/log_rotator.py --days 14
 
-      - name: Commit and Push Test File
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Stage the logs directory where the new test file was created
-          git add logs/active/
+          # This sweeps up both moved active files AND your new history.txt file
+          git add logs/
           
-          # Commit the changes; '|| exit 0' ensures the action doesn't "fail" if no changes exist
-          git commit -m "Automated Action: Created cloud-verification test file" || exit 0
+          # Commit the changes; '|| exit 0' prevents errors if no logs were old enough to move today
+          git commit -m "Automated Action: Archived logs and updated history audit" || exit 0
           
-          # Push the new file back to your repository
           git push
