@@ -41,5 +41,5 @@ H_028  | Cage      | SSR    | 71    | 3.0  | None  | Shield     | Aircraft | Non
 H_029  | Maxwell   | SSR    | 100   | 3.2  | None  | Damage     | Aircraft | None     | None    | None
 H_030  | Sarah     | SSR    | 100   | 3.3  | None  | Support    | Aircraft | None     | None    | None
 H_031  | Ambolt    | SR     | 72    | 4.1  | None  | Damage     | Aircraft | None     | None    | None
-H_032  | Taylor    | UR     | 0     | 0.0  | None  | Adventurer | None     | None     | None    | None
+H_032  | Taylor    | UR     | 0     | 1.0  | None  | Adventurer | None     | None     | None    | None
 Data:End
