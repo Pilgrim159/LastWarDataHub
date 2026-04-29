@@ -1,0 +1,9 @@
+Header:Begin
+FileType: Test_Log
+Date: 2026-04-29
+Time: 02:07
+Header:End
+
+Data:Begin
+This line written at 2026-04-29 02:07:58
+Data:End
