@@ -17,6 +17,7 @@ Loose       | Resource | Coin                 | 1        | 488.3M      | Points
 Loose       | Resource | Oil                  | 1        | 3.8M        | Points
 Loose       | Currency | Diamonds             | 1        | 170.9K      | Points
 Loose       | Resource | Hero_EXP             | 1        | 161.2M      | Points
+Inventory   | Currency | Gold_Bricks          | 1        | 300         | Points
 Inventory   | Currency | Diamonds             | 5K       | 26          | Points
 Inventory   | Currency | Diamonds             | 10K      | 1           | Points
 Inventory   | Currency | Diamonds             | 100      | 1166        | Points
