@@ -1,22 +1,23 @@
 Header:Begin
 Name: F1NE Buff Calibration
-Version: 1.4
-Date: 2026-04-27
+Version: 1.5
+Date: 2026-05-04
 Scope: Account: F1NE
 PlayerName: F1NE
 Format: Table
 Schema: BuffCalibration
-Rule: Multiplier = 2.375
+Rule: Multiplier = 2.40
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
-CalibrationNote: Verified Constant 2.375
+CalibrationNote: Verified Constant 2.40
 Header:End
 
 Data:Begin
 BuildingName    | Level | OriginalTime   | UpgradeTime
 # --------------|-------|----------------|------------
-Headquarters    | 30    | 111d 18:21:40  | 47d 01:24:55
-Headquarters    | 31    | 122d 22:35:50  | 51d 18:21:35
-Wall            | 29    | 101d 14:30:37  | 42d 18:44:29
-Tech_Center_1   | 30    | 97d 19:03:58   | 41d 04:14:19
-Tank_Center     | 30    | 83d 19:46:15   | 35d 07:03:42
+Headquarters    | 31    | 122d 22:35:50  | 51d 05:24:56
+Tech_Center_1   | 31    | 97d 19:03:58   | 40d 17:56:40
+Tech_Center_3   | 25    | 19d 04:06:37   | 07d 23:42:46
+Hospital_1      | 26    | 23d 00:07:56   | 09d 14:03:19
+Oil_Well_1      | 30    | 12d 16:48:50   | 05d 07:00:21
+Oil_Well_3      | 29    | 09d 18:28:20   | 04d 01:41:49
 Data:End
