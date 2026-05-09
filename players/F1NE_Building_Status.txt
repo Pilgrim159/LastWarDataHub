@@ -10,14 +10,14 @@ Header:End
 Data:Begin
 BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Priority
 # ----------------|--------------|-------------|-----------|----------------|---------
-Headquarters      | 31           | 32          | Idle      | -              | 3
+Headquarters      | 31           | 32          | Idle      | -              | 4
 Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
 Alert_Tower       | 24           | 24          | Idle      | -              | 99
 Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
 Barracks_1        | 17           | 20          | Idle      | -              | 7
 Barracks_2        | 20           | 24          | Idle      | -              | 7
 Barracks_3        | 24           | 27          | Idle      | -              | 7
-Barracks_4        | 30           | 31          | Idle      | -              | 4
+Barracks_4        | 30           | 31          | Idle      | -              | 3
 Builders_Hut      | 20           | 20          | Idle      | -              | 99
 Chip_Lab          | 20           | 20          | Idle      | -              | 99
 Coin_Vault        | 16           | 16          | Idle      | -              | 99
@@ -67,14 +67,14 @@ Smelter_3         | 20           | 20          | Idle      | -              | 99
 Smelter_4         | 20           | 20          | Idle      | -              | 99
 Smelter_5         | 20           | 20          | Idle      | -              | 99
 Tactical_Inst     | 20           | 20          | Idle      | -              | 99
-Tank_Center       | 30           | 31          | Idle      | -              | 3
+Tank_Center       | 30           | 31          | Upgrading | 18d 11:30:00   | 2
 Tavern            | 16           | 16          | Idle      | -              | 99
-Tech_Center_1     | 30           | 31          | Upgrading | 00d 00:25:00   | 2
+Tech_Center_1     | 31           | 31          | Idle      | -              | 99
 Tech_Center_3     | 24           | 31          | Idle      | -              | 5
 Training_Base_1   | 21           | 21          | Idle      | -              | 99
 Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 29           | 31          | Upgrading | 12d 00:25:00   | 1
+Wall              | 29           | 31          | Upgrading | 06d 04:00:00   | 1
 Data:End
