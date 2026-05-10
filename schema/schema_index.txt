@@ -21,6 +21,7 @@ ResourceInventory = schema/ResourceInventory_Spec.txt
 ResearchCalibration = schema/ResearchCalibration_Spec.txt
 HeroMasterRegistry = schema/HeroMasterRegistry_Spec.txt
 HeroSkillRegistry = schema/Hero_Skill_Registry_Spec.txt
+TechDataV2 = schema/TechData_V2_Spec.txt
 
 [Notes]
 This index file defines the authoritative list of schema documents.
