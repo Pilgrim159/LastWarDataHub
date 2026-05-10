@@ -1,0 +1,21 @@
+Header:Begin
+FileVersion: 2.0.0
+FileType: Schema_Definition
+SchemaName: TechData_V2
+Description: Defines the Node-Block format for tracking global research tree costs and effects.
+Header:End
+
+Data:Begin
+# Format Rules
+Rule: 1 | Format must be Node-Block, starting with a block header: [Node: NodeID].
+Rule: 2 | The block header must define static traits: Purpose, IsToggle, BuildingReq, and TechReq.
+Rule: 3 | TechReq only needs to define the requirement for Level 1 (e.g., EntryNode or PreviousNodeID:Level). Subsequent levels inherently require the previous level of the current node unless stated otherwise.
+Rule: 4 | Lines beginning with a hash (#) are comments meant for human readability and must be skipped by automated parsers.
+Rule: 5 | Data rows within the block are pipe (|) delimited in the following order: Level | Effect | Time | Iron | Coin | Food | Oil | Valor | Notes
+
+# Mathematical Shorthand Dictionary (Notes Column)
+Tag | Meaning | AI Strategy Directive
+Con | Confirmed (Base Value) | AI can use this as absolute truth for precise F2P resource planning.
+Est | Estimate (Base Value) | AI must add a margin of error/buffer when calculating resource requirements.
+Alt | Confirmed on Alternate Source | AI must treat this as mathematically opaque (buffs unknown). Use only to determine scaling curves, not exact costs.
+Data:End
