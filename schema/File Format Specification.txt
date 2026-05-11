@@ -44,16 +44,18 @@ Tag:Value
 2.2 Minimum Header Block
 Header:Begin
 Header:End
+
 =========================================================
 2.3 STANDARD HEADER FIELDS
 =========================================================
 This subsection defines a set of standard header fields that may appear in the Header Block of any file. These fields provide consistent metadata across all file types and support validation, versioning, and organization.
 Standard header fields do not alter the structure of the Header Block. They follow the same rules defined in Section 2.1:
 •	Format: Tag:Value
-•	Tags must not be duplicated
-•	Values may contain spaces but not line breaks
-•	Header fields may appear in any order
+•	Tags must not be duplicated (unless explicitly designated as a Repeatable Tag).
+•	Values may contain spaces but not line breaks.
+•	Header fields may appear in any order.
 The Scope: field is defined separately in Section 10.
+
 2.3.1 Name
 Name:<text>
 A human readable identifier for the file. The value may contain whitespace characters, e.g. tabs, and spaces,
@@ -61,6 +63,7 @@ but must not contain line breaks.
 Examples:
 Name:Level Cost Table
 Name:Main Account Hero Data
+
 2.3.2 Date
 Date:<YYYY-MM-DD>
 Represents the date the file was created, exported, or last updated. The required format is:
@@ -69,6 +72,7 @@ Represents the date the file was created, exported, or last updated. The require
 •	Two digit day
 Example:
 Date:2025-12-24
+
 2.3.3 Time
 Time:<HH:MM:SS>
 Represents the time the file was created, exported, or last updated. The required format is 24 hour time:
@@ -77,6 +81,7 @@ Represents the time the file was created, exported, or last updated. The require
 •	Seconds (00–59)
 Example:
 Time:15:01:00
+
 2.3.4 Version
 Version:<text>
 Indicates the version of the file’s content, schema, or data set. The specification does not impose a versioning scheme; the value is free form.
@@ -84,19 +89,30 @@ Examples:
 Version:1.0
 Version:2025.12.24
 Version:Beta-3
+
 2.3.5 Format
 Type: Standard Tag
 Description: Defines the structural parsing rules for the Data Block.
-Valid Values: Table, Index
+Valid Values: Table, Index, Node-Block
+
 2.3.6 Schema
 Type: Standard Tag
 Description: Defines the semantic domain and required contents of the file. Represents a subclass of the declared Format.
-Valid Values: HeroLevelCostTable, BuildingData
-2.3.7 Rule
-Rule:<text>
+Valid Values: HeroLevelCostTable, BuildingData, TechDataV2
 
+2.3.7 Type
+Type: Repeatable Tag
+Description: Binds a specific column, header field, or property to a primitive or custom data type defined in Section 6. This is primarily used within Schema Definition files to formally declare the expected data types for the formats they govern.
+Format: Type:<Target> = <DataType>
+Examples:
+Type: Level = Integer
+Type: Time = Duration
+Type: Iron = ScaledInt
+
+2.3.8 Rule
+Rule:<text>
 The Rule: field declares a semantic rule that applies to the file’s data.
-Rule declarations allow files to define their own semantic constraints in addition to those defined by the declared Schema and the universal semantic rules (Section 8)."
+Rule declarations allow files to define their own semantic constraints in addition to those defined by the declared Schema and the universal semantic rules (Section 8).
 
 Rules declared using the Rule: field must follow these requirements:
 • Type: Repeatable Tag. Multiple Rule: fields may appear in the Header Block. Parsers must evaluate all provided rules.
@@ -112,9 +128,11 @@ Examples:
 Rule:Cost must not exceed 100000
 Rule:Incremental cost is equal to the Cost value of the higher Level
 Rule:Level must be strictly increasing
-2.3.8 Optional Standard Fields
+
+2.3.9 Optional Standard Fields
 Future versions of this specification may define additional standard header fields. All such fields must follow the rules of Section 2.1 and must remain compatible with existing files.
 END OF SECTION 2.3
+
 =========================================================
 SECTION 3 — DATA BLOCK
 =========================================================

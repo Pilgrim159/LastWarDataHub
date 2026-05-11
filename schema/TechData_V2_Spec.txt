@@ -1,10 +1,3 @@
-Header:Begin
-FileVersion: 2.0.0
-FileType: Schema_Definition
-SchemaName: TechData_V2
-Description: Defines the Node-Block format for tracking global research tree costs and effects.
-Header:End
-
 Data:Begin
 # Format Rules
 Rule: 1 | Format must be Node-Block, starting with a block header: [Node: NodeID].
@@ -12,6 +5,28 @@ Rule: 2 | The block header must define static traits: Purpose, IsToggle, Buildin
 Rule: 3 | TechReq only needs to define the requirement for Level 1 (e.g., EntryNode or PreviousNodeID:Level). Subsequent levels inherently require the previous level of the current node unless stated otherwise.
 Rule: 4 | Lines beginning with a hash (#) are comments meant for human readability and must be skipped by automated parsers.
 Rule: 5 | Data rows within the block are pipe (|) delimited in the following order: Level | Effect | Time | Iron | Coin | Food | Oil | Valor | Notes
+Rule: 6 | Multiple requirements in the TechReq or BuildingReq fields must be separated by a semicolon (;). All listed requirements are mandatory (AND logic).
+
+# Data Type Definitions (Block Header)
+Type: Purpose = String
+Type: IsToggle = Boolean
+Type: BuildingReq = String
+Type: TechReq = String
+
+# Data Type Definitions (Data Rows)
+Type: Level = Integer
+Type: Effect = Float
+Type: Time = Duration
+Type: Iron = ScaledInt
+Type: Coin = ScaledInt
+Type: Food = ScaledInt
+Type: Oil = ScaledInt
+Type: Valor = ScaledInt
+Type: Notes = String
+
+# Semantic Validation Rules
+SemanticRule: Level must be strictly increasing.
+SemanticRule: Notes must strictly equal Con, Est, or Alt.
 
 # Mathematical Shorthand Dictionary (Notes Column)
 Tag | Meaning | AI Strategy Directive
