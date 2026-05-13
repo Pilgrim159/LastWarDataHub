@@ -15,8 +15,8 @@ Food_Output_V            | 1            | -
 Iron_Output_V            | 1            | -
 Coin_Output_V            | 3            | -
 Oil_Output_I             | 10           | Complete
-Fast_Builder_V           | 2            | 01d 12:30:00
-Research_Adv_V           | 5            | 00d 00:10:00
+Fast_Builder_V           | 3            | 03d 04:00:00
+Research_Adv_V           | 6            | 05d 12:30:00
 Unlock_Tech_Ctr_3        | 1            | Complete
 Focused_Training_V       | 1            | -
 Rapid_Field_Dressing_V   | 1            | -
