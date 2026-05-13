@@ -16,7 +16,7 @@ IsToggle: True
 BuildingReq: Tech_Center_1:30
 TechReq: EntryNode
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 0.0    | 00d 00:00:00 | 0      | 0      | 0      | 0      | 0     | Con  
+  1     | 0.00   | 00d 00:00:00 | 0      | 0      | 0      | 0      | 0     | Con  
 
 [Node: Food_Output_V]
 Purpose: "Boost Food Output"
@@ -24,16 +24,16 @@ IsToggle: False
 BuildingReq: Tech_Center_1:30
 TechReq: Unlock_Oil_Well:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 2.50   | 00d 22:50:20 | 0.9M   | 2.8M   | 0.9M   | 0      | 0     | Alt  
+  1     | 2.50   | 00d 21:18:58 | 1.1M   | 3.4M   | 1.1M   | 0      | 0     | Est  
   2     | 5.00   | 05d 14:45:00 | 1.9M   | 5.6M   | 1.9M   | 0      | 0     | Con  
-  3     | 7.50   | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Est  
-  4     | 10.00  | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
-  5     | 12.50  | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
-  6     | 15.00  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
-  7     | 17.50  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
-  8     | 20.00  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
-  9     | 22.50  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
-  10    | 25.00  | 29d 14:00:00 | 57.6M  | 172.8M | 57.6M  | 0      | 0     | Est  
+  3     | 7.50   | 06d 16:00:00 | 2.5M   | 7.5M   | 2.5M   | 0      | 0     | Est  
+  4     | 10.00  | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Est  
+  5     | 12.50  | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
+  6     | 15.00  | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
+  7     | 17.50  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
+  8     | 20.00  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
+  9     | 22.50  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
+  10    | 25.00  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
 
 [Node: Iron_Output_V]
 Purpose: "Boost Iron Output"
@@ -41,16 +41,16 @@ IsToggle: False
 BuildingReq: Tech_Center_1:30
 TechReq: Unlock_Oil_Well:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 2.50   | 00d 22:50:20 | 0.9M   | 2.8M   | 0.9M   | 0      | 0     | Alt  
-  2     | 5.00   | 05d 14:45:00 | 1.9M   | 5.7M   | 1.9M   | 0      | 0     | Con  
-  3     | 7.50   | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Est  
-  4     | 10.00  | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
-  5     | 12.50  | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
-  6     | 15.00  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
-  7     | 17.50  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
-  8     | 20.00  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
-  9     | 22.50  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
-  10    | 25.00  | 29d 14:00:00 | 57.6M  | 172.8M | 57.6M  | 0      | 0     | Est  
+  1     | 2.50   | 00d 21:18:58 | 1.1M   | 3.4M   | 1.1M   | 0      | 0     | Est  
+  2     | 5.00   | 05d 14:45:00 | 1.9M   | 5.6M   | 1.9M   | 0      | 0     | Con  
+  3     | 7.50   | 06d 16:00:00 | 2.5M   | 7.5M   | 2.5M   | 0      | 0     | Est  
+  4     | 10.00  | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Est  
+  5     | 12.50  | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
+  6     | 15.00  | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
+  7     | 17.50  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
+  8     | 20.00  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
+  9     | 22.50  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
+  10    | 25.00  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
 
 [Node: Coin_Output_V]
 Purpose: "Boost Coin Output"
@@ -58,16 +58,16 @@ IsToggle: False
 BuildingReq: Tech_Center_1:30
 TechReq: Unlock_Oil_Well:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 1.66   | 00d 21:18:58 | 1.1M   | 3.4M   | 1.1M   | 0      | 0     | Est  
-  2     | 3.33   | 05d 14:45:00 | 1.9M   | 5.6M   | 1.9M   | 0      | 0     | Alt  
-  3     | 7.50   | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Con  
-  4     | 6.66   | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
-  5     | 8.32   | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
-  6     | 10.00  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
-  7     | 11.66  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
-  8     | 13.33  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
-  9     | 15.00  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
-  10    | 16.66  | 29d 14:00:00 | 57.6M  | 172.8M | 57.6M  | 0      | 0     | Est  
+  1     | 2.50   | 00d 21:18:58 | 1.1M   | 3.4M   | 1.1M   | 0      | 0     | Est  
+  2     | 5.00   | 05d 14:45:00 | 1.9M   | 5.6M   | 1.9M   | 0      | 0     | Est  
+  3     | 7.50   | 06d 16:00:00 | 2.5M   | 7.5M   | 2.5M   | 0      | 0     | Est  
+  4     | 10.00  | 07d 20:39:00 | 3.4M   | 10.2M  | 3.4M   | 0      | 0     | Con  
+  5     | 12.50  | 09d 12:00:00 | 5.1M   | 15.3M  | 5.1M   | 0      | 0     | Est  
+  6     | 15.00  | 11d 06:00:00 | 7.6M   | 22.8M  | 7.6M   | 0      | 0     | Est  
+  7     | 17.50  | 13d 18:00:00 | 11.4M  | 34.2M  | 11.4M  | 0      | 0     | Est  
+  8     | 20.00  | 16d 12:00:00 | 17.1M  | 51.3M  | 17.1M  | 0      | 0     | Est  
+  9     | 22.50  | 20d 00:00:00 | 25.6M  | 76.8M  | 25.6M  | 0      | 0     | Est  
+  10    | 25.00  | 24d 06:00:00 | 38.4M  | 115.2M | 38.4M  | 0      | 0     | Est  
 
 [Node: Oil_Output_I]
 Purpose: "Boost Oil Well Output"
@@ -101,7 +101,7 @@ TechReq: Oil_Output_I:10
   7     | 17.50  | 24d 18:00:00 | 25.0M  | 75.0M  | 25.0M  | 0      | 0     | Est  
   8     | 20.00  | 30d 00:00:00 | 36.8M  | 110.4M | 36.8M  | 0      | 0     | Est  
   9     | 22.50  | 36d 06:00:00 | 52.5M  | 157.5M | 52.5M  | 0      | 0     | Est  
-  10    | 25.00  | 43d 12:00:00 | 72.0M  | 216.0M | 72.0M  | 0      | 0     | Est  
+  10    | 25.00  | 43d 12:00:00 | 72.0M  | 216.0M  | 72.0M  | 0      | 0     | Est  
 
 [Node: Research_Adv_V]
 Purpose: "Increase res. speed"
@@ -126,7 +126,7 @@ IsToggle: True
 BuildingReq: Tech_Center_1:30
 TechReq: Fast_Builder_V:1;Research_Adv_V:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 0.0    | 03d 21:39:49 | 4.7M   | 14.1M  | 4.7M   | 162.0K | 0     | Alt  
+  1     | 0.00   | 03d 21:39:49 | 4.7M   | 14.1M  | 4.7M   | 162.0K | 0     | Alt  
 
 [Node: Focused_Training_V]
 Purpose: "Increase training speed"
@@ -177,7 +177,7 @@ TechReq: Focused_Training_V:1;Rapid_Field_Dressing_V:1
   7     | 7.00   | 36d 06:00:00 | 40.0M  | 120.0M | 40.0M  | 700.0K | 0     | Est  
   8     | 8.00   | 42d 00:00:00 | 53.0M  | 159.0M | 53.0M  | 920.0K | 0     | Est  
   9     | 9.00   | 48d 12:00:00 | 68.0M  | 204.0M | 68.0M  | 1.18M  | 0     | Est  
-  10    | 10.00  | 56d 00:00:00 | 86.0M  | 258.0M | 86.0M  | 1.5M   | 0     | Est  
+  10    | 10.00  | 56d 00:00:00 | 86.0M  | 258.0M | 86.0M  | 1.50M  | 0     | Est  
 
 [Node: Infirmary_Expansion_V]
 Purpose: "Increase Inf Capacity"
@@ -219,7 +219,7 @@ IsToggle: True
 BuildingReq: Tech_Center_1:30
 TechReq: Infirmary_Expansion_V:1;Emergency_Capacity_I:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 0.0    | 05d 13:58:34 | 7.6M   | 22.9M  | 7.6M   | 405.0K | 0     | Alt  
+  1     | 0.00   | 05d 13:58:34 | 7.6M   | 22.9M  | 7.6M   | 405.0K | 0     | Alt  
 
 [Node: Training_Cost_I]
 Purpose: "Reduce training costs"
@@ -261,7 +261,7 @@ IsToggle: True
 BuildingReq: Tech_Center_1:30
 TechReq: Training_Cost_I:1;Healing_Cost_II:1
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 0.0    | 22d 07:37:00 | 9.5M   | 28.7M  | 9.5M   | 162.0K | 0     | Alt  
+  1     | 0.00   | 22d 07:37:00 | 9.5M   | 28.7M  | 9.5M   | 162.0K | 0     | Alt  
 
 [Node: Oil_Output_III]
 Purpose: "Boost Oil Well Output"
@@ -286,5 +286,6 @@ IsToggle: True
 BuildingReq: Tech_Center_1:30
 TechReq: Oil_Output_III:10
 # Level | Effect | Time         | Iron   | Coin   | Food   | Oil    | Valor | Notes
-  1     | 0.0    | 55d 12:47:00 | 59.0M  | 177.0M | 59.0M  | 549.0K | 0     | Con  
+  1     | 0.00   | 55d 12:47:00 | 59.0M  | 177.0M | 59.0M  | 549.0K | 0     | Con  
+
 Data:End
