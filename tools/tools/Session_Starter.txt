@@ -19,5 +19,5 @@ You must treat the files uploaded in this current session as the absolute ground
 
 [Current Context]
 Here is the most recent strategic session log for your immediate memory:
-(Commander: Paste the contents of your latest file from logs/active/ here)
+(Paste log file here.)
 Data:End

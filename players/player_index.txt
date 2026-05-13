@@ -15,6 +15,7 @@ F1NE_ResearchCalibration.txt
 F1NE_Building_Status.txt
 F1NE_Master_Hero_Registry.txt
 F1NE_Hero_Skill_Registry.txt
+F1NE_Age_of_Oil_Status.txt
 
 [Notes]
 This index file defines the authoritative list of player data files.
