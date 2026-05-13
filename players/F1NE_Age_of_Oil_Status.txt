@@ -1,0 +1,32 @@
+Header:Begin
+Name: F1NE Age of Oil Status
+TreeID: Age_of_Oil
+Scope: Account: F1NE
+Version: 2.2.0
+Format: Table
+Schema: TechTreeStatus
+Header:End
+
+Data:Begin
+# Strategic Note: Focus on Oil Output III to stabilize Oil income for Farmer-First scaling.
+# NodeID                 | CurrentLevel | Status
+Unlock_Oil_Well          | 1            | Complete
+Food_Output_V            | 1            | -
+Iron_Output_V            | 1            | -
+Coin_Output_V            | 3            | -
+Oil_Output_I             | 10           | Complete
+Fast_Builder_V           | 2            | 01d 12:30:00
+Research_Adv_V           | 5            | 00d 00:10:00
+Unlock_Tech_Ctr_3        | 1            | Complete
+Focused_Training_V       | 1            | -
+Rapid_Field_Dressing_V   | 1            | -
+Oil_Output_II            | 10           | Complete
+Infirmary_Expansion_V    | 1            | -
+Emergency_Capacity_I     | 1            | -
+More_Oil_Wells           | 1            | Complete
+Training_Cost_I          | 1            | -
+Healing_Cost_II          | 1            | -
+Parts_Workshop           | 1            | Complete
+Oil_Output_III           | 10           | Complete
+Base_Expansion_I         | 1            | Complete
+Data:End

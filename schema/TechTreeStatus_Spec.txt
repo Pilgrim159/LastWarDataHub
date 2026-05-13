@@ -1,0 +1,41 @@
+Header:Begin
+Name: Tech Tree Status Specification
+Version: 1.1.0
+Scope: Global
+Format: Specification
+Schema: TechTreeStatus
+FileType: Schema_Definition
+Description: Defines the standard for account-specific tech progression tracking.
+Header:End
+
+Data:Begin
+
+[Section 1: Header Traits]
+- TreeID: Required. The primary key used to connect the status file to the global tech tree.
+- Scope: Required. Defines the specific account (e.g., Account: F1NE).
+- Schema: Must be "TechTreeStatus" to invoke this validator.
+- Version: Required. Matches the file's iteration.
+
+[Section 2: Data Columns]
+1 | NodeID       | String   | Matches a [Node: ID] in the master tech tree file.
+2 | CurrentLevel | Integer  | The highest level fully completed by the account.
+3 | Status       | Mix      | Defines the current state of the node:
+                            - [Duration]: Active timer (e.g., 04d 12:00:00).
+                            - "Complete": Node has reached its MaxLevel.
+                            - "-": Inactive research below MaxLevel.
+
+[Section 3: Semantic Rules]
+Rule: 1 | The TreeID in the header must perform a semantic match with the TreeID in the global/ registry.
+Rule: 2 | Every NodeID must be unique within the file to prevent collision during parsing.
+Rule: 3 | CurrentLevel must never exceed the MaxLevel defined in the master tech file.
+Rule: 4 | Status timers must strictly follow the "DDd HH:MM:SS" format or the "-" placeholder.
+Rule: 5 | Human-readable notes or strategic planning must be preceded by a hash (#) and will be ignored by parsers.
+Rule: 6 | Table rows must use pipe (|) delimiters with strict visual alignment.
+
+[Section 4: Data Types]
+Type: TreeID = String
+Type: CurrentLevel = Integer
+Type: Status = Duration
+Type: NodeID = String
+
+Data:End
