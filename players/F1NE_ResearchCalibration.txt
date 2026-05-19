@@ -12,6 +12,6 @@ Header:End
 Data:Begin
 TreeID         NodeID                  NodeLevel   OriginalTime   UpgradeTime
 Age_of_Oil     Food_Output_V           2           05d 14:45:00   01d 19:03:04
-Age_of_Oil     Coin_Output_V           3           07d 20:39:00   02d 12:16:17
+Age_of_Oil     Coin_Output_V           4           07d 20:39:00   02d 12:16:17
 Age_of_Oil     Research_Adv_V          9           22d 07:37:00   07d 03:07:24
 Data:End

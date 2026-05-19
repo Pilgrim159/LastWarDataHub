@@ -1,35 +1,29 @@
-========================================================= 
-HERO LEVEL COST TABLE 
-=========================================================
-The Hero Level Cost Table defines the resource cost required to advance a game Hero from one level to the next. 
-This Hero Level Cost Table subclasses the Table format section in the Specification.
+Header:Begin
+Name: Hero Level Cost Table Schema
+Version: 1.1
+Scope: Global
+Format: Specification
+Schema: HeroLevelCostTable
+FileType: Schema_Definition
+Description: Defines the resource cost required to advance a game Hero from one level to the next.
+Header:End
 
-1. Schema Name
-• Schema: HeroLevelCostTable
+Data:Begin
+# Column Type Declarations
+Type: Level = Integer
+Type: Cost = ScaledInt
 
-2.Required Header Fields
-• Name:
-• Version:
-• Scope:
-• Format:Table
-• Schema:HeroLevelCostTable
+# Universal Header Requirements
+Rule: Target files must declare Format: Table
+Rule: Target files must declare Schema: HeroLevelCostTable
 
-3. Column Definitions
-The Label Row must contain the following columns exactly, and validators must enforce these types:
-Level = Integer
-Cost = ScaledInt
+# Semantic Rules
+Rule: Upgrade cost from level L to K is the sum of the Cost values for levels L+1 through K
+Rule: Level must increase by exactly 1 per row (Level[n] - Level[n-1] = 1)
+Rule: Cost must be non-decreasing (Cost[n] >= Cost[n-1])
+Rule: Level must start at 1 (The first row must satisfy Level = 1)
+Rule: Cost must be non-negative (Cost >= 0)
 
-4. Semantic Rules
-• Rule: Upgrade cost from level L to K is the sum of the Cost values for levels L+1 through K
-• Rule: Level must increase by exactly 1 per row
-    Level[n] - Level[n-1] = 1
-• Rule: Cost must be non-decreasing
-    Cost[n] >= Cost[n-1]
-• Rule: Level must start at 1
-    The first row must satisfy:
-    Level = 1
-• Rule: Cost must be non-negative
-    Cost >= 0
-
-5. Optional Additional Columns:
-• Notes:String
+# Optional Columns
+Type: Notes = String
+Data:End
