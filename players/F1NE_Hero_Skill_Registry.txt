@@ -15,7 +15,7 @@ H_002  | Marshall  | 20              | 26            | 26               | 28    
 H_003  | Mason     | 30              | 20            | 23               | 20            | True
 H_004  | Murphy    | 31              | 23            | 23               | 28            | True
 H_005  | Scarlett  | 10              | 1             | 1                | 1             | False
-H_006  | Stetmann  | 1               | 10            | 10               | 10            | False
+H_006  | Stetmann  | 10              | 10            | 10               | 10            | False
 H_007  | Violet    | 20              | 12            | 12               | 12            | True
 H_008  | Williams  | 20              | 20            | 20               | 20            | True
 H_009  | Monica    | 20              | 20            | 20               | 20            | True

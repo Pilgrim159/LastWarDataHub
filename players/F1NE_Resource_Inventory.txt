@@ -4,88 +4,88 @@ Version: 2.0
 Scope: Account: F1NE
 Format: Table
 Schema: ResourceInventory
-Date: 2026-04-28
-Time: 13:00:00
+Date: 2026-05-20
+Time: 17:00:00
 Header:End
 
 Data:Begin
 # Source    | Category | ItemName             | UnitSize | PacketCount | Unit
 # ----------|----------|----------------------|----------|-------------|---------
-Loose       | Resource | Food                 | 1        | 2.9G        | Points
-Loose       | Resource | Iron                 | 1        | 290.7M      | Points
-Loose       | Resource | Coin                 | 1        | 192.7M      | Points
-Loose       | Resource | Oil                  | 1        | 5.1M        | Points
-Loose       | Currency | Diamonds             | 1        | 191.0K      | Points
-Loose       | Resource | Hero_EXP             | 1        | 774.7M      | Points
+Loose       | Resource | Food                 | 1        | 3.1G        | Points
+Loose       | Resource | Iron                 | 1        | 522.7M      | Points
+Loose       | Resource | Coin                 | 1        | 288.7M      | Points
+Loose       | Resource | Oil                  | 1        | 5.8M        | Points
+Loose       | Currency | Diamonds             | 1        | 196.0K      | Points
+Loose       | Resource | Hero_EXP             | 1        | 1.3G        | Points
 Loose       | Currency | Gold_Bricks          | 1        | 300         | Points
 Inventory   | Currency | Diamonds             | 5K       | 28          | Points
 Inventory   | Currency | Diamonds             | 10K      | 1           | Points
-Inventory   | Currency | Diamonds             | 100      | 1221        | Points
+Inventory   | Currency | Diamonds             | 100      | 1232        | Points
 Inventory   | Currency | Diamonds             | 200      | 1           | Points
 Inventory   | Currency | Diamonds             | 1.0K     | 15          | Points
-Inventory   | Currency | Diamonds             | 5        | 4502        | Points
-Inventory   | Currency | Diamonds             | 10       | 7456        | Points
-Inventory   | Currency | Diamonds             | 20       | 510         | Points
-Inventory   | Currency | Diamonds             | 50       | 736         | Points
+Inventory   | Currency | Diamonds             | 5        | 4551        | Points
+Inventory   | Currency | Diamonds             | 10       | 7531        | Points
+Inventory   | Currency | Diamonds             | 20       | 512         | Points
+Inventory   | Currency | Diamonds             | 50       | 754         | Points
 Inventory   | Chest    | UR_Resource_Chest    | 1        | 856         | Chests
-Inventory   | Chest    | SSR_Resource_Chest   | 1        | 1566        | Chests
-Inventory   | Chest    | SR_Resource_Chest    | 1        | 3093        | Chests
-Inventory   | Chest    | Resource_Chest       | 1        | 123884      | Chests
-Inventory   | Chest    | Hero_Exp_Chest_SSR   | 8.34M    | 280         | Chests
-Inventory   | Chest    | Hero_EXP_Chest_R     | 1.04M    | 17732       | Chests
-Inventory   | Resource | Food_Chest_(UR)      | 4.23M    | 684         | Points
-Inventory   | Resource | Food_Chest_(SSR)     | 1.41M    | 4328        | Points
-Inventory   | Resource | Food_Chest_(SR)      | 176.4K   | 6141        | Points
+Inventory   | Chest    | SSR_Resource_Chest   | 1        | 1575        | Chests
+Inventory   | Chest    | SR_Resource_Chest    | 1        | 3192        | Chests
+Inventory   | Chest    | Resource_Chest       | 1        | 127326      | Chests
+Inventory   | Chest    | Hero_Exp_Chest_SSR   | 8.34M    | 285         | Chests
+Inventory   | Chest    | Hero_EXP_Chest_R     | 1.04M    | 17923       | Chests
+Inventory   | Resource | Food_Chest_(UR)      | 4.23M    | 690         | Points
+Inventory   | Resource | Food_Chest_(SSR)     | 1.41M    | 4358        | Points
+Inventory   | Resource | Food_Chest_(SR)      | 176.4K   | 6648        | Points
 Inventory   | Resource | Food_Chest_(R)       | 17.64K   | 55          | Points
-Inventory   | Resource | 50K_Food             | 50.0K    | 1504        | Points
-Inventory   | Resource | 10K_Food             | 10.0K    | 546         | Points
-Inventory   | Resource | 1K_Food              | 1.0K     | 6227        | Points
-Inventory   | Resource | Iron_Chest_(UR)      | 4.23M    | 784         | Points
-Inventory   | Resource | Iron_Chest_(SSR)     | 1.41M    | 2283        | Points
-Inventory   | Resource | Iron_Chest_(SR)      | 176.4K   | 5776        | Points
+Inventory   | Resource | 50K_Food             | 50.0K    | 1669        | Points
+Inventory   | Resource | 10K_Food             | 10.0K    | 603         | Points
+Inventory   | Resource | 1K_Food              | 1.0K     | 7091        | Points
+Inventory   | Resource | Iron_Chest_(UR)      | 4.23M    | 787         | Points
+Inventory   | Resource | Iron_Chest_(SSR)     | 1.41M    | 2307        | Points
+Inventory   | Resource | Iron_Chest_(SR)      | 176.4K   | 6291        | Points
 Inventory   | Resource | Iron_Chest_(R)       | 17.64K   | 34          | Points
-Inventory   | Resource | 50K_Iron             | 50.0K    | 1364        | Points
-Inventory   | Resource | 10K_Iron             | 10.0K    | 645         | Points
-Inventory   | Resource | 1K_Iron              | 1.0K     | 5884        | Points
+Inventory   | Resource | 50K_Iron             | 50.0K    | 1529        | Points
+Inventory   | Resource | 10K_Iron             | 10.0K    | 754         | Points
+Inventory   | Resource | 1K_Iron              | 1.0K     | 6616        | Points
 Inventory   | Resource | Coin_Chest_(UR)      | 2.57M    | 57          | Points
-Inventory   | Resource | Coin_Chest_(SSR)     | 857.08K  | 617         | Points
-Inventory   | Resource | Coin_Chest_(SR)      | 107.13K  | 5852        | Points
+Inventory   | Resource | Coin_Chest_(SSR)     | 857.08K  | 680         | Points
+Inventory   | Resource | Coin_Chest_(SR)      | 107.13K  | 6438        | Points
 Inventory   | Resource | Coin_Chest_(R)       | 10.71K   | 37          | Points
 Inventory   | Resource | 300K_Coins           | 300.0K   | 189         | Points
-Inventory   | Resource | 30K_Coins            | 30.0K    | 1367        | Points
-Inventory   | Resource | 6K_Coins             | 6.0K     | 636         | Points
-Inventory   | Resource | 600_Coins            | 600      | 7019        | Points
+Inventory   | Resource | 30K_Coins            | 30.0K    | 1528        | Points
+Inventory   | Resource | 6K_Coins             | 6.0K     | 684         | Points
+Inventory   | Resource | 600_Coins            | 600      | 8027        | Points
 Inventory   | Resource | 3.0K_Oil             | 3.0K     | 35          | Points
-Inventory   | Resource | 6.0K_Oil             | 6.0K     | 814         | Points
+Inventory   | Resource | 6.0K_Oil             | 6.0K     | 832         | Points
 Inventory   | Resource | 10.0K_Oil            | 10.0K    | 30          | Points
 Inventory   | Speedup  | General              | 8        | 28          | Hours
 Inventory   | Speedup  | General              | 3        | 43          | Hours
-Inventory   | Speedup  | General              | 1        | 2169        | Hours
+Inventory   | Speedup  | General              | 1        | 2369        | Hours
 Inventory   | Speedup  | General              | 15       | 2           | Minutes
-Inventory   | Speedup  | General              | 5        | 21620       | Minutes
-Inventory   | Speedup  | General              | 1        | 24355       | Minutes
-Inventory   | Speedup  | Construction         | 8        | 49          | Hours
+Inventory   | Speedup  | General              | 5        | 21942       | Minutes
+Inventory   | Speedup  | General              | 1        | 25075       | Minutes
+Inventory   | Speedup  | Construction         | 8        | 50          | Hours
 Inventory   | Speedup  | Construction         | 3        | 0           | Hours
-Inventory   | Speedup  | Construction         | 1        | 109         | Hours
-Inventory   | Speedup  | Construction         | 15       | 102         | Minutes
-Inventory   | Speedup  | Construction         | 5        | 20324       | Minutes
-Inventory   | Speedup  | Construction         | 1        | 14894       | Minutes
-Inventory   | Speedup  | Research             | 8        | 11          | Hours
+Inventory   | Speedup  | Construction         | 1        | 122         | Hours
+Inventory   | Speedup  | Construction         | 15       | 103         | Minutes
+Inventory   | Speedup  | Construction         | 5        | 20872       | Minutes
+Inventory   | Speedup  | Construction         | 1        | 15169       | Minutes
+Inventory   | Speedup  | Research             | 8        | 16          | Hours
 Inventory   | Speedup  | Research             | 3        | 0           | Hours
-Inventory   | Speedup  | Research             | 1        | 457         | Hours
-Inventory   | Speedup  | Research             | 15       | 42          | Minutes
-Inventory   | Speedup  | Research             | 5        | 14689       | Minutes
-Inventory   | Speedup  | Research             | 1        | 16659       | Minutes
+Inventory   | Speedup  | Research             | 1        | 487         | Hours
+Inventory   | Speedup  | Research             | 15       | 48          | Minutes
+Inventory   | Speedup  | Research             | 5        | 15039       | Minutes
+Inventory   | Speedup  | Research             | 1        | 17124       | Minutes
 Inventory   | Speedup  | Training             | 8        | 46          | Hours
 Inventory   | Speedup  | Training             | 3        | 0           | Hours
 Inventory   | Speedup  | Training             | 1        | 100         | Hours
 Inventory   | Speedup  | Training             | 15       | 0           | Minutes
-Inventory   | Speedup  | Training             | 5        | 27634       | Minutes
-Inventory   | Speedup  | Training             | 1        | 31624       | Minutes
+Inventory   | Speedup  | Training             | 5        | 27871       | Minutes
+Inventory   | Speedup  | Training             | 1        | 32164       | Minutes
 Inventory   | Speedup  | Healing              | 8        | 44          | Hours
 Inventory   | Speedup  | Healing              | 3        | 0           | Hours
 Inventory   | Speedup  | Healing              | 1        | 142         | Hours
 Inventory   | Speedup  | Healing              | 15       | 0           | Minutes
-Inventory   | Speedup  | Healing              | 5        | 8006        | Minutes
+Inventory   | Speedup  | Healing              | 5        | 8106        | Minutes
 Inventory   | Speedup  | Healing              | 1        | 2056        | Minutes
 Data:End
