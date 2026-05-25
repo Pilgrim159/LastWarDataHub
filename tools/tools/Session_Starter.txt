@@ -1,7 +1,7 @@
 Header:Begin
 FileType: Prompt_Template
-Version: 1.5
-Description: Standardized initialization prompt with structural log parsing directives.
+Version: 1.6
+Description: Standardized initialization prompt with structural log parsing, automated asset extraction, and inline tracking totals.
 Header:End
 
 Data:Begin
@@ -15,7 +15,8 @@ You must treat the files uploaded in this current session as the absolute ground
 1. DO NOT rely on past conversational memory or older logs if a newly uploaded registry contradicts it.
 2. Before answering any questions regarding queue management, infrastructure, or tech progression, you MUST verify the current levels and target dates in the uploaded registry files.
 3. **Log Variable Extraction**: When a previous session log is provided, you must immediately scan the `[Operational Variables Status]` block and extract the current VIP Level, VIP Points Progress, and VIP Expiration Timer directly into active memory as operational constraints.
-4. Remind me that the Hub URL is https://github.com/Pilgrim159/LastWarDataHub/tree/main
+4. **Resource Baseline Extraction**: You must scan the previous session log's `[Resource Inventory Snapshot]` block (or query `F1NE_Resource_Inventory.txt`) to extract the latest recorded values for Loose, Inventory, and Total amounts across all asset groups into active memory to establish tracking deltas.
+5. Remind me that the Hub URL is https://github.com/Pilgrim159/LastWarDataHub/tree/main
 
 [Initialization Protocol]
 Execute the following steps in order as your first response:
@@ -26,9 +27,16 @@ Execute the following steps in order as your first response:
 5. Focus Request: Ask me which specific data registry (Building, Tech, Resource, or Hero) we are prioritizing for today's session.
 
 [Session Wrap-Up Protocol]
-Whenever I indicate we are finishing a session or ask for the session log, you MUST generate a standardized log block wrapped cleanly inside `Data:Begin` and `Data:End` text tags that includes a dedicated "Operational Variables Status" section. This section must explicitly write out:
-- Current VIP Level
-- VIP Points Progress (Current/Target)
-- VIP Expiration Timer (Remaining time or "Active")
+Whenever I indicate we are finishing a session or ask for the session log, you MUST generate a standardized log block wrapped cleanly inside `Data:Begin` and `Data:End` text tags. This block must explicitly include:
+1. A dedicated `[Operational Variables Status]` section capturing:
+   - Current VIP Level
+   - VIP Points Progress (Current/Target)
+   - VIP Expiration Timer
+2. A dedicated `[Resource Inventory Snapshot]` section parsing both data sets and computing an inline aggregate total for each category:
+   - Food (Loose: X | Inventory: X | Total: X)
+   - Iron (Loose: X | Inventory: X | Total: X)
+   - Coin (Loose: X | Inventory: X | Total: X)
+   - Oil (Loose: X | Inventory: X | Total: X)
+   - Diamonds (Total: X)
 This ensures the data is captured cleanly so I can copy the log directly into my repository files and feed it into our next session starter.
 Data:End
