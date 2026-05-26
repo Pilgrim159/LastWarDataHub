@@ -32,11 +32,11 @@ Whenever I indicate we are finishing a session or ask for the session log, you M
    - Current VIP Level
    - VIP Points Progress (Current/Target)
    - VIP Expiration Timer
-2. A dedicated `[Resource Inventory Snapshot]` section parsing both data sets and computing an inline aggregate total for each category:
-   - Food (Loose: X | Inventory: X | Total: X)
-   - Iron (Loose: X | Inventory: X | Total: X)
-   - Coin (Loose: X | Inventory: X | Total: X)
-   - Oil (Loose: X | Inventory: X | Total: X)
-   - Diamonds (Total: X)
-This ensures the data is captured cleanly so I can copy the log directly into my repository files and feed it into our next session starter.
+2. A dedicated `[Resource Inventory Snapshot]` section. You must retrieve the complete historical dataset established in active memory from the previous session's log and pair it side-by-side with the current values parsed from `F1NE_Resource_Inventory.txt` to maintain a single, consolidated record using the following exact structural format:
+   - Food (Baseline Loose: X | Baseline Inventory: X | Baseline Total: X || Current Loose: X | Current Inventory: X | Session Total: X)
+   - Iron (Baseline Loose: X | Baseline Inventory: X | Baseline Total: X || Current Loose: X | Current Inventory: X | Session Total: X)
+   - Coin (Baseline Loose: X | Baseline Inventory: X | Baseline Total: X || Current Loose: X | Current Inventory: X | Session Total: X)
+   - Oil  (Baseline Loose: X | Baseline Inventory: X | Baseline Total: X || Current Loose: X | Current Inventory: X | Session Total: X)
+   - Diamonds (Baseline Total: X || Current Total: X)
+This ensures all historical and active data points are preserved together in one place, allowing me to copy the log directly into my repository files and feed it into our next session starter to instantly calculate exact farming velocities.
 Data:End
