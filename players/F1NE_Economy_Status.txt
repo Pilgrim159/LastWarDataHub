@@ -1,0 +1,46 @@
+Header:Begin
+Name: F1NE Economy Status
+TreeID: Economy
+Scope: Account: F1NE
+Version: 1.0.0
+Format: Table
+Schema: TechTreeStatus
+Header:End
+
+Data:Begin
+# Strategic Note: Economy tree baseline established. Priority on "Coin Output" and 
+# "Gathering" nodes to support late-game infrastructure requirements (HQ 32) and supplement 
+# Age of Oil tech expenditures. Please manually calibrate the "Current Level" column.
+#
+# NodeID                 | CurrentLevel | Status
+Food_Output_I            | 5            | Complete
+Iron_Output_I            | 5            | Complete
+Coin_Output_I            | 5            | Complete
+Food_Gathering_I         | 5            | Complete
+Iron_Gathering_I         | 5            | Complete
+Coin_Gathering_I         | 5            | Complete
+More_Farmlands           | 1            | Complete
+Food_Output_II           | 5            | Complete
+Iron_Output_II           | 5            | Complete
+Coin_Output_II           | 5            | Complete
+Food_Gathering_II        | 5            | Complete
+Iron_Gathering_II        | 5            | Complete
+Coin_Gathering_II        | 5            | Complete
+More_Iron_Mines          | 1            | Complete
+Food_Output_III          | 4            | -
+Iron_Output_III          | 4            | -
+Coin_Output_III          | 5            | Complete
+Food_Gathering_III       | 2            | -
+Iron_Gathering_III       | 4            | -
+Coin_Gathering_III       | 4            | -
+More_Gold_Mines          | 1            | Complete
+Food_Output_IV           | 1            | -
+Iron_Output_IV           | 1            | -
+Coin_Output_IV           | 4            | 02D 22:30:00
+Food_Gathering_IV        | 1            | -
+Iron_Gathering_IV        | 1            | -
+Coin_Gathering_IV        | 1            | -
+Food_Protection          | 0            | -
+Iron_Protection          | 0            | -
+Coin_Protection          | 0            | -
+Data:End

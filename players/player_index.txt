@@ -9,13 +9,14 @@ Header:End
 
 Data:Begin
 [Active Players]
-F1NE_Resource_Inventory.txt
-F1NE_BuffCalibration.txt
-F1NE_ResearchCalibration.txt
-F1NE_Building_Status.txt
-F1NE_Master_Hero_Registry.txt
-F1NE_Hero_Skill_Registry.txt
 F1NE_Age_of_Oil_Status.txt
+F1NE_BuffCalibration.txt
+F1NE_Building_Status.txt
+F1NE_Economy_Status.txt
+F1NE_Hero_Skill_Registry.txt
+F1NE_Master_Hero_Registry.txt
+F1NE_ResearchCalibration.txt
+F1NE_Resource_Inventory.txt
 
 [Notes]
 This index file defines the authoritative list of player data files.
