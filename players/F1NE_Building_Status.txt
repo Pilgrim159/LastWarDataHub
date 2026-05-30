@@ -17,7 +17,7 @@ Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
 Barracks_1        | 17           | 20          | Idle      | -              | 7
 Barracks_2        | 20           | 24          | Idle      | -              | 7
 Barracks_3        | 24           | 27          | Idle      | -              | 7
-Barracks_4        | 30           | 31          | Upgrading | 09d 00:00:00   | 3
+Barracks_4        | 30           | 31          | Upgrading | 04d 06:00:00   | 3
 Builders_Hut      | 20           | 20          | Idle      | -              | 99
 Chip_Lab          | 20           | 20          | Idle      | -              | 99
 Coin_Vault        | 16           | 16          | Idle      | -              | 99
@@ -76,5 +76,5 @@ Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 30           | 31          | Upgrading | 26d 03:30:00   | 1
+Wall              | 30           | 31          | Upgrading | 21d 09:30:00   | 1
 Data:End
