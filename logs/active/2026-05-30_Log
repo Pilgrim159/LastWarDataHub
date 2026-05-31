@@ -1,0 +1,31 @@
+Header:Begin
+Name:Session Log
+Version:1.6.0
+FileType:Session_Log
+Schema:SessionLog
+PlayerName:F1NE
+Date:2026-05-30
+Time:20:15:00
+Scope:Account:F1NE
+Format:Table
+Description:Unified dynamic session log consolidating historical baseline data, asset deltas, and strategic summaries.
+Header:End
+
+Data:Begin
+[Session Summary]
+- Strategy: Initiated "Double-Dip" VIP Store strategy. Total expenditure of 25,920 diamonds planned across two reset cycles to secure 400 hours (16.66 days) of speedups.
+- Objective: Accelerated compression of the 21-day Wall 31 upgrade timer to facilitate an early transition to Headquarters 32.
+- Sustainability: Confirmed diamond reserve (635.8K) is sufficient; expenditure represents <4% of total liquidity with long-term sustainability maintained.
+
+[Operational Variables Status]
+- Current VIP Level: 11
+- VIP Points Progress: 256,870 / 500,000
+- VIP Expiration Timer: 22d 06:49:00
+
+[Resource Inventory Snapshot]
+- Food (Baseline Loose: 3.00G | Baseline Inventory: 9.74G | Baseline Total: 12.74G || Current Loose: 3.20G | Current Inventory: 10.96G | Session Total: 14.16G)
+- Iron (Baseline Loose: 220.00M | Baseline Inventory: 7.52G | Baseline Total: 7.74G || Current Loose: 478.40M | Current Inventory: 7.67G | Session Total: 8.15G)
+- Coin (Baseline Loose: 121.20M | Baseline Inventory: 1.78G | Baseline Total: 1.90G || Current Loose: 128.80M | Current Inventory: 1.99G | Session Total: 2.12G)
+- Oil  (Baseline Loose: 6.10M | Baseline Inventory: 5.57M | Baseline Total: 11.67M || Current Loose: 6.70M | Current Inventory: 5.84M | Session Total: 12.54M)
+- Diamonds (Baseline Total: 385.3K || Current Total: 635.8K)
+Data:End
