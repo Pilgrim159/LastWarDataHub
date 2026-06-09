@@ -12,7 +12,7 @@ Data:Begin
 Unlock_Oil_Well          | 1            | Complete
 Food_Output_V            | 1            | -
 Iron_Output_V            | 1            | -
-Coin_Output_V            | 4            | 00d 06:30:00
+Coin_Output_V            | 6            | -
 Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
 Research_Adv_V           | 10           | Complete

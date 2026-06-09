@@ -36,7 +36,7 @@ Coin_Gathering_III       | 4            | -
 More_Gold_Mines          | 1            | Complete
 Food_Output_IV           | 1            | -
 Iron_Output_IV           | 1            | -
-Coin_Output_IV           | 4            | 02D 22:30:00
+Coin_Output_IV           | 5            | Complete
 Food_Gathering_IV        | 1            | -
 Iron_Gathering_IV        | 1            | -
 Coin_Gathering_IV        | 1            | -
