@@ -10,10 +10,10 @@ Header:End
 Data:Begin
 HeroID | Name      | Max_Skill_Level | Passive_Level | AutoAttack_Level | Tactics_Level | Expertise_Unlocked
 # -----|-----------|-----------------|---------------|------------------|---------------|-------------------
-H_001  | Kimberly  | 35              | 35            | 36               | 35            | True
+H_001  | Kimberly  | 35              | 36            | 36               | 35            | True
 H_002  | Marshall  | 20              | 26            | 26               | 28            | True
 H_003  | Mason     | 30              | 20            | 23               | 20            | True
-H_004  | Murphy    | 31              | 23            | 23               | 28            | True
+H_004  | Murphy    | 31              | 23            | 23               | 30            | True
 H_005  | Scarlett  | 10              | 1             | 1                | 1             | False
 H_006  | Stetmann  | 10              | 20            | 20               | 20            | False
 H_007  | Violet    | 20              | 12            | 12               | 12            | True
@@ -39,7 +39,7 @@ H_026  | Morrison  | 5               | 5             | 5                | 5     
 H_027  | Schuyler  | 10              | 10            | 10               | 10            | False
 H_028  | Cage      | 10              | 1             | 1                | 1             | False
 H_029  | Maxwell   | 10              | 10            | 10               | 10            | False
-H_030  | Sarah     | 10              | 5             | 7                | 7             | False
+H_030  | Sarah     | 10              | 1             | 1                | 1             | False
 H_031  | Ambolt    | 20              | 0             | 10               | 10            | True
 H_032  | Taylor    | 10              | 0             | 0                | 0             | False
 Data:End

@@ -26,7 +26,7 @@ Drill_Ground_1    | 16           | 16          | Idle      | -              | 99
 Drill_Ground_2    | 18           | 18          | Idle      | -              | 99
 Drill_Ground_3    | 29           | 29          | Idle      | -              | 99
 Drone_Parts_WShop | 25           | 25          | Idle      | -              | 99
-Emergency_Ctr     | 23           | 23          | Idle      | -              | 99
+Emergency_Ctr     | 23           | 24          | Upgrading | 01d 12:30:00   | 99
 Farmland_1        | 20           | 20          | Idle      | -              | 99
 Farmland_2        | 20           | 20          | Idle      | -              | 99
 Farmland_3        | 20           | 20          | Idle      | -              | 99
@@ -76,5 +76,5 @@ Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 30           | 31          | Upgrading | 10d 15:30:00   | 1
+Wall              | 30           | 31          | Upgrading | 03d 15:30:00   | 1
 Data:End
