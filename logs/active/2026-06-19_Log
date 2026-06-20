@@ -1,0 +1,43 @@
+Header:Begin
+Name:Session Log
+Version:1.8.0
+FileType:Session_Log
+Schema:SessionLog_v1.8
+PlayerName:F1NE
+Date:2026-06-19
+Scope:Account:F1NE
+Format:Table
+Description:Unified dynamic session log updated to v1.8 schema. Includes Active Queue tracking, separated Speedup inventory, and Hero_EXP baseline establishment.
+Header:End
+
+Data:Begin
+[Session Summary]
+- Strategy: Headquarters 32 upgrade active. Secondary builder queue actively staggering HQ 33 prerequisites (Hospital/Drill Grounds). "Farmer-First" economic recovery remains the primary objective.
+- Infrastructure: Headquarters 32 (Queue 1: 29d 15h 30m remaining). Hospital level 25 -> 26 (Queue 2: In Progress).
+- Protocol Update Note: Session Starter and Log schemas not yet upgraded to v1.8 to include [Active Queues & Targets] and [Speedup Inventory Snapshot] for improved operational tracking. Hero_EXP has been integrated into the Resource Inventory as a permanent baseline metric.
+
+[Operational Variables Status]
+- Current VIP Level: 11
+- VIP Points Progress: 271,940 / 500,000
+- VIP Expiration Timer: 2d 03:40:00
+
+[Active Queues & Targets]
+- Queue 1: Headquarters 32 / 29d 15h 30m
+- Queue 2: Hospital Level 26 / In Progress
+- Next Major Objective: HQ 33 Prerequisites (Level 32 target)
+
+[Speedup Inventory Snapshot]
+- General: 6,612 Hours
+- Construction: 3,482 Hours
+- Tech (Research): 2,888 Hours
+- Training: 3,853 Hours
+- Healing: 1,317 Hours
+
+[Resource Inventory Snapshot]
+- Food (Baseline Loose: 4.37G | Baseline Inventory: 10.26G | Baseline Total: 14.63G || Current Loose: 3.07G | Current Inventory: 12.35G | Session Total: 15.42G)
+- Iron (Baseline Loose: 1.65G | Baseline Inventory: 6.95G | Baseline Total: 8.60G || Current Loose: 147.7M | Current Inventory: 9.17G | Session Total: 9.32G)
+- Coin (Baseline Loose: 673.70M | Baseline Inventory: 1.55G | Baseline Total: 2.12G || Current Loose: 275.0M | Current Inventory: 3.14G | Session Total: 3.42G)
+- Oil  (Baseline Loose: 9.45M | Baseline Inventory: 4.14M | Baseline Total: 13.59M || Current Loose: 8.21M | Current Inventory: 6.82M | Session Total: 15.03G)
+- Diamonds (Baseline Total: 210.2K || Current Total: 699.9K)
+- Hero_EXP (Baseline Loose: 2.90G | Baseline Inventory: 25.77G | Baseline Total: 28.67G || Current Loose: 2.90G | Current Inventory: 25.77G | Session Total: 28.67G)
+Data:End
