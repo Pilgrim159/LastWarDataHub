@@ -10,7 +10,7 @@ Header:End
 Data:Begin
 BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Priority
 # ----------------|--------------|-------------|-----------|----------------|---------
-Headquarters      | 31           | 32          | Upgrading | 29D 15:30:00   | 1
+Headquarters      | 31           | 32          | Upgrading | 25d 07:00:00   | 1
 Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
 Alert_Tower       | 24           | 24          | Idle      | -              | 99
 Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
@@ -54,7 +54,7 @@ Matl_Workshop_2   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_3   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_4   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_5   | 20           | 20          | Idle      | -              | 99
-Missile_Center    | 26           | 27          | Upgrading | 06D 15:00:00   | 99
+Missile_Center    | 26           | 27          | Upgrading | 02d 06:30:00   | 99
 Oil_Well_1        | 29           | 29          | Idle      | -              | 6
 Oil_Well_2        | 29           | 29          | Idle      | -              | 6
 Oil_Well_3        | 28           | 28          | Idle      | -              | 6
