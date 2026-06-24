@@ -76,5 +76,5 @@ Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 30           | 31          | Upgrading | 03d 15:30:00   | 1
+Wall              | 31           | 31          | Idle      | -              | 99
 Data:End
