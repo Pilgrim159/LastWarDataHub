@@ -11,8 +11,8 @@ Data:Begin
 # NodeID                 | CurrentLevel | Status
 Unlock_Oil_Well          | 1            | Complete
 Food_Output_V            | 1            | -
-Iron_Output_V            | 1            | -
-Coin_Output_V            | 9            | 1d 05:00:00
+Iron_Output_V            | 6            | 02d 06:00:00
+Coin_Output_V            | 10           | Complete
 Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
 Research_Adv_V           | 10           | Complete
@@ -24,7 +24,7 @@ Infirmary_Expansion_V    | 1            | -
 Emergency_Capacity_I     | 1            | -
 More_Oil_Wells           | 1            | Complete
 Training_Cost_I          | 2            | -
-Healing_Cost_II          | 2            | 02d 05:10:00
+Healing_Cost_II          | 3            | Complete
 Parts_Workshop           | 1            | Complete
 Oil_Output_III           | 10           | Complete
 Base_Expansion_I         | 1            | Complete
