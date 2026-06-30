@@ -42,7 +42,7 @@ Gold_Mine_5       | 22           | 22          | Idle      | -              | 99
 Hospital_1        | 16           | 16          | Idle      | -              | 99
 Hospital_2        | 16           | 16          | Idle      | -              | 99
 Hospital_3        | 16           | 16          | Idle      | -              | 99
-Hospital_4        | 25           | 31          | Upgrading | 01d 21:00:00   | 02
+Hospital_4        | 25           | 26          | Upgrading | 01d 21:00:00   | 02
 Iron_Mine_1       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_2       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_3       | 21           | 21          | Idle      | -              | 99
