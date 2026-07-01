@@ -54,7 +54,7 @@ Matl_Workshop_2   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_3   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_4   | 20           | 20          | Idle      | -              | 99
 Matl_Workshop_5   | 20           | 20          | Idle      | -              | 99
-Missile_Center    | 27           | 27          | Idel      | -              | 99
+Missile_Center    | 27           | 27          | Idle      | -              | 99
 Oil_Well_1        | 29           | 29          | Idle      | -              | 6
 Oil_Well_2        | 29           | 29          | Idle      | -              | 6
 Oil_Well_3        | 28           | 28          | Idle      | -              | 6

@@ -1,0 +1,43 @@
+Header:Begin
+Name:Session Log
+Version:1.8.0
+FileType:Session_Log
+Schema:SessionLog_v1.8
+PlayerName:F1NE
+Date:2026-06-30
+Scope:Account:F1NE
+Format:Table
+Description:Unified dynamic session log establishing post-audit baseline. Includes updated building status from local registry and corrected resource tracking.
+Header:End
+
+Data:Begin
+[Session Summary]
+- Strategy: Validated Hub structure and schema integrity. Confirmed "Farmer-First" operational state.
+- Infrastructure: Headquarters 32 (Queue 1: 17d 10h 00m remaining). Hospital 4 Level 25 -> 26 (Queue 2: 01d 21h 00m remaining). 
+- Note: Building Status registry audited; status corrected to match real-time queue activity.
+
+[Operational Variables Status]
+- Current VIP Level: 11
+- VIP Points Progress: 274,930 / 500,000
+- VIP Expiration Timer: 28d 02:47:00
+
+[Active Queues & Targets]
+- Queue 1: Headquarters 32 / 17d 10h 00m
+- Queue 2: Hospital 4 Level 26 / 01d 21h 00m
+- Next Major Objective: Hospital 4 Level 27 / Drill Ground 3 Level 30
+
+[Speedup Inventory Snapshot]
+- General: 6,612 Hours
+- Construction: 3,482 Hours
+- Tech (Research): 2,888 Hours
+- Training: 3,853 Hours
+- Healing: 1,317 Hours
+
+[Resource Inventory Snapshot]
+- Food (Baseline Loose: 4.37G | Baseline Inventory: 10.26G | Baseline Total: 14.63G || Current Loose: 3.40G | Current Inventory: 12.35G | Session Total: 15.75G)
+- Iron (Baseline Loose: 1.65G | Baseline Inventory: 6.95G | Baseline Total: 8.60G || Current Loose: 681.9M | Current Inventory: 9.17G | Session Total: 9.85G)
+- Coin (Baseline Loose: 673.70M | Baseline Inventory: 1.55G | Baseline Total: 2.12G || Current Loose: 221.6M | Current Inventory: 3.14G | Session Total: 3.36G)
+- Oil  (Baseline Loose: 9.45M | Baseline Inventory: 4.14M | Baseline Total: 13.59M || Current Loose: 9.90M | Current Inventory: 6.82G | Session Total: 6.83G)
+- Diamonds (Baseline Total: 210.2K || Current Total: 718.6K)
+- Hero_EXP (Baseline Loose: 2.90G | Baseline Inventory: 25.77G | Baseline Total: 28.67G || Current Loose: 4.80G | Current Inventory: 25.77G | Session Total: 30.57G)
+Data:End
