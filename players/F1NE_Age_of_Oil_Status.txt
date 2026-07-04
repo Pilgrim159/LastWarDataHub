@@ -11,7 +11,7 @@ Data:Begin
 # NodeID                 | CurrentLevel | Status
 Unlock_Oil_Well          | 1            | Complete
 Food_Output_V            | 1            | -
-Iron_Output_V            | 6            | 02d 06:00:00
+Iron_Output_V            | 8            | 03d 10:00:00
 Coin_Output_V            | 10           | Complete
 Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
