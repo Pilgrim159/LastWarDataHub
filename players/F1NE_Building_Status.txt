@@ -10,7 +10,7 @@ Header:End
 Data:Begin
 BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Priority
 # ----------------|--------------|-------------|-----------|----------------|---------
-Headquarters      | 31           | 32          | Upgrading | 12d 06:00:00   | 1
+Headquarters      | 31           | 32          | Upgrading | 09d 0620:00:00   | 1
 Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
 Alert_Tower       | 24           | 24          | Idle      | -              | 99
 Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
@@ -42,7 +42,7 @@ Gold_Mine_5       | 22           | 22          | Idle      | -              | 99
 Hospital_1        | 16           | 16          | Idle      | -              | 99
 Hospital_2        | 16           | 16          | Idle      | -              | 99
 Hospital_3        | 16           | 16          | Idle      | -              | 99
-Hospital_4        | 26           | 27          | Upgrading | 06d 11:00:00   | 02
+Hospital_4        | 26           | 27          | Upgrading | 04d 01:00:00   | 02
 Iron_Mine_1       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_2       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_3       | 21           | 21          | Idle      | -              | 99
