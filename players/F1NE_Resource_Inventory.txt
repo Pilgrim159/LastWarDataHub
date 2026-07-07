@@ -11,9 +11,9 @@ Header:End
 Data:Begin
 # Source    | Category | ItemName             | UnitSize | PacketCount | Unit
 # ----------|----------|----------------------|----------|-------------|---------
-Loose       | Resource | Food                 | 1        | 3.37G       | Points
-Loose       | Resource | Iron                 | 1        | 834.8M      | Points
-Loose       | Resource | Coin                 | 1        | 35.6M       | Points
+Loose       | Resource | Food                 | 1        | 2.54G       | Points
+Loose       | Resource | Iron                 | 1        | 13.5M       | Points
+Loose       | Resource | Coin                 | 1        | 6.4M        | Points
 Loose       | Resource | Oil                  | 1        | 10.9M       | Points
 Loose       | Currency | Diamonds             | 1        | 224.7K      | Points
 Loose       | Resource | Hero_EXP             | 1        | 5.9G        | Points
