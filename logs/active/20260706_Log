@@ -1,0 +1,55 @@
+Header:Begin
+Name: Session Log
+Version: 1.9.0
+FileType: Session_Log
+Schema: SessionLog_v1.9
+PlayerName: F1NE
+Date: 2026-07-06
+Scope: Account:F1NE
+Format: Table
+Description: Strategic session log detailing HQ 32 double-clear execution plan, VIP status update, active queues, speedup and resource inventory snapshot, and Headquarters 33 roadmap.
+Header:End
+
+Data:Begin
+[Session Summary]
+- Strategy: Executing immediate double-clear of Headquarters 32 and Hospital 4 queues to maximize Base Expansion points. 
+- Hero Progression: Holding 5.9G loose Hero EXP until Thursday's reset to push 5 main tank heroes to the new Level 160 cap for Arms Race and Alliance Duel maximization.
+
+[Operational Variables Status]
+- Current VIP Level: 11
+- VIP Points Progress: 283,510 / 500,000
+- VIP Expiration Timer: 15d 05:20:00
+
+[Active Queues & Targets]
+- Queue 1: Headquarters 32 / 09d 06:20:00 remaining (Targeted for immediate clear)
+- Queue 2: Hospital 4 Level 26 / 04d 01:00:00 remaining (Targeted for immediate clear)
+- Next Major Objectives: Drill Ground 1 (Level 16 -> 17) & Barracks 1 (Level 17 -> 18) for rapid completion points, transitioning to HQ 33 prerequisites (Tech Center 1 / Tank Center to Level 32).
+
+[HQ 33 Prerequisite Roadmap]
+Here is exactly what you need to unlock the upgrade, mapped directly against your active registry:
+Tech Center (Any): Must reach Level 32.
+Your Status: Your Tech Center 1 is currently sitting at Level 31.  
+Barracks (Any): Must reach Level 32.
+Your Status: Your Barracks 4 is perfectly positioned at Level 31.  
+Combat Center (Tank, Missile, or Aircraft): Must reach Level 32.
+Your Status: Your Tank Center is already Level 31.  
+Drill Ground (Any): Must reach Level 32.
+Your Status: Your highest is Drill Ground 3, currently at Level 29.  
+Hospital (Any): Must reach Level 32.
+Your Status: Your highest is Hospital 4, which is currently pushing to Level 27. This will be your primary time bottleneck for the upcoming tier.
+
+[Speedup Inventory Snapshot]
+- General: 51 × 8h | 43 × 3h | 3,408 × 1h | 1 × 15m | 29,539 × 5m | 39,001 × 1m
+- Construction: 79 × 8h | 288 × 1h | 206 × 15m | 33,340 × 5m | 21,658 × 1m
+- Research: 31 × 8h | 889 × 1h | 174 × 15m | 22,207 × 5m | 26,962 × 1m
+- Training: 66 × 8h | 139 × 1h | 35,145 × 5m | 40,304 × 1m
+- Healing: 28 × 8h | 176 × 1h | 9,861 × 5m | 1,868 × 1m
+
+[Resource Inventory Snapshot]
+- Food (Current Loose: 3.37G | Session Total: 16.80G)
+- Iron (Current Loose: 834.8M | Session Total: 11.06G)
+- Coin (Current Loose: 35.6M | Session Total: 4.13G)
+- Oil (Current Loose: 10.9M)
+- Diamonds (Current Total: 224.7K)
+- Hero_EXP (Current Loose: 5.90G | Session Total: 34.22G)
+Data:End
