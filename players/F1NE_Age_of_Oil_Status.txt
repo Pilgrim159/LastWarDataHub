@@ -10,8 +10,8 @@ Header:End
 Data:Begin
 # NodeID                 | CurrentLevel | Status
 Unlock_Oil_Well          | 1            | Complete
-Food_Output_V            | 1            | -
-Iron_Output_V            | 8            | 0d 14:00:00
+Food_Output_V            | 3            | -
+Iron_Output_V            | 10           | Complete
 Coin_Output_V            | 10           | Complete
 Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
@@ -23,7 +23,7 @@ Oil_Output_II            | 10           | Complete
 Infirmary_Expansion_V    | 1            | -
 Emergency_Capacity_I     | 1            | -
 More_Oil_Wells           | 1            | Complete
-Training_Cost_I          | 2            | -
+Training_Cost_I          | 2            | 04d 22:00:00
 Healing_Cost_II          | 3            | Complete
 Parts_Workshop           | 1            | Complete
 Oil_Output_III           | 10           | Complete

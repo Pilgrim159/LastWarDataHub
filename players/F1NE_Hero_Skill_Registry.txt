@@ -10,22 +10,22 @@ Header:End
 Data:Begin
 HeroID | Name      | Max_Skill_Level | Passive_Level | AutoAttack_Level | Tactics_Level | Expertise_Unlocked
 # -----|-----------|-----------------|---------------|------------------|---------------|-------------------
-H_001  | Kimberly  | 35              | 36            | 36               | 36            | True
+H_001  | Kimberly  | 36              | 36            | 36               | 36            | True
 H_002  | Marshall  | 20              | 26            | 26               | 28            | True
 H_003  | Mason     | 10              | 10            | 10               | 10            | False
 H_004  | Murphy    | 31              | 23            | 23               | 30            | True
-H_005  | Scarlett  | 10              | 1             | 1                | 1             | False
-H_006  | Stetmann  | 10              | 20            | 20               | 20            | False
-H_007  | Violet    | 20              | 05            | 05               | 05            | False
-H_008  | Williams  | 20              | 20            | 20               | 20            | True
+H_005  | Scarlett  | 5               | 1             | 1                | 1             | False
+H_006  | Stetmann  | 20              | 20            | 20               | 20            | False
+H_007  | Violet    | 5               | 05            | 05               | 05            | False
+H_008  | Williams  | 30              | 30            | 30               | 30            | True
 H_009  | Monica    | 20              | 20            | 20               | 20            | True
 H_010  | Richard   | 10              | 10            | 10               | 10            | False
 H_011  | Farhad    | 10              | 5             | 5                | 5             | False
 H_012  | Gump      | 20              | 0             | 10               | 10            | True
 H_013  | Loki      | 20              | 0             | 20               | 20            | True
-H_014  | Adam      | 5               | 5             | 5                | 5             | True
+H_014  | Adam      | 20              | 5             | 5                | 5             | True
 H_015  | Fiona     | 5               | 5             | 5                | 5             | False
-H_016  | McGregor  | 5               | 5             | 5                | 5             | False
+H_016  | McGregor  | 10              | 5             | 5                | 5             | False
 H_017  | Swift     | 10              | 10            | 10               | 10            | False
 H_018  | Tesla     | 10              | 10            | 10               | 10            | False
 H_019  | Braz      | 10              | 10            | 10               | 10            | False

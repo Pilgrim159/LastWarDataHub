@@ -10,7 +10,7 @@ Header:End
 Data:Begin
 BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Priority
 # ----------------|--------------|-------------|-----------|----------------|---------
-Headquarters      | 31           | 32          | Upgrading | 09d 0620:00:00   | 1
+Headquarters      | 32           | 33          | Idle      | -              | 1
 Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
 Alert_Tower       | 24           | 24          | Idle      | -              | 99
 Alliance_Sup_Hub  | 23           | 23          | Idle      | -              | 99
@@ -42,7 +42,7 @@ Gold_Mine_5       | 22           | 22          | Idle      | -              | 99
 Hospital_1        | 16           | 16          | Idle      | -              | 99
 Hospital_2        | 16           | 16          | Idle      | -              | 99
 Hospital_3        | 16           | 16          | Idle      | -              | 99
-Hospital_4        | 26           | 27          | Upgrading | 04d 01:00:00   | 02
+Hospital_4        | 28           | 29          | Upgrading | 13d 17:00:00   | 02
 Iron_Mine_1       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_2       | 21           | 21          | Idle      | -              | 99
 Iron_Mine_3       | 21           | 21          | Idle      | -              | 99
@@ -67,7 +67,7 @@ Smelter_3         | 20           | 20          | Idle      | -              | 99
 Smelter_4         | 20           | 20          | Idle      | -              | 99
 Smelter_5         | 20           | 20          | Idle      | -              | 99
 Tactical_Inst     | 20           | 20          | Idle      | -              | 99
-Tank_Center       | 31           | 31          | Idle      | -              | 99
+Tank_Center       | 31           | 32          | Upgrading | 16d 23:15:00   | 3
 Tavern            | 16           | 16          | Idle      | -              | 99
 Tech_Center_1     | 31           | 31          | Idle      | -              | 99
 Tech_Center_3     | 24           | 31          | Idle      | -              | 5
