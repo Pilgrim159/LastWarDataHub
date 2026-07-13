@@ -6,9 +6,9 @@ Scope: Account: F1NE
 PlayerName: F1NE
 Format: Table
 Schema: BuffCalibration
-Rule: Multiplier = 2.50
+Rule: Multiplier = 2.725
 Rule: UpgradeTime = Ceiling(OriginalTime / Multiplier)
-CalibrationNote: Verified Constant 2.50
+CalibrationNote: Verified Constant 2.725
 Header:End
 
 Data:Begin
