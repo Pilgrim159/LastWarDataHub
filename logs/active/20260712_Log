@@ -1,0 +1,29 @@
+Header:Begin
+Name: Session Log
+Version: 1.9.1
+FileType: Session_Log
+Schema: SessionLog_v1.9
+PlayerName: F1NE
+Date: 2026-07-12
+Scope: Account:F1NE
+Format: Table
+Description: Strategic session log detailing recalibrated buff multiplier (2.725), HQ 33 critical path timeline update, Hero EXP allocation plan, and complete resource and VIP inventory snapshot.
+Header:End
+
+Data:Begin
+[Session Summary]
+- Strategy: Confirmed a massive construction buff multiplier increase to 2.725. Established a paced, double-dipping execution strategy for the Headquarters 33 prerequisite queue (Tech Center 32, Drill Ground 32, Barracks 32, Hospital 32) to maximize Alliance Duel and Arms Race boxes, specifically avoiding a single-day flash completion.
+- Hero Progression: Holding ~20.38G Hero EXP until Thursday's Alliance Duel reset to uniformly level the secondary Aircraft squad to 150 and the tertiary Missile squad to 145.
+
+[Operational Variables Status]
+- Current VIP Level: 11
+- VIP Points Progress: 286,970 / 500,000
+- VIP Expiration Timer: 09d 04:44:20
+
+[Resource Inventory Snapshot]
+- Food (Baseline Loose: 3.37G | Baseline Inventory: 16.80G | Baseline Total: 20.17G || Current Loose: 2.09G | Current Inventory: 11.23G | Session Total: 13.32G)
+- Iron (Baseline Loose: 834.8M | Baseline Inventory: 11.06G | Baseline Total: 11.89G || Current Loose: 83.8M | Current Inventory: 10.31G | Session Total: 10.39G)
+- Coin (Baseline Loose: 35.6M | Baseline Inventory: 4.13G | Baseline Total: 4.17G || Current Loose: 24.9M | Current Inventory: 3.68G | Session Total: 3.70G)
+- Oil  (Baseline Loose: 10.9M | Baseline Inventory: 0.00M | Baseline Total: 10.90M || Current Loose: 11.2M | Current Inventory: 7.86M | Session Total: 19.06M)
+- Diamonds (Baseline Total: 224.7K || Current Total: 568.2K)
+Data:End
