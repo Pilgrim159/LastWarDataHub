@@ -17,13 +17,13 @@ Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
 Research_Adv_V           | 10           | Complete
 Unlock_Tech_Ctr_3        | 1            | Complete
-Focused_Training_V       | 1            | -
-Rapid_Field_Dressing_V   | 1            | -
+Focused_Training_V       | 2            | -
+Rapid_Field_Dressing_V   | 2            | -
 Oil_Output_II            | 10           | Complete
-Infirmary_Expansion_V    | 1            | -
-Emergency_Capacity_I     | 1            | -
+Infirmary_Expansion_V    | 2            | -
+Emergency_Capacity_I     | 2            | -
 More_Oil_Wells           | 1            | Complete
-Training_Cost_I          | 2            | 04d 22:00:00
+Training_Cost_I          | 3            | -
 Healing_Cost_II          | 3            | Complete
 Parts_Workshop           | 1            | Complete
 Oil_Output_III           | 10           | Complete
