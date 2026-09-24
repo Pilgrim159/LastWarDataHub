@@ -11,26 +11,28 @@ Header:End
 Data:Begin
 # Source    | Category | ItemName             | UnitSize | PacketCount | Unit
 # ----------|----------|----------------------|----------|-------------|---------
-Available   | Resource | Food                 | 1        | 182.6M      | Points
-Available   | Resource | Iron                 | 1        | 191.1M      | Points
-Available   | Resource | Coin                 | 1        | 120.9M      | Points
-Available   | Resource | Oil                  | 1        | 11.9M       | Points
-Available   | Currency | Diamonds             | 1        | 301.4K      | Points
-Available   | Resource | Hero_EXP             | 1        | 5.9G        | Points
-Available   | Currency | Gold_Bricks          | 1        | 2.3K        | Points
-Inventory   | Currency | Diamonds             | 1        | 583.8K      | Points
-Inventory   | Chest    | UR_Resource_Chest    | 1        | 1132        | Chests
-Inventory   | Chest    | SSR_Resource_Chest   | 1        | 2733        | Chests
-Inventory   | Chest    | SR_Resource_Chest    | 1        | 8274        | Chests
-Inventory   | Chest    | Resource_Chest       | 1        | 256984      | Chests
-Inventory   | Chest    | Hero_EXP             | 1        | 28.8G       | Chests
+Available   | Resource | Food                 | 1        | 103.2M      | Points
+Available   | Resource | Iron                 | 1        | 111.9M      | Points
+Available   | Resource | Coin                 | 1        | 50.1M       | Points
+Available   | Resource | Oil                  | 1        | 14.0M       | Points
+Available   | Currency | Diamonds             | 1        | 311.5K      | Points
+Available   | Currency | Satmina              | 1        | 120         | Points
+Available   | Resource | Hero_EXP             | 1        | 2.4G        | Points
+Available   | Currency | Gold_Bricks          | 1        | 300         | Points
+Inventory   | Currency | Diamonds             | 1        | 608.4K      | Points
+Inventory   | Currency | Stamina              | 1        | 69.9K       | Points
+Inventory   | Chest    | UR_Resource_Chest    | 1        | 1148        | Chests
+Inventory   | Chest    | SSR_Resource_Chest   | 1        | 2807        | Chests
+Inventory   | Chest    | SR_Resource_Chest    | 1        | 8689        | Chests
+Inventory   | Chest    | Resource_Chest       | 1        | 276361      | Chests
+Inventory   | Chest    | Hero_EXP             | 1        | 27.6G       | Chests
 Inventory   | Resource | Food                 | 1        | 12.8G       | Points
-Inventory   | Resource | Iron                 | 1        | 10.9G       | Points
-Inventory   | Resource | Coin                 | 1        | 2.7G        | Points
-Inventory   | Resource | Oil                  | 1        | 10.0M       | Points
-Inventory   | Speedup  | Universal            | 1        | 365:18:11   | Duration
-Inventory   | Speedup  | Construction         | 1        | 210:00:13   | Duration
-Inventory   | Speedup  | Research             | 1        | 199:17:37   | Duration
-Inventory   | Speedup  | Training             | 1        | 234:12:28   | Duration
-Inventory   | Speedup  | Healing              | 1        | 066:04:03   | Duration
+Inventory   | Resource | Iron                 | 1        | 11.2G       | Points
+Inventory   | Resource | Coin                 | 1        | 1.9G        | Points
+Inventory   | Resource | Oil                  | 1        | 10.6M       | Points
+Inventory   | Speedup  | Universal            | 1        | 387:05:06   | Duration
+Inventory   | Speedup  | Construction         | 1        | 225:01:41   | Duration
+Inventory   | Speedup  | Research             | 1        | 210:23:14   | Duration
+Inventory   | Speedup  | Training             | 1        | 250:05:19   | Duration
+Inventory   | Speedup  | Healing              | 1        | 066:13:08   | Duration
 Data:End
