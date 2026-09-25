@@ -1,17 +1,18 @@
 Header:Begin
 Name: F1NE Research Calibration
 ResearchID: Research_Calibration
-Version: 1.0
+Version: 1.1
 Scope: Account: F1NE
 Format: Table
 Schema: ResearchCalibration
-Rule: Multiplier = 3.13
+Rule: Multiplier = 3.235
 Rule: UpgradeTime = Floor(OriginalTime / Multiplier)
+CalibrationNote: Verified Constant 3.235
 Header:End
 
 Data:Begin
-TreeID         NodeID                  NodeLevel   OriginalTime   UpgradeTime
-Age_of_Oil     Food_Output_V           2           05d 14:45:00   01d 19:03:04
-Age_of_Oil     Coin_Output_V           4           07d 20:39:00   02d 12:16:17
-Age_of_Oil     Research_Adv_V          9           22d 07:37:00   07d 03:07:24
+TreeID          NodeID                  NodeLevel   OriginalTime   UpgradeTime
+Age_of_Oil      Infirmary_Expansion_V   3           18d 14:21:00   05d 17:58:30
+Age_of_Oil      Training_Cost_I         4           22d 07:37:00   06d 21:34:09
+Age_of_Oil      Focused_Training_V      3           14d 07:21:00   04d 10:08:09
 Data:End
