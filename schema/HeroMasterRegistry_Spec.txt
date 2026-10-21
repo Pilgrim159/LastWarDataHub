@@ -12,10 +12,10 @@ Data:Begin
 1        | HeroID      | String   | PK; Format 'H_###'
 2        | Name        | String   | Natural Label; Human readability
 3        | Rarity      | Enum     | Allowed: [UR, SSR, SR, R]
-4        | Level       | Integer  | Range: 1 to 175
+4        | Level       | Integer  | Range: 0 to 175
 5        | Tier        | Float    | Format: Star.SubTier (e.g., 5.1)
 6        | Squad       | Enum     | Allowed: [1, 2, 3, 4, None]
-7        | Role        | Enum     | Allowed: [Damage, Shield, Support]
+7        | Role        | Enum     | Allowed: [Damage, Shield, Support, Adventurer]
 8        | Type        | Enum     | Allowed: [Tank, Missile, Aircraft]
 9        | SkillRef    | String   | Pointer: Spoke filename or 'None'
 10       | GearRef     | String   | Pointer: Spoke filename or 'None'
