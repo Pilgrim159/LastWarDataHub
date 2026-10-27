@@ -2,20 +2,42 @@
 
 ```text
 Header:Begin
-Name:Resource Inventory Schema
-Scope:Global
-Version:1.0
-Format:Table
-Schema:ResourceInventory
-FileType:Schema_Definition
-Description:Defines the structure for resource inventory tables.
-LastModified:2026-10-27
+FileVersion: 1.2.1
+FileType: Schema_Definition
+SchemaName: ResourceInventory
+Description: Defines the format for tracking player-specific resource inventories, including spendable balances, chest stockpiles, and cumulative duration summaries.
 Header:End
 
 Data:Begin
-Column | Type | Required | Description
-ResourceName | String | Yes | Resource identifier
-Amount | ScaledInt | Yes | Quantity in inventory
-Type | String | Yes | Resource type
+# Required Header Fields (Section 4.3)
+# -----------------------------------
+Required_Header  | Field_Name    | Expected_Value_Type
+# ---------------|--------------|----------------------
+Required         | Name         | String
+Required         | Version      | String
+Required         | Scope        | Account: <AccountID>
+Required         | Format       | Table (Strict)
+Required         | Schema       | ResourceInventory
+Required         | PlayerName   | String
+
+# Required Data Block Columns (Section 5.1)
+# ----------------------------------------
+Column_Order     | Column_Name  | Data_Type    | Constraints
+# ---------------|--------------|--------------|-----------------------------------------
+1                | Source       | String       | Allowed: Available, Loose, Inventory
+2                | Category     | String       | Allowed: Currency, Resource, Chest, Speedup
+3                | ItemName     | String       | Allowed: Universal, Building, Research, Training, Healing, Food, Iron, Coin, Oil, Diamonds, Hero_EXP, Gold_Bricks
+4                | UnitSize     | String       | ScaledInt, Integer, or Duration
+5                | PacketCount  | String       | ScaledInt, Integer, or Duration
+6                | Unit         | String       | Allowed: Points, Chests, Hours, Minutes, Duration
+
+# Semantic Rules (Section 7)
+# --------------------------
+Rule             | Logic
+# ---------------|-----------------------------------------------------------------------
+Source:Available | Entries represent liquid, immediately spendable balances (formerly Loose).
+Source:Inventory | Entries represent unopened packets, chests, or stockpiled items.
+Duration:Format  | Time duration summaries must use unspaced DDD:HH:MM format (e.g., 365:18:11).
+Item:GrandTotal  | Sum(UnitSize * PacketCount) for all rows of a specific ItemName.
 Data:End
 ```

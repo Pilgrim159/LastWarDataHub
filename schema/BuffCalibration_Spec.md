@@ -2,21 +2,41 @@
 
 ```text
 Header:Begin
-Name:Buff Calibration Schema
-Scope:Global
-Version:1.1.0
-Format:Table
-Schema:BuffCalibration
-FileType:Schema_Definition
-Description:Defines the expected structure for buff calibration files.
-LastModified:2026-10-27
+FileVersion: 1.1.0
+FileType: Schema_Definition
+SchemaName: BuffCalibration
+Description: The Buff Calibration Table is used to calibrate building upgrade times.
 Header:End
 
 Data:Begin
-Column | Type | Required | Description
-BuildingName | String | Yes | Building name or system
-Level | Integer | Yes | Building level
-OriginalTime | Duration | Yes | Original time before calibration
-UpgradeTime | Duration | Yes | Calibrated time after any multiplier
+# Validation Logic Binding (Section 5)
+# -----------------------------------
+# This schema defines the requirements for files declaring 'Schema: BuffCalibration'.
+# Structural interpretation is governed by Section 5 (Table Format & Delimiters).
+
+# Required Header Fields (Section 4.3)
+# Target data files MUST include these exact header tags.
+Required_Header  | Field_Name   | Expected_Value_Type
+# ---------------|--------------|----------------------
+Required         | Name         | String
+Required         | Version      | String
+Required         | Scope        | String
+Required         | Format       | Table (Strict)
+Required         | Schema       | BuffCalibration
+Required         | PlayerName   | String
+
+# Required Data Block Columns (Section 5.1)
+# The data file's Label Row (Section 5.2) must contain these columns in this order.
+Column_Order     | Column_Name  | Data_Type
+# ---------------|--------------|-----------
+1                | BuildingName | String
+2                | Level        | Integer
+3                | OriginalTime | Duration
+4                | UpgradeTime  | Duration
+
+# Semantic Rules (Section 7)
+# --------------------------
+# Rule: Calibrated upgrade time cannot exceed the base original time.
+Rule             | Logic        | UpgradeTime <= OriginalTime
 Data:End
 ```

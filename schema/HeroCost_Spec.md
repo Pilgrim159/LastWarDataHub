@@ -1,21 +1,33 @@
-# Hero Cost Schema
+# Hero Level Cost Table Schema
 
 ```text
 Header:Begin
-Name:Hero Cost Schema
-Scope:Global
-Version:1.1
-Format:Table
-Schema:HeroLevelCostTable
-FileType:Schema_Definition
-Description:Defines the structure for hero level cost tables.
-LastModified:2026-10-27
+Name: Hero Level Cost Table Schema
+Version: 1.1
+Scope: Global
+Format: Specification
+Schema: HeroLevelCostTable
+FileType: Schema_Definition
+Description: Defines the resource cost required to advance a game Hero from one level to the next.
 Header:End
 
 Data:Begin
-Column | Type | Required | Description
-Level | Integer | Yes | Hero level
-Cost | ScaledInt | Yes | Cost to advance to this level
-Notes | String | No | Additional notes
+# Column Type Declarations
+Type: Level = Integer
+Type: Cost = ScaledInt
+
+# Universal Header Requirements
+Rule: Target files must declare Format: Table
+Rule: Target files must declare Schema: HeroLevelCostTable
+
+# Semantic Rules
+Rule: Upgrade cost from level L to K is the sum of the Cost values for levels L+1 through K
+Rule: Level must increase by exactly 1 per row (Level[n] - Level[n-1] = 1)
+Rule: Cost must be non-decreasing (Cost[n] >= Cost[n-1])
+Rule: Level must start at 1 (The first row must satisfy Level = 1)
+Rule: Cost must be non-negative (Cost >= 0)
+
+# Optional Columns
+Type: Notes = String
 Data:End
 ```

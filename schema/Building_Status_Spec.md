@@ -2,21 +2,21 @@
 
 ```text
 Header:Begin
-Name:Building Status Schema
-Scope:Global
-Version:1.0
-Format:Table
-Schema:BuildingStatus
-FileType:Schema_Definition
-Description:Defines the expected structure for building status tables.
-LastModified:2026-10-27
+Name: Building Status Schema Specification
+Version: 1.6
+Scope: Global
+Format: Specification
+Schema: BuildingStatus
+FileType: Schema_Definition
 Header:End
 
 Data:Begin
-Column | Type | Required | Description
-BuildingName | String | Yes | Building identifier
-Status | String | Yes | Current state of the building
-Level | Integer | Yes | Current level
-Notes | String | No | Additional commentary
+# Column | Requirement  | DataType | Logic/Format
+1        | BuildingName | String   | Match keys in global/BuildingData.txt
+2        | CurrentLevel | Integer  | Value >= 0
+3        | TargetLevel  | Integer  | Value >= CurrentLevel
+4        | Status       | String   | Valid: [Idle, Upgrading, Blocked]
+5        | TimeRemaining| Duration | Format: DDd HH:MM:SS or [-]
+6        | Priority     | Integer  | Range: 1-99
 Data:End
 ```

@@ -1,21 +1,23 @@
-# Hero Skill Registry Schema
+# Hero Skill Registry Specification
 
 ```text
 Header:Begin
-Name:Hero Skill Registry Schema
-Scope:Global
-Version:1.0
-Format:Index
-Schema:HeroSkillRegistry
-FileType:Schema_Definition
-Description:Defines the structure for hero skill registry entries.
-LastModified:2026-10-27
+Name: Hero Skill Registry Specification
+Version: 1.8
+Scope: Global
+Format: Specification
+Schema: HeroSkillRegistry
+FileType: Schema_Definition
 Header:End
 
 Data:Begin
-Entry | Type | Required | Description
-Skill | String | Yes | Skill identifier
-Hero | String | Yes | Hero identifier
-Rank | Integer | Yes | Skill rank
+# Column | Requirement        | DataType | Logic/Format
+1        | HeroID             | String   | PK; Format 'H_###'; Must match HeroMasterRegistry
+2        | Name               | String   | Natural Label; Human readability
+3        | Max_Skill_Level    | Integer  | Dynamic cap based on Star Tier and Level
+4        | Passive_Level      | Integer  | Current Level; Cannot exceed Max_Skill_Level
+5        | AutoAttack_Level   | Integer  | Current Level; Cannot exceed Max_Skill_Level
+6        | Tactics_Level      | Integer  | Current Level; Cannot exceed Max_Skill_Level
+7        | Expertise_Unlocked | Boolean  | Allowed: [True, False]; Expertise (Super Sensing) status
 Data:End
 ```
