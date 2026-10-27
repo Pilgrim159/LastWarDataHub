@@ -11,7 +11,7 @@ Header:End
 
 Data:Begin
 Entry | Type | Required | Description
-Skill|String|Yes|Skill identifier
-Hero|String|Yes|Hero identifier
-Rank|Integer|Yes|Skill rank
+Skill | String | Yes | Skill identifier
+Hero | String | Yes | Hero identifier
+Rank | Integer | Yes | Skill rank
 Data:End

@@ -11,7 +11,7 @@ Header:End
 
 Data:Begin
 Entry | Type | Required | Description
-Hero|String|Yes|Hero entry label
-PlayerID|String|Yes|Player identifier
-Status|String|Yes|Current status marker
+Hero | String | Yes | Hero entry label
+PlayerID | String | Yes | Player identifier
+Status | String | Yes | Current status marker
 Data:End
