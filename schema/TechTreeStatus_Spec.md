@@ -1,3 +1,6 @@
+# Tech Tree Status Schema
+
+```text
 Header:Begin
 Name:Tech Tree Status Schema
 Scope:Global
@@ -15,3 +18,4 @@ TechName | String | Yes | Technology identifier
 NodeStatus | String | Yes | Current node state
 Level | Integer | Yes | Current level
 Data:End
+```

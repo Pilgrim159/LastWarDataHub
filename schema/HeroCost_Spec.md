@@ -1,3 +1,6 @@
+# Hero Cost Schema
+
+```text
 Header:Begin
 Name:Hero Cost Schema
 Scope:Global
@@ -15,3 +18,4 @@ Level | Integer | Yes | Hero level
 Cost | ScaledInt | Yes | Cost to advance to this level
 Notes | String | No | Additional notes
 Data:End
+```

@@ -1,3 +1,6 @@
+# Building Data Schema
+
+```text
 Header:Begin
 Name:Building Data Schema
 Scope:Global
@@ -22,3 +25,4 @@ ResearchRequirements | String | No | Research dependencies as key/value pairs
 BuildingRequirements | String | No | Building dependencies as key/value pairs
 Notes | String | No | Additional notes
 Data:End
+```

@@ -1,3 +1,6 @@
+# Resource Inventory Schema
+
+```text
 Header:Begin
 Name:Resource Inventory Schema
 Scope:Global
@@ -15,3 +18,4 @@ ResourceName | String | Yes | Resource identifier
 Amount | ScaledInt | Yes | Quantity in inventory
 Type | String | Yes | Resource type
 Data:End
+```

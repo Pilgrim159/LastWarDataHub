@@ -1,3 +1,6 @@
+# Hero Skill Registry Schema
+
+```text
 Header:Begin
 Name:Hero Skill Registry Schema
 Scope:Global
@@ -15,3 +18,4 @@ Skill | String | Yes | Skill identifier
 Hero | String | Yes | Hero identifier
 Rank | Integer | Yes | Skill rank
 Data:End
+```

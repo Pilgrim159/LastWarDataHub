@@ -1,3 +1,6 @@
+# Building Status Schema
+
+```text
 Header:Begin
 Name:Building Status Schema
 Scope:Global
@@ -16,3 +19,4 @@ Status | String | Yes | Current state of the building
 Level | Integer | Yes | Current level
 Notes | String | No | Additional commentary
 Data:End
+```

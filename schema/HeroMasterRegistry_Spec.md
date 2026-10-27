@@ -1,3 +1,6 @@
+# Hero Master Registry Schema
+
+```text
 Header:Begin
 Name:Hero Master Registry Schema
 Scope:Global
@@ -15,3 +18,4 @@ Hero | String | Yes | Hero entry label
 PlayerID | String | Yes | Player identifier
 Status | String | Yes | Current status marker
 Data:End
+```

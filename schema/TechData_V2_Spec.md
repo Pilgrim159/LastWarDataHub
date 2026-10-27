@@ -1,3 +1,6 @@
+# Tech Data V2 Schema
+
+```text
 Header:Begin
 Name:Tech Data V2 Schema
 Scope:Global
@@ -16,3 +19,4 @@ Level | Integer | Yes | Technology level
 Cost | ScaledInt | Yes | Cost for the level
 Time | Duration | Yes | Required completion time
 Data:End
+```

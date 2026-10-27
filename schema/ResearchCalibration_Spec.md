@@ -1,3 +1,6 @@
+# Research Calibration Schema
+
+```text
 Header:Begin
 Name:Research Calibration Schema
 Scope:Global
@@ -16,3 +19,4 @@ Level | Integer | Yes | Research level
 Time | Duration | Yes | Research duration
 Cost | ScaledInt | Yes | Research cost
 Data:End
+```

@@ -1,3 +1,6 @@
+# File Format Specification
+
+```text
 Header:Begin
 Name:File Format Specification
 Scope:Global
@@ -18,3 +21,4 @@ Section | Title | Description
 5 | SemanticRules | Validation and precedence
 6 | ErrorReporting | Required validation output format
 Data:End
+```

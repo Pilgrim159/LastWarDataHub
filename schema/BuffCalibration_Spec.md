@@ -1,3 +1,6 @@
+# Buff Calibration Schema
+
+```text
 Header:Begin
 Name:Buff Calibration Schema
 Scope:Global
@@ -16,3 +19,4 @@ Level | Integer | Yes | Building level
 OriginalTime | Duration | Yes | Original time before calibration
 UpgradeTime | Duration | Yes | Calibrated time after any multiplier
 Data:End
+```
