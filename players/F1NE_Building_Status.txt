@@ -13,18 +13,19 @@ BuildingName      | CurrentLevel | TargetLevel | Status    | TimeRemaining  | Pr
 Headquarters      | 33           | 34          | Idle      | -              | 1
 Aircraft_Ctr      | 27           | 27          | Idle      | -              | 99
 Alert_Tower       | 25           | 25          | Idle      | -              | 99
-Alliance_Sup_Hub  | 29           | 30          | Upgrading | 05d 09:00:00   | 2
+Alliance_Sup_Hub  | 31           | 32          | Upgrading | 10d 05:30:00   | 2
 Barracks_1        | 17           | 20          | Idle      | -              | 99
 Barracks_2        | 20           | 24          | Idle      | -              | 99
 Barracks_3        | 24           | 27          | Idle      | -              | 99
 Barracks_4        | 33           | 33          | Idle      | -              | 99
-Builders_Hut      | 20           | 20          | Idle      | -              | 99
+Builders_Hut      | 22           | 23          | Idle      | -              | 99
 Chip_Lab          | 20           | 20          | Idle      | -              | 99
 Coin_Vault        | 16           | 16          | Idle      | -              | 99
 Component_Factory | 20           | 20          | Idle      | -              | 99
-Drill_Ground_1    | 20           | 20          | Idle      | -              | 99
+Drill_Ground_1    | 17           | 17          | Idle      | -              | 99
 Drill_Ground_2    | 20           | 20          | Idle      | -              | 99
-Drill_Ground_3    | 32           | 32          | Idle      | -              | 99
+Drill_Ground_3    | 20           | 20          | Idle      | -              | 99
+Drill_Ground_4    | 32           | 32          | Idle      | -              | 99
 Drone_Parts_WShop | 25           | 25          | Idle      | -              | 99
 Emergency_Ctr     | 24           | 24          | Idle      | -              | 99
 Farmland_1        | 20           | 20          | Idle      | -              | 99
@@ -58,7 +59,7 @@ Missile_Center    | 27           | 27          | Idle      | -              | 99
 Oil_Well_1        | 29           | 29          | Idle      | -              | 99
 Oil_Well_2        | 29           | 29          | Idle      | -              | 99
 Oil_Well_3        | 29           | 29          | Idle      | -              | 99
-Oil_Well_4        | 21           | 21          | Idle      | -              | 99
+Oil_Well_4        | 22           | 22          | Idle      | -              | 99
 Recon_Plane_1     | 17           | 17          | Idle      | -              | 99
 Recon_Plane_2     | 17           | 17          | Idle      | -              | 99
 Recon_Plane_3     | 18           | 18          | Idle      | -              | 99
@@ -68,14 +69,15 @@ Smelter_3         | 20           | 20          | Idle      | -              | 99
 Smelter_4         | 20           | 20          | Idle      | -              | 99
 Smelter_5         | 20           | 20          | Idle      | -              | 99
 Tactical_Inst     | 20           | 20          | Idle      | -              | 99
-Tank_Center       | 32           | 33          | Upgrading | 23d 17:30:00   | 02
+Tank_Center       | 33           | 33          | Idle      | -              | 99
 Tavern            | 16           | 16          | Idle      | -              | 99
-Tech_Center_1     | 32           | 33          | Idle      | -              | 04
+Tech_Center_1     | 32           | 33          | Upgrading | 26d 22:00:00   | 02
+Tech_Center_2     | 05           | 06          | Idle      | -              | 99
 Tech_Center_3     | 24           | 25          | Idle      | -              | 99
 Training_Base_1   | 21           | 21          | Idle      | -              | 99
 Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 31           | 33          | Idle      | -              | 04
+Wall              | 32           | 33          | Upgrading | 26d 20:00:00   | 02
 Data:End

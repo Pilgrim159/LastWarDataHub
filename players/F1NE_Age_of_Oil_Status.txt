@@ -10,14 +10,14 @@ Header:End
 Data:Begin
 # NodeID                 | CurrentLevel | Status
 Unlock_Oil_Well          | 1            | Complete
-Food_Output_V            | 3            | -
+Food_Output_V            | 5            | -
 Iron_Output_V            | 10           | Complete
 Coin_Output_V            | 10           | Complete
 Oil_Output_I             | 10           | Complete
 Fast_Builder_V           | 10           | Complete
 Research_Adv_V           | 10           | Complete
 Unlock_Tech_Ctr_3        | 1            | Complete
-Focused_Training_V       | 2            | -
+Focused_Training_V       | 3            | -
 Rapid_Field_Dressing_V   | 2            | -
 Oil_Output_II            | 10           | Complete
 Infirmary_Expansion_V    | 2            | -

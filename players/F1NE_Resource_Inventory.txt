@@ -9,30 +9,30 @@ Time: 17:00:00
 Header:End
 
 Data:Begin
-# Source    | Category | ItemName             | UnitSize | PacketCount | Unit
-# ----------|----------|----------------------|----------|-------------|---------
-Available   | Resource | Food                 | 1        | 103.2M      | Points
-Available   | Resource | Iron                 | 1        | 111.9M      | Points
-Available   | Resource | Coin                 | 1        | 50.1M       | Points
-Available   | Resource | Oil                  | 1        | 14.0M       | Points
-Available   | Currency | Diamonds             | 1        | 311.5K      | Points
-Available   | Currency | Satmina              | 1        | 120         | Points
-Available   | Resource | Hero_EXP             | 1        | 2.4G        | Points
-Available   | Currency | Gold_Bricks          | 1        | 300         | Points
-Inventory   | Currency | Diamonds             | 1        | 608.4K      | Points
-Inventory   | Currency | Stamina              | 1        | 69.9K       | Points
-Inventory   | Chest    | UR_Resource_Chest    | 1        | 1148        | Chests
-Inventory   | Chest    | SSR_Resource_Chest   | 1        | 2807        | Chests
-Inventory   | Chest    | SR_Resource_Chest    | 1        | 8689        | Chests
-Inventory   | Chest    | Resource_Chest       | 1        | 276361      | Chests
-Inventory   | Chest    | Hero_EXP             | 1        | 27.6G       | Chests
-Inventory   | Resource | Food                 | 1        | 12.8G       | Points
-Inventory   | Resource | Iron                 | 1        | 11.2G       | Points
-Inventory   | Resource | Coin                 | 1        | 1.9G        | Points
-Inventory   | Resource | Oil                  | 1        | 10.6M       | Points
-Inventory   | Speedup  | Universal            | 1        | 387:05:06   | Duration
-Inventory   | Speedup  | Construction         | 1        | 225:01:41   | Duration
-Inventory   | Speedup  | Research             | 1        | 210:23:14   | Duration
-Inventory   | Speedup  | Training             | 1        | 250:05:19   | Duration
-Inventory   | Speedup  | Healing              | 1        | 066:13:08   | Duration
+# Source    | Category | ItemName             | UnitSize | PacketCount     | Unit
+# ----------|----------|----------------------|----------|-----------------|---------
+Available   | Resource | Food                 | 1        | 122.8M          | Points
+Available   | Resource | Iron                 | 1        | 134.6M          | Points
+Available   | Resource | Coin                 | 1        | 38.0M           | Points
+Available   | Resource | Oil                  | 1        | 13.6M           | Points
+Available   | Currency | Diamonds             | 1        | 341.1K          | Points
+Available   | Currency | Stamina              | 1        | 180             | Points
+Available   | Resource | Hero_EXP             | 1        | 9.4G            | Points
+Available   | Currency | Gold_Bricks          | 1        | 4.3K            | Points
+Inventory   | Chest    | Hero_EXP             | 1        | 34.9G           | Chests
+Inventory   | Currency | Diamonds             | 1        | 669.3K          | Points
+Inventory   | Currency | Stamina              | 1        | 80.8K           | Points
+Inventory   | Chest    | UR_Resource_Chest    | 1        | 1206            | Chests
+Inventory   | Chest    | SSR_Resource_Chest   | 1        | 3242            | Chests
+Inventory   | Chest    | SR_Resource_Chest    | 1        | 9533            | Chests
+Inventory   | Chest    | Resource_Chest       | 1        | 318664          | Chests
+Inventory   | Resource | Food                 | 1        | 11.7G           | Points
+Inventory   | Resource | Iron                 | 1        | 9.6G            | Points
+Inventory   | Resource | Coin                 | 1        | 900.9M          | Points
+Inventory   | Resource | Oil                  | 1        | 11.9M           | Points
+Inventory   | Speedup  | Universal            | 1        | 452d 11:22:00   | Duration
+Inventory   | Speedup  | Construction         | 1        | 250d 05:53:00   | Duration
+Inventory   | Speedup  | Research             | 1        | 245d 07:50:00   | Duration
+Inventory   | Speedup  | Training             | 1        | 271d 19:03:00   | Duration
+Inventory   | Speedup  | Healing              | 1        | 065d 06:51:00   | Duration
 Data:End
