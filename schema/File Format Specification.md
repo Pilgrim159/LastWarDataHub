@@ -1,0 +1,437 @@
+# File Format Specification
+
+```text
+LAST WAR BASIC FILE FORMAT SPECIFICATION (MASTER COPY)
+PURPOSE OF THIS SPECIFICATION
+=========================================================
+This document defines the complete file format, structural rules, semantic rules, and validation requirements for all Last War data files. Its purpose is to ensure that a validator, parser, or AI agent can interpret and validate files deterministically.
+This specification establishes:
+• The required file skeleton and structural tags
+• The rules governing header fields and metadata
+• The structure and behavior of Columnar Tables
+• Type enforcement rules for typed columns
+• Semantic validation rules and rule precedence
+• Scope rules for global and account-specific data
+• File-type definitions and required behaviors
+• Validator behavior requirements for deterministic,
+  non-heuristic validation
+
+Any system reading a file written in this format must use this specification as the authoritative reference for how to interpret, validate, and process the file’s contents.
+END OF PURPOSE
+=========================================================
+Version: 1.1 — Stable Structure for Word Storage and Chat Reuse
+=========================================================
+SECTION 1 — FILE STRUCTURE OVERVIEW
+=========================================================
+Every file in this format must contain the following four structural tags, in this exact order:
+Header:Begin
+Header:End
+Data:Begin
+Data:End
+These tags define the outer boundaries of the file. They must appear exactly as written, with matching capitalization and punctuation.
+A file with only these tags is an Empty File. It is considered structurally valid.
+=========================================================
+SECTION 2 — HEADER BLOCK
+=========================================================
+The header block is defined by:
+Header:Begin
+... (optional header fields)
+Header:End
+2.1 Header Block Rules
+• The header block may be empty.
+• All header fields, if present, must appear between Header:Begin and Header:End.
+• Header fields use the format:
+Tag:Value
+• Tags must not be duplicated within the Header Block, unless explicitly designated as a Repeatable Tag in their field definition.
+• Values may contain white space characters, e.g. tabs, spaces, but not line breaks.
+2.2 Minimum Header Block
+Header:Begin
+Header:End
+
+=========================================================
+2.3 STANDARD HEADER FIELDS
+=========================================================
+This subsection defines a set of standard header fields that may appear in the Header Block of any file. These fields provide consistent metadata across all file types and support validation, versioning, and account scoping.
+Standard header fields do not alter the structure of the Header Block. They follow the same rules defined in Section 2.1:
+• Format: Tag:Value
+• Tags must not be duplicated (unless explicitly designated as a Repeatable Tag).
+• Values may contain spaces but not line breaks.
+• Header fields may appear in any order.
+The Scope: field is defined separately in Section 10.
+
+2.3.1 Name
+Name:<text>
+A human readable identifier for the file. The value may contain whitespace characters, e.g. tabs, and spaces,
+but must not contain line breaks.
+Examples:
+Name:Level Cost Table
+Name:Main Account Hero Data
+
+2.3.2 Date
+Date:<YYYY-MM-DD>
+Represents the date the file was created, exported, or last updated. The required format is:
+• Four digit year
+• Two digit month
+• Two digit day
+Example:
+Date:2025-12-24
+
+2.3.3 Time
+Time:<HH:MM:SS>
+Represents the time the file was created, exported, or last updated. The required format is 24 hour time:
+• Hours (00–23)
+• Minutes (00–59)
+• Seconds (00–59)
+Example:
+Time:15:01:00
+
+2.3.4 Version
+Version:<text>
+Indicates the version of the file’s content, schema, or data set. The specification does not impose a versioning scheme; the value is free form.
+Examples:
+Version:1.0
+Version:2025.12.24
+Version:Beta-3
+
+2.3.5 Format
+Type: Standard Tag
+Description: Defines the structural parsing rules for the Data Block.
+Valid Values: Table, Index, Node-Block
+
+2.3.6 Schema
+Type: Standard Tag
+Description: Defines the semantic domain and required contents of the file. Represents a subclass of the declared Format.
+Valid Values: HeroLevelCostTable, BuildingData, TechDataV2
+
+2.3.7 Type
+Type: Repeatable Tag
+Description: Binds a specific column, header field, or property to a primitive or custom data type defined in Section 6. This is primarily used within Schema Definition files to formally declare a data model.
+Format: Type:<Target> = <DataType>
+Examples:
+Type: Level = Integer
+Type: Time = Duration
+Type: Iron = ScaledInt
+
+2.3.8 Rule
+Rule:<text>
+The Rule: field declares a semantic rule that applies to the file’s data.
+Rule declarations allow files to define their own semantic constraints in addition to those defined by the declared Schema and the universal semantic rules (Section 8).
+
+Rules declared using the Rule: field must follow these requirements:
+• Type: Repeatable Tag. Multiple Rule: fields may appear in the Header Block. Parsers must evaluate all provided rules.
+• The value may contain whitespace, e.g. tabs, spaces, but must not contain line breaks.
+• Multiple Rule: fields may appear in the Header Block.
+• Each Rule: field defines one semantic rule.
+• Rule text is free-form and interpreted according to Section 8.6 (Rule Precedence).
+• File-declared rules may refine or extend file-type rules, but may not violate structural or type requirements.
+
+Examples:
+Rule:Cost must not exceed 100000
+Rule:Incremental cost is equal to the Cost value of the higher Level
+Rule:Level must be strictly increasing
+
+2.3.9 Optional Standard Fields
+Future versions of this specification may define additional standard header fields. All such fields must follow the rules of Section 2.1 and must remain compatible with existing files.
+END OF SECTION 2.3
+
+=========================================================
+SECTION 3 — DATA BLOCK
+=========================================================
+The data block is defined by:
+Data:Begin
+... (optional data content)
+Data:End
+3.1 Data Block Rules
+• The data block may be empty.
+• All data content must appear between Data:Begin and Data:End.
+• The structure of the data content will be defined in later sections (e.g., tables, lists, records).
+3.2 Minimum Data Block
+Data:Begin
+Data:End
+
+=========================================================
+SECTION 4 — STRUCTURAL CONTENT & MINIMUM VALID FILE
+=========================================================
+4.1 Required Structural Tags (The Skeleton)
+All files must contain the following structural markers in pairs. Content outside of these markers is considered non-functional metadata or documentation.
+• Header:Begin / Header:End
+• Data:Begin / Data:End
+A file containing only these four lines is an "Empty File" and is structurally valid.
+
+4.2 Tag Formatting
+Structural tags must occupy their own line. They are case-sensitive and must not contain leading or trailing whitespace.
+
+4.3 Populated File Requirements
+A "Populated File" contains additional data and must include the following standard tags within the Header section to ensure valid interpretation:
+• Name: (The identifier of the data table)
+• Scope: (Global or Account)
+• Version: (The version of this file)
+• Format: (The basic formatting instructions)
+• Schema: (The name of the schema definition file)
+
+4.4 The FileType Tag
+The Header Block may include a 'FileType' tag to define the functional purpose of the file.
+• Data_Table: (Default) The file contains primary game data to be processed by tools. The Data Block is interpreted as a literal list of entries.
+• Schema_Definition: The file contains the rules, columns, and semantic constraints used to validate other files. The Data Block is interpreted as a set of requirement declarations.
+
+4.5 Blank Lines (Visual Spacing)
+Empty lines or lines containing only whitespace characters are permitted anywhere in the file. Parsers must explicitly skip these lines during processing.
+
+4.6 Comments (Documentation)
+Any line where the first non-whitespace character is a hash symbol (#) is a comment.
+• Parsers must completely ignore comment lines.
+• Inline comments (placing a # at the end of a valid data row) are prohibited.
+
+4.7 Optional Delimiter Override
+A Header Block may include a 'Delimiter' tag to force a specific parsing method.
+• Values: 'Pipe' or 'Whitespace'
+• Behavior: If present, the parser MUST ignore automated detection (Section 5) and apply the specified delimiter.
+
+=========================================================
+SECTION 5 — TABLE FORMAT & DELIMITERS
+=========================================================
+5.1 Columnar Table Structure
+The data contained between the Data:Begin and Data:End tags must be formatted as a columnar table consisting of one Label Row followed by one or more Data Rows.
+
+5.2 The Label Row
+The first non-empty, non-comment line following the Data:Begin tag MUST be interpreted as the Label Row. This row defines the names and total number of columns for the table.
+
+5.3 Data Rows
+Every non-empty, non-comment line following the Label Row, up to the Data:End tag, is considered a Data Row. A valid Data Row must contain the exact same number of delimited fields as defined by the Label Row.
+
+5.4 Delimiter Precedence (Auto-Detection)
+Unless explicitly overridden by a 'Delimiter' tag in the Header (Section 4.6), parsers must apply the following line-by-line auto-detection rules:
+• If at least one pipe character (|) is detected on a row, the parser MUST treat that row as Pipe-Delimited. Whitespace acting as a delimiter is ignored.
+• If no pipe character is detected, the parser MUST fall back to treating the row as Whitespace-Delimited (splitting by single or multiple spaces/tabs).
+
+5.5 Whitespace Normalization (Trimming)
+To allow for flexible visual alignment in Pipe-Delimited tables (e.g., " Iron | 100 "), parsers must trim all leading and trailing whitespace from a field's value after splitting the string. Integer-like fields may still be interpreted after trimming.
+
+5.6 Logical Consistency
+While auto-detection operates line-by-line, it is strongly recommended that a single Data Block utilize one consistent delimiter format for both the Label Row and all Data Rows to ensure maximum compatibility.
+=========================================================
+SECTION 6 — DATA TYPES AND TYPING RULES
+=========================================================
+6.1 Schema-Driven Typing
+Column types are dictated exclusively by the external Schema specification (e.g., `schema_index.txt` pointing to `HeroCost_Spec.txt`).
+The data file itself MUST ONLY contain the column labels without annotations (e.g., `Level Cost`, not `Level:Integer Cost:ScaledInt`).
+When a parser reads a column in a data file, it must look up that column's required type in the declared Schema and validate the data rows against the definitions below.
+
+6.2 Primitive Types
+Parsers must evaluate the following standard primitive types exactly as defined:
+• Integer: A whole number. May be prefaced with a minus sign for negative values. MUST NOT contain commas or decimals.
+• Float: A numeric value containing a single decimal point. May be prefaced with a minus sign for negative values (e.g., 1.5, 0.99, -2.5).
+• String: A sequence of characters. Because Table formats use space-delimited columns, Strings containing spaces MUST be enclosed in quotes (e.g., "Headquarters Level 5"), or spaces must be represented by the delimiter rules.
+Exception: Custom types that explicitly require spaces (such as Duration) do not require quotes.
+• Boolean: Must be strictly the text True or False (case-insensitive).
+
+6.3 Game-Specific Custom Types
+Parsers must evaluate the following custom data types exactly as defined:
+• ScaledInt: A highly specific integer representing large resource costs. It consists of a positive integer or float followed immediately by a multiplier character (K = Thousands, M = Millions, B = Billions, etc.).
+• Duration: A time-string format. Formatted as [Days]d [Hours]:[Minutes]:[Seconds]. (e.g., 111d 18:21:40).
+If the "Days" position is 0, it may be omitted. For example 18:21:40 is valid and is to be interpreted as 0 days, 18 hours, 21 minutes, 40 seconds.
+If BOTH Days and Hours are 0, they both may be omitted, e.g. 21:40 is valid and is to be interpreted as 0 days, 0 hours, 21 minutes, 40 seconds.
+PARSER EXCEPTION: Because this custom type inherently contains a space, parsers MUST treat the sequence of [Days]d and [Hours]:[Minutes]:[Seconds] as a single unified column value, exempting it from standard split logic.
+
+END OF SECTION 6
+
+=========================================================
+SECTION 7 — SEMANTIC VALIDATION RULES
+=========================================================
+Semantic Validation Rules define constraints on the meaning and relationships of data values within a Columnar Table. These rules operate after structural validation (Sections 1–5) and type validation (Section 6).
+
+7.1 Purpose of Semantic Validation
+Semantic validation ensures that:
+• Values make sense within the domain of the table
+• Relationships between columns are logically consistent
+• Constraints across rows are respected
+• The table adheres to domain-specific rules
+These rules allow the specification to enforce meaningful correctness, not just syntactic correctness.
+
+7.2 Categories of Semantic Rules
+Semantic rules fall into the following categories:
+
+7.2.1 Monotonicity Rules
+A column may be required to be:
+• Strictly increasing
+• Strictly decreasing
+• Non-decreasing
+• Non-increasing
+Example: Level:Integer must be strictly increasing. Cost:Integer must be non-decreasing.
+
+7.2.2 Uniqueness Rules
+A column may be required to contain unique values.
+Example: Level:Integer must be unique.
+
+7.2.3 Cross-Column Constraints
+Rules may define relationships between columns.
+Examples:
+• Cost must always be greater than or equal to BaseCost
+• MaxValue must be greater than MinValue
+
+7.2.4 Row-to-Row Constraints
+Rules may define relationships between adjacent rows.
+Examples:
+• Cost[n] - Cost[n-1] must be non-negative
+
+7.2.5 Domain-Specific Rules
+Rules may be defined for specific file types or game systems.
+Examples:
+• Level values must start at 1 or 0
+
+7.3 Rule Violations
+A file fails semantic validation if:
+• A monotonicity rule is violated
+• A uniqueness rule is violated
+• A cross-column constraint fails
+• A row-to-row constraint is violated
+• A domain-specific rule is violated
+• A declared rule references a non-existent column
+• A declared rule is syntactically malformed
+
+7.4 Rule Precedence
+Semantic rules may originate from three sources:
+1. File-declared rules (Rule: fields in the Header Block)
+2. File-type required semantic rules (Section 10.x)
+3. Universal semantic rules (Section 7)
+To ensure deterministic and consistent validation behavior, semantic rules must be evaluated in the following order:
+
+7.4.1 File-Declared Rules (Highest Precedence)
+Rules declared within the Header Block using the format: Rule:<rule text> take precedence over all other semantic rules. These rules may refine, extend, or override file-type or universal semantic rules.
+
+7.4.2 Schema-Required Semantic Rules
+Rules defined within an external schema specification apply after all format-declared rules.
+
+7.4.3 Universal Semantic Rules (Lowest Precedence)
+Universal rules serve as a general semantic framework and must not override file-declared or schema-declared rules.
+
+7.4.4 Conflict Resolution
+If two rules at the same precedence level conflict, the file is considered invalid. If rules at different precedence levels conflict, the rule with higher precedence governs.
+
+END OF SECTION 7
+
+=========================================================
+SECTION 8 — ERROR REPORTING
+=========================================================
+8.1 Error Reporting Requirements
+A compliant parser or validator must explicitly report the specific cause of any validation failure, including:
+• Missing tags or mismatched boundaries
+• Incorrect structural formatting
+• Type violations
+• Uniqueness violations
+• Cross-column constraint failures
+• Domain-specific rule violations
+
+8.2 Error Message Format
+Each error must be reported using the following structure:
+ErrorType: <Structural|Type|Semantic>
+Section: <section number>
+Code: <error code>
+Message: <human-readable description>
+Line: <line number or N/A>
+Column: <column number or N/A>
+
+8.2.1 Required Fields
+• ErrorType: One of: Structural, Type, Semantic.
+• Section: The section number of this specification that defines the violated rule.
+• Code: A short, machine-readable identifier (e.g., S001, T004, SEM12).
+• Message: A human-readable explanation of the error.
+• Line / Column: If applicable, the location of the error in the file. If not applicable, use N/A.
+
+8.3 Error Codes
+Error codes must follow this pattern:
+• Structural errors: S###
+• Type errors: T###
+• Semantic errors: SEM###
+Examples:
+• S001: Missing Header:Begin
+• S014: Duplicate column label
+• T003: Invalid integer value
+• SEM007: Column must be strictly increasing
+Future sections may define additional codes.
+
+8.4 Multiple Errors
+A validator may:
+• Stop after the first error, or
+• Continue and report all errors found in the file.
+
+END OF SECTION 8
+
+=========================================================
+SECTION 9 — SCOPE
+=========================================================
+Scope defines which game accounts a file’s data applies to. Because a player may maintain multiple accounts in Last War, each file must be interpreted within a defined scope so that global data is not confused with account-specific data.
+Scope does not alter the file skeleton, the Columnar Table Format, Typed Columns, or validation rules. It determines how validated data is used, not how it is structured.
+
+9.1 Scope Categories
+Two scope categories are defined:
+9.1.1 Global Scope: Data with Global scope applies to all accounts owned or managed by the user.
+9.1.2 Account Scope: Data with Account scope applies only to a specific account.
+
+9.2 Declaring Scope
+Scope is declared in the Header Block using the following field:
+Scope:<value>
+Where <value> must be one of:
+• Global
+• Account:<AccountIdentifier>
+The <AccountIdentifier> is a user-defined text string with no line breaks.
+
+9.3 Header Field Ordering
+All header fields, including the Scope: field, may appear in any order within the Header Block.
+
+9.4 Error Conditions
+A file fails scope validation if:
+• The Scope: field is missing
+• The scope value is malformed
+• An account-scoped file references another account
+• A global file references account-specific identifiers
+
+END OF SECTION 9
+
+=========================================================
+SECTION 10 — FORMAT AND SCHEMA DEFINITIONS
+=========================================================
+This section defines how the FORMAT and SCHEMA tags work together to dictate validation.
+
+10.1 Format Binding
+The Format tag dictates the structural validation of the Data Block:
+• Format: Table dictates that the Data Block MUST strictly adhere to all Table rules defined in Section 5.
+• Format: Index dictates that the Data Block is a list of file references.
+
+10.2 Schema Binding
+The Schema tag enforces specific business logic and column requirements upon the chosen Format.
+For example, if a file declares Format: Table and Schema: BuildingData, it must pass both the generic table alignment checks AND possess the exact columns required by the external BuildingData schema.
+
+END OF SECTION 10
+
+=========================================================
+SECTION 11 — VALIDATOR BEHAVIOR
+=========================================================
+Validators must produce deterministic results for identical input files. No probabilistic or heuristic behavior is permitted.
+
+11.1 Rule Scoping and Precedence
+This rule establishes the hierarchy of logic within the Data Hub.
+• Global Specification: Defines structural and grammatical rules universal to all files.
+• Schema Definitions: Defines the mandatory table columns and data types for specific groups of files.
+• File-Level Headers: Rules defined within a file's Header block (e.g. `Rule:`) operate locally and take highest precedence over schema rules.
+
+END OF SECTION 11
+
+=========================================================
+SECTION 12 — EXTENSIBILITY
+=========================================================
+This specification is designed to be expanded over time. Future sections may define:
+• Required header fields
+• Optional header fields
+• Data formats
+• Validation rules
+• Versioning rules
+• Error handling
+• Semantic constraints
+
+All expansions must remain strictly compatible with the core structural and formatting foundations defined in Sections 1–5.
+END OF SECTION 12
+
+=========================================================
+END OF SPECIFICATION (VERSION 1.1)
+```

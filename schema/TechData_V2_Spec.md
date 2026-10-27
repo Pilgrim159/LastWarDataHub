@@ -1,0 +1,49 @@
+# Tech Data V2 Schema
+
+```text
+Header:Begin
+Name: Tech Data V2 Schema Specification
+Version: 2.0
+Scope: Global
+Format: Specification
+Schema: TechDataV2
+FileType: Schema_Definition
+Description: Defines the requirements for standard tech progression tables.
+Header:End
+
+Data:Begin
+# Format Rules
+Rule: Format must be Node-Block, starting with a block header: [Node: NodeID].
+Rule: The block header must define static traits: Purpose, IsToggle, BuildingReq, and TechReq.
+Rule: TechReq only needs to define the requirement for Level 1. Subsequent levels inherently require the previous level unless stated otherwise.
+Rule: Lines beginning with a hash (#) are comments meant for human readability and must be skipped by automated parsers.
+Rule: Data rows within the block are pipe (|) delimited in the following order: Level | Effect | Time | Iron | Coin | Food | Oil | Valor | Notes
+Rule: Multiple requirements in the TechReq or BuildingReq fields must be separated by a semicolon (;). All listed requirements are mandatory (AND logic).
+
+# Data Type Definitions (Block Header)
+Type: Purpose = String
+Type: IsToggle = Boolean
+Type: BuildingReq = String
+Type: TechReq = String
+
+# Data Type Definitions (Data Rows)
+Type: Level = Integer
+Type: Effect = Float
+Type: Time = Duration
+Type: Iron = ScaledInt
+Type: Coin = ScaledInt
+Type: Food = ScaledInt
+Type: Oil = ScaledInt
+Type: Valor = ScaledInt
+Type: Notes = String
+
+# Semantic Validation Rules
+Rule: Level must be strictly increasing.
+Rule: Notes must strictly equal Con, Est, or Alt.
+
+# Mathematical Shorthand Dictionary (Notes Column)
+# Con - Confirmed (Base Value): AI can use this as absolute truth for precise F2P resource planning.
+# Est - Estimate (Base Value): AI must add a margin of error/buffer when calculating resource requirements.
+# Alt - Confirmed on Alternate Source: AI must treat this as mathematically opaque (buffs unknown).
+Data:End
+```
