@@ -1,4 +1,4 @@
-# Last War Data File Specification
+# Last War Data File Specification (Revision 2)
 
 ## 1. Purpose
 
@@ -102,13 +102,31 @@ Schema:BuildingData
 Rules:
 
 - Header fields may appear in any order.
-- Values may contain spaces but not line breaks.
+- Values must be single-line entries. Embedded newline characters are not allowed.
+- Whitespace characters other than line breaks may appear only when they are part of a valid field value or when they act as field separators under the chosen delimiter rules.
 - Tags must not be duplicated unless explicitly marked as repeatable.
 - Empty lines within the header are allowed and must be ignored.
 
 ### 4.2 Standard Header Fields
 
-The following fields are standardized and may appear in any file unless otherwise specified:
+The following standardized fields may appear in any file unless otherwise specified.
+
+Required fields for all files:
+
+- `Name`
+- `Scope`
+- `Version`
+- `Format`
+- `Schema`
+
+Optional fields:
+
+- `FileType`
+- `Description`
+- `Type`
+- `Rule`
+- `Delimiter`
+- `LastModified`
 
 #### Name
 
@@ -148,7 +166,7 @@ Defines how the Data Block must be parsed.
 Schema:<text>
 ```
 
-Identifiers the schema or semantic domain for the file.
+Identifies the schema or semantic domain for the file.
 
 #### FileType
 
@@ -188,7 +206,15 @@ Defines a semantic rule local to the file. This tag is repeatable.
 Delimiter:<Pipe|Whitespace>
 ```
 
-Optional override for delimiter detection.
+Optional override for delimiter detection. Use the explicit keyword form, not a raw space or raw pipe character.
+
+#### LastModified
+
+```text
+LastModified:<YYYY-MM-DD>
+```
+
+Optional metadata field indicating the date on which the file was last modified. If present, it must use the form `YYYY-MM-DD`. If omitted, the file remains valid.
 
 ### 4.3 Comment and Blank Lines
 
@@ -235,10 +261,18 @@ Typical examples:
 - player indexes
 - active registry entries
 
+Examples of registry-style entries:
+
+- schema references: `BuildingData|schema/buildings.schema`, `HeroLevelCostTable|schema/hero_level_cost.schema`
+- player indexes: `F1NE|PlayerID:1001|Active`, `Aether|PlayerID:1002|Active`
+- active registry entries: `Build|Alliance Support Hub|Level 32|Active`, `Build|1st Tech Center|Level 32|Active`
+
 Rules:
 
 - The Data Block is not required to contain a label row.
+- Each line is treated as a separate entry or record.
 - The content must still respect outer file boundaries.
+- Index files are not parsed as labeled tables.
 
 ### 5.3 Node-Block Format
 
@@ -255,6 +289,8 @@ Rules:
 ## 6. Delimiter Rules
 
 Unless overridden by a `Delimiter:` tag, parsers must detect the delimiter automatically.
+
+For new files, the preferred default delimiter is `Pipe`.
 
 ### 6.1 Pipe Delimiter
 
@@ -281,6 +317,15 @@ Rules:
 1. `Delimiter:` tag override, if present
 2. pipe detection, if any row contains `|`
 3. whitespace-delimited parsing
+
+### 6.4 Delimiter Values
+
+The `Delimiter:` tag accepts explicit values:
+
+- `Delimiter:Pipe`
+- `Delimiter:Whitespace`
+
+This is preferred over raw literal values because a raw space or raw pipe character is harder for humans to read and validate.
 
 ---
 
@@ -337,17 +382,20 @@ Text value.
 
 Rules:
 
-- if a value contains spaces in a whitespace-delimited table, it must be quoted
-- examples: `"Headquarters Level 5"`
+- Strings may be quoted or unquoted.
+- If quotes are present, they are treated as delimiters and are not part of the value.
+- If no quotes are present, leading and trailing whitespace are trimmed.
+- Internal whitespace is preserved.
+- Example: `"Alliance Support Hub"` -> `Alliance Support Hub`
 
 #### Boolean
 
-Must be exactly:
+Canonical values are:
 
 - `True`
 - `False`
 
-Case-insensitive matching is allowed.
+Matching is case-insensitive. Examples: `True`, `true`, `FALSE` are valid.
 
 ### 7.2 Game-Specific Custom Types
 
@@ -359,13 +407,14 @@ Supported suffixes:
 
 - `K` = thousand
 - `M` = million
-- `B` = billion
+- `B` or `G` = billion
 
 Examples:
 
 - `10K`
 - `1.5M`
 - `2B`
+- `2G`
 
 #### Duration
 
@@ -416,7 +465,23 @@ Rules:
 - the schema defines required columns, data types, and optional rules
 - a file that declares a schema but does not conform to it is invalid
 
-### 8.3 FileType Binding
+### 8.3 Format/Schema Consistency
+
+`Format` and `Schema` are binding.
+
+A file is valid only if the declared `Format` and the referenced schema agree on the file's structural model.
+
+If the declared `Format` conflicts with the schema's expected structure, the file is invalid.
+
+Examples:
+
+- `Format:Table` with a schema defining an index/list structure = invalid
+- `Format:Index` with a schema defining table columns = invalid
+- `Format:Node-Block` with a schema defining a table = invalid
+
+The validator must reject such files before further advisor interpretation.
+
+### 8.4 FileType Binding
 
 `FileType` is optional but recommended.
 
@@ -674,6 +739,7 @@ Format:Table
 Schema:BuffCalibration
 FileType:Data_Table
 Description:Calibration constants for upgrade timing.
+LastModified:2026-10-27
 Rule:Multiplier = 2.375
 Header:End
 
@@ -700,6 +766,7 @@ Format:Table
 Schema:BuffCalibration
 FileType:Schema_Definition
 Description:Defines the expected structure for buff calibration files.
+LastModified:2026-10-27
 Header:End
 
 Data:Begin
@@ -713,7 +780,31 @@ Data:End
 
 ---
 
-## 17. Summary
+## 17. Example: Index Registry File
+
+```text
+Header:Begin
+Name:Active Build Registry
+Scope:Account:F1NE
+Version:1.0
+Format:Index
+Schema:ActiveBuildRegistry
+Description:List of currently active building upgrades for account F1NE.
+LastModified:2026-10-27
+Header:End
+
+Data:Begin
+Build|Alliance Support Hub|Level 32|Active
+Build|1st Tech Center|Level 32|Active
+Build|Wall|Level 32|Active
+Data:End
+```
+
+This demonstrates the `Index` file type for registry data rather than columnar rows.
+
+---
+
+## 18. Summary
 
 This specification keeps the original intent of the repository but makes it cleaner, more consistent, and easier for both humans and advisors to work with.
 
@@ -731,7 +822,7 @@ This makes the repository suitable not just for storage, but for structured reas
 
 ---
 
-## 18. Recommended Next Action
+## 19. Recommended Next Action
 
 The next step should be to:
 
