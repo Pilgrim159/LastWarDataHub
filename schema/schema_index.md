@@ -1,3 +1,6 @@
+# Master Schema Registry
+
+```text
 Header:Begin
 Name:Master Schema Registry
 Scope:Global
@@ -22,3 +25,4 @@ SchemaDefinition | TechDataV2 | schema/TechData_V2_Spec.md
 SchemaDefinition | TechTreeStatus | schema/TechTreeStatus_Spec.md
 SchemaDefinition | FileFormatSpecification | schema/File Format Specification.md
 Data:End
+```
