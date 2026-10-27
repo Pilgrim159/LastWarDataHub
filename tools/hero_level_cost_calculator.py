@@ -19,6 +19,12 @@ from pathlib import Path
 
 def load_cost_table(table_path: Path) -> dict[int, int]:
     """Parse the canonical HeroLevelCostTable.txt and return {level: step_cost}."""
+    if not table_path.exists():
+        raise ValueError(
+            f"Hero cost table not found: '{table_path}'. "
+            "Check that the repository contains the canonical global/HeroLevelCostTable.txt file."
+        )
+
     table: dict[int, int] = {}
     in_data = False
 
@@ -55,22 +61,56 @@ def load_cost_table(table_path: Path) -> dict[int, int]:
             table[level] = cost
 
     if not table:
-        raise ValueError(f"No valid level/cost rows found in {table_path}")
+        raise ValueError(
+            f"No valid level/cost rows were found in '{table_path}'. "
+            "The file appears to be empty or malformed."
+        )
 
     return table
 
 
+def validate_inputs(start_level: int, end_level: int, hero_count: int, cost_table: dict[int, int]) -> None:
+    """Validate the requested range and count before calculating totals."""
+    if start_level < 1:
+        raise ValueError(
+            f"Invalid start level {start_level}: hero levels start at 1. "
+            "You cannot level a hero below Level 1."
+        )
+
+    if end_level <= start_level:
+        raise ValueError(
+            f"Invalid range {start_level} -> {end_level}: "
+            "the end level must be greater than the start level."
+        )
+
+    if hero_count < 1:
+        raise ValueError(
+            f"Invalid hero count {hero_count}: you must level at least 1 hero."
+        )
+
+    missing_levels = [
+        level
+        for level in range(start_level + 1, end_level + 1)
+        if level not in cost_table
+    ]
+    if missing_levels:
+        missing = ", ".join(str(level) for level in missing_levels)
+        raise ValueError(
+            f"Requested range {start_level} -> {end_level} includes level(s) {missing} "
+            f"that are not defined in the canonical HeroLevelCostTable. "
+            "Check that your start/end levels are valid for this table."
+        )
+
+
 def compute_level_steps(cost_table: dict[int, int], start_level: int, end_level: int) -> list[tuple[int, int]]:
     """Return a list of (target_level, cost_to_reach_target_level) from start to end."""
-    if start_level < 1:
-        raise ValueError("start_level must be >= 1")
-    if end_level <= start_level:
-        raise ValueError("end_level must be greater than start_level")
-
     steps: list[tuple[int, int]] = []
     for target_level in range(start_level + 1, end_level + 1):
         if target_level not in cost_table:
-            raise ValueError(f"Missing cost for level {target_level} in HeroLevelCostTable.txt")
+            raise ValueError(
+                f"Missing cost for level {target_level} in the HeroLevelCostTable. "
+                f"This usually means the requested range is outside the table's defined levels."
+            )
         steps.append((target_level, cost_table[target_level]))
     return steps
 
@@ -93,18 +133,19 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    cost_table = load_cost_table(args.table)
-    steps = compute_level_steps(cost_table, args.start, args.end)
+    try:
+        cost_table = load_cost_table(args.table)
+        validate_inputs(args.start, args.end, args.heroes, cost_table)
+        steps = compute_level_steps(cost_table, args.start, args.end)
+    except ValueError as exc:
+        raise SystemExit(f"Error: {exc}") from exc
+
     per_hero_total = sum(cost for _, cost in steps)
     total_for_all = per_hero_total * args.heroes
 
     print(f"Hero level-up calculation: {args.start} -> {args.end}")
     print(f"Heroes: {args.heroes}")
     print()
-
-    if not steps:
-        print("No level steps to calculate.")
-        return
 
     print("Per-level step costs:")
     for target_level, cost in steps:
