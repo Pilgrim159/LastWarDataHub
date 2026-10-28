@@ -1,0 +1,69 @@
+Header:Begin
+FileType: Log_File
+Commander: F1NE
+Date: 2026-10-28
+Time: 20:00:00
+Timezone: MT
+Status: Active
+Scope: Account:F1NE
+Version: 1.0
+Description: Current strategic state, event timing, and near-term build priorities for F1NE.
+Header:End
+
+Data:Begin
+[1. STRATEGIC STATE]
+- VIP Level: 11
+- VIP Points: 380,560 / 500,000
+- VIP Timer: 81d 23:00
+- HQ: 33
+- Tank Center: 33
+- Wall: 33 in progress
+- Wall Timer: 24d 07:14
+- Tank Heroes: capped at 165 until HQ 34
+- Fast_Builder_V: Maxed
+- Immediate Goal: finish Wall 33, then trigger HQ 34
+
+[2. RESOURCE SNAPSHOT]
+- Coin (Available): 38.0M
+- Coin (Inventory): 900.9M
+- Coin (Total): 938.9M
+- Iron: 134.6M
+- Food: 122.8M
+- Oil: 13.6M
+- Diamonds: 341.1K
+- Construction Speedups: 250d 05:53
+- Research Speedups: 245d 07:50
+- Training Speedups: 271d 19:03
+- Healing Speedups: 065d 06:51
+
+[3. WEEKLY SCHEDULE]
+Monday - Radar Training
+Tuesday - City Building
+Wednesday - Tech Research
+Thursday - Hero Training
+Friday - Total Mobilization
+Saturday - Enemy Buster
+
+[4. RESET TIMING]
+- Reset occurs at 8:00PM when Daylight Saving Time is active.
+- Reset occurs at 7:00PM when Standard Time is active.
+- In 2026, DST ends at 2:00AM MDT on Sunday 01 November 2026.
+
+[5. DECISION LOG]
+- Do not spend Coin on tank hero upgrades while the tank heroes are capped at 165.
+- Hold Coin for the HQ 34 unlock.
+- Use construction speedups on the Wall 33 build unless a stronger event window materially improves the value of waiting.
+- Use research speedups only for the next major throughput techs.
+- Do not treat event timing as a reason to ignore the main wall-to-HQ progression path.
+
+[6. ACTION PLAN]
+- Spend now: construction speedups for Wall 33 if no stronger event improves the value of waiting
+- Hold: Coin for HQ 34; diamonds unless a short-term build gain is obvious
+- Avoid: incoherent hero spending, scattered techs, and non-critical upgrades while the hero cap is active
+
+[7. SUMMARY]
+- The strongest near-term move is to finish Wall 33 and unlock HQ 34.
+- Event timing only matters if it creates a larger strategic gain than the direct progression path.
+- Thursday Hero Training is not a good reason to delay Wall 33 or HQ 34.
+- The best event-alignment window for building is Tuesday City Building.
+Data:End
