@@ -1,0 +1,49 @@
+Header:Begin
+FileType: Log_File
+Commander: F1NE
+Date: 2026-10-28
+Time: 22:32:03
+Timezone: MT
+Status: Active
+Scope: Account:F1NE
+Version: 1.0
+Description: Current strategic state, event timing, and near-term build priorities for F1NE.
+Header:End
+
+Data:Begin
+[1. STRATEGIC STATE]
+- VIP Level: 11
+- VIP Points: 380,560 / 500,000
+- VIP Timer: 81d 23:00
+- HQ: 33
+- Tank Center: 33
+- Wall: 33 in progress
+- Wall Timer: 24d 07:14
+- Immediate Goal: finish Wall 33, then trigger HQ 34
+
+[2. RESOURCE SNAPSHOT]
+- Coin (Available): 38.0M
+- Coin (Inventory): 900.9M
+- Iron: Missing data: Iron not available in current repo files or inputs.
+- Food: Missing data: Food not available in current repo files or inputs.
+- Oil: Missing data: Oil not available in current repo files or inputs.
+- Diamonds: Missing data: Diamonds not available in current repo files or inputs.
+- Hero_EXP: Missing data: Hero_EXP not available in current repo files or inputs.
+- Construction Speedups: 250d 05:53
+- Research Speedups: 245d 07:50
+- Training Speedups: 271d 19:03
+- Healing Speedups: 065d 06:51
+
+[3. WEEKLY SCHEDULE]
+Monday - Radar Training
+Tuesday - City Building
+Wednesday - Tech Research
+Thursday - Hero Training
+Friday - Total Mobilization
+Saturday - Enemy Buster
+
+[4. RESET TIMING]
+- Reset occurs at 8:00PM when Daylight Saving Time is active.
+- In 2026, DST ends at 2:00AM MDT on Sunday 01 November 2026.
+
+Data:End
