@@ -1,20 +1,11 @@
 #!/usr/bin/env python3
 """Create a timestamped active log and update the current active-log pointer.
 
-This script is designed for the LastWarDataHub repo. It creates a new active log in
-logs/active/, names it using a date-time convention to avoid collisions when more
-than one log is created on the same day, and writes the current filename to
-logs/active/CURRENT_LOG.txt.
-
-The log includes standard sections for:
-- STRATEGIC STATE
-- RESOURCE SNAPSHOT
-- WEEKLY SCHEDULE
-- RESET TIMING
-- optional notes and user-provided details
-
-It also attempts to read known repo data from players/*.txt when available, while
-marking missing values explicitly instead of guessing.
+This script creates a new log under logs/active/ using a local Mountain Time timestamp,
+then writes the filename to logs/active/CURRENT_LOG.txt.
+It includes the standard sections requested for strategic state, resource snapshot,
+weekly schedule, and reset timing, and notes missing values explicitly instead of
+inventing data when information is unavailable.
 """
 
 from __future__ import annotations
@@ -23,7 +14,6 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
-
 
 MT = ZoneInfo("America/Denver")
 
@@ -54,7 +44,6 @@ def format_missing(label: str) -> str:
 
 
 def parse_resource_inventory(path: Path) -> dict[str, str]:
-    """Best-effort extraction of known resource values from players/F1NE_Resource_Inventory.txt."""
     values: dict[str, str] = {}
     if not path.exists():
         return values
@@ -72,17 +61,14 @@ def parse_resource_inventory(path: Path) -> dict[str, str]:
                 continue
             if line.startswith("Data:End"):
                 break
-            if not in_data:
-                continue
-
-            if "|" not in line:
+            if not in_data or "|" not in line:
                 continue
 
             parts = [part.strip() for part in line.split("|")]
             if len(parts) < 6:
                 continue
 
-            source, category, item, unit_size, packet_count, unit = parts[:6]
+            _, _, item, _, packet_count, _ = parts[:6]
             if not item or item.startswith("#"):
                 continue
 
@@ -97,41 +83,25 @@ def build_default_strategic_state(cli_values: dict[str, str]) -> list[str]:
     lines: list[str] = []
     lines.append("[1. STRATEGIC STATE]")
 
-    vip_level = cli_values.get("vip_level")
-    vip_points = cli_values.get("vip_points")
-    vip_timer = cli_values.get("vip_timer")
+    for key, label in [
+        ("vip_level", "VIP Level"),
+        ("vip_points", "VIP Points"),
+        ("vip_timer", "VIP Timer"),
+    ]:
+        value = cli_values.get(key)
+        lines.append(f"- {label}: {value if value else format_missing(label)}")
 
-    if vip_level:
-        lines.append(f"- VIP Level: {vip_level}")
-    else:
-        lines.append(f"- VIP Level: {format_missing('VIP Level')}")
+    for key, label in [
+        ("hq", "HQ"),
+        ("tank_center", "Tank Center"),
+        ("wall", "Wall"),
+        ("wall_timer", "Wall Timer"),
+    ]:
+        value = cli_values.get(key)
+        lines.append(f"- {label}: {value if value else format_missing(label)}")
 
-    if vip_points:
-        lines.append(f"- VIP Points: {vip_points}")
-    else:
-        lines.append(f"- VIP Points: {format_missing('VIP Points')}")
-
-    if vip_timer:
-        lines.append(f"- VIP Timer: {vip_timer}")
-    else:
-        lines.append(f"- VIP Timer: {format_missing('VIP Timer')}")
-
-    hq = cli_values.get("hq")
-    tank_center = cli_values.get("tank_center")
-    wall = cli_values.get("wall")
-    wall_timer = cli_values.get("wall_timer")
     goal = cli_values.get("goal")
-
-    lines.append(f"- HQ: {hq if hq else format_missing('HQ')}")
-    lines.append(f"- Tank Center: {tank_center if tank_center else format_missing('Tank Center')}")
-    lines.append(f"- Wall: {wall if wall else format_missing('Wall status')}")
-    lines.append(f"- Wall Timer: {wall_timer if wall_timer else format_missing('Wall Timer')}")
-
-    if goal:
-        lines.append(f"- Immediate Goal: {goal}")
-    else:
-        lines.append("- Immediate Goal: Missing data: not provided in current repo files or inputs.")
-
+    lines.append(f"- Immediate Goal: {goal if goal else format_missing('Immediate Goal')}")
     return lines
 
 
@@ -140,7 +110,6 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
     lines.append("[2. RESOURCE SNAPSHOT]")
 
     resource_inventory = parse_resource_inventory(repo_root / "players" / "F1NE_Resource_Inventory.txt")
-
     resource_pairs = [
         ("Coin (Available)", "Coin", cli_values.get("coin_available")),
         ("Coin (Inventory)", "Coin", cli_values.get("coin_inventory")),
@@ -153,10 +122,7 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
 
     for label, key, cli_value in resource_pairs:
         value = cli_value or resource_inventory.get(key)
-        if value:
-            lines.append(f"- {label}: {value}")
-        else:
-            lines.append(f"- {label}: {format_missing(label)}")
+        lines.append(f"- {label}: {value if value else format_missing(label)}")
 
     for speedup_label, cli_key in [
         ("Construction Speedups", "construction_speedups"),
@@ -165,10 +131,7 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
         ("Healing Speedups", "healing_speedups"),
     ]:
         value = cli_values.get(cli_key)
-        if value:
-            lines.append(f"- {speedup_label}: {value}")
-        else:
-            lines.append(f"- {speedup_label}: {format_missing(speedup_label)}")
+        lines.append(f"- {speedup_label}: {value if value else format_missing(speedup_label)}")
 
     return lines
 
@@ -176,34 +139,30 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
 def build_weekly_schedule() -> list[str]:
     lines: list[str] = []
     lines.append("[3. WEEKLY SCHEDULE]")
-    lines.append("Monday - Radar Training")
-    lines.append("Tuesday - City Building")
-    lines.append("Wednesday - Tech Research")
-    lines.append("Thursday - Hero Training")
-    lines.append("Friday - Total Mobilization")
-    lines.append("Saturday - Enemy Buster")
+    for day, activity in [
+        ("Monday", "Radar Training"),
+        ("Tuesday", "City Building"),
+        ("Wednesday", "Tech Research"),
+        ("Thursday", "Hero Training"),
+        ("Friday", "Total Mobilization"),
+        ("Saturday", "Enemy Buster"),
+    ]:
+        lines.append(f"{day} - {activity}")
     return lines
 
 
 def build_reset_timing(dt: datetime) -> list[str]:
     lines: list[str] = []
     lines.append("[4. RESET TIMING]")
-    lines.append(f"- {reset_note_for(dt)}")
+    if dt.dst() is not None:
+        lines.append("- Reset occurs at 8:00PM when Daylight Saving Time is active.")
+    else:
+        lines.append("- Reset occurs at 7:00PM when Standard Time is active.")
     lines.append("- In 2026, DST ends at 2:00AM MDT on Sunday 01 November 2026.")
     return lines
 
 
-def build_log_document(
-    repo_root: Path,
-    commander: str,
-    scope: str,
-    description: str,
-    version: str,
-    timezone: str,
-    now: datetime,
-    notes: list[str],
-    cli_values: dict[str, str],
-) -> list[str]:
+def build_log_document(repo_root: Path, commander: str, scope: str, description: str, version: str, timezone: str, now: datetime, notes: list[str], cli_values: dict[str, str]) -> list[str]:
     lines: list[str] = [
         "Header:Begin",
         "FileType: Log_File",
@@ -219,41 +178,31 @@ def build_log_document(
         "",
         "Data:Begin",
     ]
-
     lines.extend(build_default_strategic_state(cli_values))
     lines.extend(build_default_resource_snapshot(repo_root, cli_values))
     lines.extend(build_weekly_schedule())
     lines.extend(build_reset_timing(now))
-
     if notes:
         lines.append("[5. NOTES]")
         for note in notes:
             lines.append(f"- {note}")
-
     lines.append("Data:End")
     lines.append("")
     return lines
 
 
-def write_pointer(current_pointer: Path, repo_root: Path, filename: str) -> None:
-    relative = (Path("logs") / "active" / filename).as_posix()
-    current_pointer.write_text(f"{relative}\n", encoding="utf-8")
+def write_pointer(current_pointer: Path, filename: str) -> None:
+    current_pointer.write_text(f"{filename}\n", encoding="utf-8")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Create a new active log file and update CURRENT_LOG.txt."
-    )
+    parser = argparse.ArgumentParser(description="Create a new active log file and update CURRENT_LOG.txt.")
     parser.add_argument("--commander", default="F1NE")
     parser.add_argument("--scope", default="Account:F1NE")
-    parser.add_argument(
-        "--description",
-        default="Current strategic state, event timing, and near-term build priorities for F1NE.",
-    )
+    parser.add_argument("--description", default="Current strategic state, event timing, and near-term build priorities for F1NE.")
     parser.add_argument("--version", default="1.0")
     parser.add_argument("--timezone", default="MT")
-    parser.add_argument("--note", action="append", default=[], help="Repeat to add multiple notes.")
-
+    parser.add_argument("--note", action="append", default=[])
     parser.add_argument("--vip-level")
     parser.add_argument("--vip-points")
     parser.add_argument("--vip-timer")
@@ -262,7 +211,6 @@ def main() -> None:
     parser.add_argument("--wall")
     parser.add_argument("--wall-timer")
     parser.add_argument("--goal")
-
     parser.add_argument("--coin-available")
     parser.add_argument("--coin-inventory")
     parser.add_argument("--iron")
@@ -274,8 +222,7 @@ def main() -> None:
     parser.add_argument("--research-speedups")
     parser.add_argument("--training-speedups")
     parser.add_argument("--healing-speedups")
-
-    parser.add_argument("--dry-run", action="store_true", help="Print the target file names without writing.")
+    parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[1]
@@ -314,24 +261,12 @@ def main() -> None:
     if target_path.exists():
         raise FileExistsError(f"Target log already exists: {target_path}")
 
-    document = build_log_document(
-        repo_root=repo_root,
-        commander=args.commander,
-        scope=args.scope,
-        description=args.description,
-        version=args.version,
-        timezone=args.timezone,
-        now=now,
-        notes=args.note,
-        cli_values=cli_values,
-    )
-
+    document = build_log_document(repo_root, args.commander, args.scope, args.description, args.version, args.timezone, now, args.note, cli_values)
     target_path.write_text("\n".join(document), encoding="utf-8")
-    write_pointer(current_pointer, repo_root, target_name)
+    write_pointer(current_pointer, target_name)
 
     print(f"Created active log: {target_path}")
     print(f"Updated current pointer: {current_pointer}")
-    print(f"Pointer points to: {target_path.relative_to(repo_root)}")
 
 
 if __name__ == "__main__":
