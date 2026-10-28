@@ -24,6 +24,7 @@
 - When answering resource, player, or account questions, always prefer files from the current branch HEAD (default: `main`) over archived or historical files.
 - Only use archive or older log files when the user explicitly asks for historical context, a previous snapshot, or a comparison against older data.
 - If a file exists in both the active tree and archive folders, the active-tree version is the authoritative source unless the user requests historical analysis.
+- When creating or updating a log, use the relevant `players/` files for current resource values and the latest active log for other account-state details. If the sources conflict, prefer `players/` for resources, mention the discrepancy, and identify the source of the values used.
 
 ## Repository structure
 - `global/` = canonical data tables
