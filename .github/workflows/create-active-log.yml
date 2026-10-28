@@ -1,0 +1,132 @@
+name: Create Active Log
+
+on:
+  workflow_dispatch:
+    inputs:
+      commander:
+        description: Commander name
+        required: false
+        default: F1NE
+      scope:
+        description: Scope label
+        required: false
+        default: Account:F1NE
+      description:
+        description: Log description
+        required: false
+        default: Current strategic state, event timing, and near-term build priorities for F1NE.
+      vip_level:
+        description: VIP Level
+        required: false
+        default: "11"
+      vip_points:
+        description: VIP Points
+        required: false
+        default: "380,560 / 500,000"
+      vip_timer:
+        description: VIP Timer
+        required: false
+        default: "81d 23:00"
+      hq:
+        description: HQ level
+        required: false
+        default: "33"
+      tank_center:
+        description: Tank Center level
+        required: false
+        default: "33"
+      wall:
+        description: Wall status
+        required: false
+        default: "33 in progress"
+      wall_timer:
+        description: Wall timer
+        required: false
+        default: "24d 07:14"
+      goal:
+        description: Immediate goal
+        required: false
+        default: "finish Wall 33, then trigger HQ 34"
+      coin_available:
+        description: Coin available
+        required: false
+        default: "38.0M"
+      coin_inventory:
+        description: Coin inventory
+        required: false
+        default: "900.9M"
+      construction_speedups:
+        description: Construction speedups
+        required: false
+        default: "250d 05:53"
+      research_speedups:
+        description: Research speedups
+        required: false
+        default: "245d 07:50"
+      training_speedups:
+        description: Training speedups
+        required: false
+        default: "271d 19:03"
+      healing_speedups:
+        description: Healing speedups
+        required: false
+        default: "065d 06:51"
+      note_1:
+        description: Note 1
+        required: false
+        default: "Do not spend Coin on tank hero upgrades while the tank heroes are capped at 165."
+      note_2:
+        description: Note 2
+        required: false
+        default: "Hold Coin for the HQ 34 unlock."
+      note_3:
+        description: Note 3
+        required: false
+        default: "Use construction speedups on the Wall 33 build unless a stronger event window materially improves the value of waiting."
+
+jobs:
+  create-active-log:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Create active log
+        run: |
+          python tools/create_active_log.py \
+            --commander "${{ github.event.inputs.commander }}" \
+            --scope "${{ github.event.inputs.scope }}" \
+            --description "${{ github.event.inputs.description }}" \
+            --vip-level "${{ github.event.inputs.vip_level }}" \
+            --vip-points "${{ github.event.inputs.vip_points }}" \
+            --vip-timer "${{ github.event.inputs.vip_timer }}" \
+            --hq "${{ github.event.inputs.hq }}" \
+            --tank-center "${{ github.event.inputs.tank_center }}" \
+            --wall "${{ github.event.inputs.wall }}" \
+            --wall-timer "${{ github.event.inputs.wall_timer }}" \
+            --goal "${{ github.event.inputs.goal }}" \
+            --coin-available "${{ github.event.inputs.coin_available }}" \
+            --coin-inventory "${{ github.event.inputs.coin_inventory }}" \
+            --construction-speedups "${{ github.event.inputs.construction_speedups }}" \
+            --research-speedups "${{ github.event.inputs.research_speedups }}" \
+            --training-speedups "${{ github.event.inputs.training_speedups }}" \
+            --healing-speedups "${{ github.event.inputs.healing_speedups }}" \
+            --note "${{ github.event.inputs.note_1 }}" \
+            --note "${{ github.event.inputs.note_2 }}" \
+            --note "${{ github.event.inputs.note_3 }}"
+
+      - name: Commit generated log files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logs/active
+          git commit -m "Add generated active log" || echo "No changes to commit"
+          git push
