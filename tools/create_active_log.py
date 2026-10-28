@@ -20,7 +20,6 @@ marking missing values explicitly instead of guessing.
 from __future__ import annotations
 
 import argparse
-import re
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -87,7 +86,6 @@ def parse_resource_inventory(path: Path) -> dict[str, str]:
             if not item or item.startswith("#"):
                 continue
 
-            # Keep only the resource line names we are likely to use in a standard snapshot.
             normalized = item.strip()
             if normalized in {"Food", "Iron", "Coin", "Oil", "Diamonds", "Hero_EXP", "Stamina"}:
                 values[normalized] = packet_count.strip()
@@ -95,45 +93,7 @@ def parse_resource_inventory(path: Path) -> dict[str, str]:
     return values
 
 
-def parse_player_registry(path: Path) -> dict[str, str]:
-    """Best-effort extraction of known top-level registry values from players/*.txt."""
-    values: dict[str, str] = {}
-    if not path.exists():
-        return values
-
-    # This is intentionally narrow and best-effort, because the repo may not have all fields.
-    in_data = False
-    with path.open("r", encoding="utf-8") as handle:
-        for raw_line in handle:
-            line = raw_line.strip()
-            if not line:
-                continue
-            if line.startswith("Header:Begin") or line.startswith("Header:End"):
-                continue
-            if line.startswith("Data:Begin"):
-                in_data = True
-                continue
-            if line.startswith("Data:End"):
-                break
-            if not in_data:
-                continue
-
-            if "|" not in line:
-                continue
-
-            parts = [part.strip() for part in line.split("|")]
-            if len(parts) < 11:
-                continue
-            hero_id, name, rarity, level, tier, squad, role, type_, skill_ref, gear_ref, ex_weapon_ref = parts[:11]
-            if hero_id and hero_id.startswith("H_"):
-                # We only keep the most common field we might want to infer for a quick log.
-                # Example: if a tank hero is capped at 165, we do not enforce a full registry parse here.
-                continue
-
-    return values
-
-
-def build_default_strategic_state(repo_root: Path, cli_values: dict[str, str]) -> list[str]:
+def build_default_strategic_state(cli_values: dict[str, str]) -> list[str]:
     lines: list[str] = []
     lines.append("[1. STRATEGIC STATE]")
 
@@ -181,10 +141,9 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
 
     resource_inventory = parse_resource_inventory(repo_root / "players" / "F1NE_Resource_Inventory.txt")
 
-    # Known fields in the repo resource inventory. Use repo data if present, else CLI override, else placeholder.
     resource_pairs = [
         ("Coin (Available)", "Coin", cli_values.get("coin_available")),
-        ("Coin (Inventory)", "CoinInventory", cli_values.get("coin_inventory")),
+        ("Coin (Inventory)", "Coin", cli_values.get("coin_inventory")),
         ("Iron", "Iron", cli_values.get("iron")),
         ("Food", "Food", cli_values.get("food")),
         ("Oil", "Oil", cli_values.get("oil")),
@@ -199,7 +158,6 @@ def build_default_resource_snapshot(repo_root: Path, cli_values: dict[str, str])
         else:
             lines.append(f"- {label}: {format_missing(label)}")
 
-    # Common speedups from current repo log patterns, but marked missing if not explicitly provided.
     for speedup_label, cli_key in [
         ("Construction Speedups", "construction_speedups"),
         ("Research Speedups", "research_speedups"),
@@ -262,7 +220,7 @@ def build_log_document(
         "Data:Begin",
     ]
 
-    lines.extend(build_default_strategic_state(repo_root, cli_values))
+    lines.extend(build_default_strategic_state(cli_values))
     lines.extend(build_default_resource_snapshot(repo_root, cli_values))
     lines.extend(build_weekly_schedule())
     lines.extend(build_reset_timing(now))
@@ -275,6 +233,11 @@ def build_log_document(
     lines.append("Data:End")
     lines.append("")
     return lines
+
+
+def write_pointer(current_pointer: Path, repo_root: Path, filename: str) -> None:
+    relative = (Path("logs") / "active" / filename).as_posix()
+    current_pointer.write_text(f"{relative}\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -291,7 +254,6 @@ def main() -> None:
     parser.add_argument("--timezone", default="MT")
     parser.add_argument("--note", action="append", default=[], help="Repeat to add multiple notes.")
 
-    # Standardized state fields
     parser.add_argument("--vip-level")
     parser.add_argument("--vip-points")
     parser.add_argument("--vip-timer")
@@ -301,7 +263,6 @@ def main() -> None:
     parser.add_argument("--wall-timer")
     parser.add_argument("--goal")
 
-    # Resource snapshot fields
     parser.add_argument("--coin-available")
     parser.add_argument("--coin-inventory")
     parser.add_argument("--iron")
@@ -366,10 +327,11 @@ def main() -> None:
     )
 
     target_path.write_text("\n".join(document), encoding="utf-8")
-    current_pointer.write_text(f"{target_name}\n", encoding="utf-8")
+    write_pointer(current_pointer, repo_root, target_name)
 
     print(f"Created active log: {target_path}")
     print(f"Updated current pointer: {current_pointer}")
+    print(f"Pointer points to: {target_path.relative_to(repo_root)}")
 
 
 if __name__ == "__main__":
