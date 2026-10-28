@@ -2,15 +2,16 @@ Header:Begin
 FileType: Log_File
 Commander: F1NE
 Date: 2026-10-28
-Time: 09:12:00
-Status: Strategic
+Time: 20:00:00
+Timezone: MT
+Status: Active
 Scope: Account:F1NE
 Version: 1.0
-Description: Strategic review covering VS event timing, VIP state, Coin posture, and next build priorities.
+Description: Current strategic state, event timing, and near-term build priorities for F1NE.
 Header:End
 
 Data:Begin
-[1. CURRENT STRATEGIC STATE]
+[1. STRATEGIC STATE]
 - VIP Level: 11
 - VIP Points: 380,560 / 500,000
 - VIP Timer: 81d 23:00
@@ -18,11 +19,11 @@ Data:Begin
 - Tank Center: 33
 - Wall: 33 in progress
 - Wall Timer: 24d 07:14
-- Tank Heroes: maxed at 165 until HQ 34
+- Tank Heroes: capped at 165 until HQ 34
 - Fast_Builder_V: Maxed
-- Key Constraint: Tank hero progression is capped until HQ 34
+- Immediate Goal: finish Wall 33, then trigger HQ 34
 
-[2. RESOURCE SUMMARY]
+[2. RESOURCE SNAPSHOT]
 - Coin (Available): 38.0M
 - Coin (Inventory): 900.9M
 - Coin (Total): 938.9M
@@ -43,31 +44,27 @@ Thursday - Hero Training
 Friday - Total Mobilization
 Saturday - Enemy Buster
 
-[4. event TIMING NOTE]
+[4. EVENT TIMING]
 - Tonight at reset, the active VS schedule begins on Thursday (Hero Training).
-- Thursday Hero Training is a poor fit for the current build state because tank heroes are capped until HQ 34.
-- Tuesday City Building is the strongest alignment for the current plan because it rewards building upgrades and construction speedups.
-- Base Building and other building-aligned windows can justify a short delay only when they materially improve the Wall 33 -> HQ 34 transition.
-- VS delays should be used as a timing multiplier, not as a replacement for the main progression path.
+- Hero Training is a poor fit for the current build state because tank heroes are capped until HQ 34.
+- Tuesday City Building is the most relevant event for the current plan because it rewards building upgrades and construction speedups.
+- Use event timing as a multiplier, not as a replacement for the main progression path.
 
-[5. STRATEGIC PRIORITY]
-1. Complete Wall 33
-2. Trigger HQ 34
-3. Restore tank hero progression
-4. Spend Coin on build unlocks, not on capped hero upgrades
-5. Use event timing to improve the wall-to-HQ cycle, not to replace it
+[5. DECISION LOG]
+- Do not spend Coin on tank hero upgrades while the tank heroes are capped at 165.
+- Hold Coin for the HQ 34 unlock.
+- Use construction speedups on the Wall 33 build unless a stronger event window materially improves the value of waiting.
+- Use research speedups only for the next major throughput techs.
+- Do not treat event timing as a reason to ignore the main wall-to-HQ progression path.
 
 [6. ACTION PLAN]
-- Hold Coin for HQ 34.
-- Do not spend Coin on tank hero upgrades while the tank heroes are capped at 165.
-- Use construction speedups on the Wall 33 build unless a strong event materially improves the value of waiting.
-- Research speedups should be reserved for the next major throughput techs, not for scattered or low-value tasks.
-- Reassess at each event window before spending speedups.
-- Keep a reserve for the post-HQ 34 progression cycle.
+- Spend now: construction speedups for Wall 33 if no stronger event improves the value of waiting
+- Hold: Coin for HQ 34; diamonds unless a short-term build gain is obvious
+- Avoid: incoherent hero spending, scattered techs, and non-critical upgrades while the hero cap is active
 
-[7. STRATEGIC DECISION]
+[7. SUMMARY]
 - The strongest near-term move is to finish Wall 33 and unlock HQ 34.
-- Event timing only matters if it creates a larger return than the direct HQ progression path.
-- Based on the current schedule, Hero Training tonight is not a good reason to delay Wall 33 or HQ 34.
-- For the next building-aligned event, City Building is the preferred window to optimize around.
+- Event timing only matters if it creates a larger strategic gain than the direct progression path.
+- Thursday Hero Training is not a good reason to delay Wall 33 or HQ 34.
+- The best event-alignment window for building is Tuesday City Building.
 Data:End
