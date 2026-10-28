@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Create a new active log and update CURRENT_LOG.txt.
-
-This is a thin wrapper used to create a new log file via the repo's script.
-"""
+"""Create a new active log and update CURRENT_LOG.txt."""
 
 from pathlib import Path
 from subprocess import run
@@ -10,7 +7,6 @@ from subprocess import run
 repo_root = Path(__file__).resolve().parents[1]
 script = repo_root / "tools" / "create_active_log.py"
 
-# Use the current real timestamp at runtime.
 cmd = [
     "python",
     str(script),
