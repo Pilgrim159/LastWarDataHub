@@ -86,6 +86,10 @@ When adding or editing files:
 - use the header fields for metadata, not ad hoc text blocks
 - validate files against the canonical spec before using them in tools or advisors
 
+## Advisor Data Freshness
+
+`run-advisor.ps1` reports each player file's path, schema, embedded `Date`, age, and freshness status before recommendations. It flags `ResourceInventory` files older than 7 days and other player files older than 30 days. Missing, invalid, or future dates are reported as `UNKNOWN` or `FUTURE`; file modification times are not used as a substitute for source dates.
+
 ## Repository Layout
 
 - `global/` — global or shared data files

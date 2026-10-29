@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import date
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -16,8 +17,29 @@ class AdvisorSummary:
     research_priorities: List[str] = field(default_factory=list)
 
 
+@dataclass(frozen=True)
+class DataFreshness:
+    path: str
+    schema: str
+    recorded_date: str | None
+    age_days: int | None
+    max_age_days: int
+    status: str
+
+    def __str__(self) -> str:
+        recorded_date = self.recorded_date or "missing"
+        age = f"{self.age_days}d" if self.age_days is not None else "unknown"
+        return (
+            f"{self.status}: {self.path} (schema={self.schema}, "
+            f"date={recorded_date}, age={age}, limit={self.max_age_days}d)"
+        )
+
+
 class Advisor:
     """A schema-aware advisor that reads player data files and produces simple upgrade guidance."""
+
+    INVENTORY_MAX_AGE_DAYS = 7
+    PLAYER_DATA_MAX_AGE_DAYS = 30
 
     def __init__(self, repo_root: str | Path):
         self.repo_root = Path(repo_root).resolve()
@@ -47,6 +69,52 @@ class Advisor:
                 }
             )
         return parsed_files
+
+    def data_freshness_report(self, as_of: date | None = None) -> List[DataFreshness]:
+        """Report source dates and freshness for each current player file."""
+        reference_date = as_of or date.today()
+        report: List[DataFreshness] = []
+
+        for file_info in self.load_player_files():
+            metadata = file_info["metadata"]
+            schema = str(metadata.get("Schema") or "Unknown")
+            max_age_days = (
+                self.INVENTORY_MAX_AGE_DAYS
+                if schema == "ResourceInventory"
+                else self.PLAYER_DATA_MAX_AGE_DAYS
+            )
+            recorded_date_value = metadata.get("Date")
+            recorded_date = str(recorded_date_value) if recorded_date_value else None
+            age_days = None
+
+            if recorded_date:
+                try:
+                    source_date = date.fromisoformat(recorded_date)
+                except ValueError:
+                    status = "UNKNOWN"
+                else:
+                    age_days = (reference_date - source_date).days
+                    if age_days < 0:
+                        status = "FUTURE"
+                    elif age_days > max_age_days:
+                        status = "STALE"
+                    else:
+                        status = "CURRENT"
+            else:
+                status = "UNKNOWN"
+
+            report.append(
+                DataFreshness(
+                    path=str(file_info["path"]),
+                    schema=schema,
+                    recorded_date=recorded_date,
+                    age_days=age_days,
+                    max_age_days=max_age_days,
+                    status=status,
+                )
+            )
+
+        return report
 
     def summarize(self) -> AdvisorSummary:
         player_files = self.load_player_files()
