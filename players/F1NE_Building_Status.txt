@@ -4,7 +4,7 @@ Version: 1.0
 Scope: Account:F1NE
 Format: Table
 Schema: BuildingStatus
-Date: 2026-04-25
+Date: 2026-11-02
 Header:End
 
 Data:Begin
@@ -71,7 +71,7 @@ Smelter_5         | 20           | 20          | Idle      | -              | 99
 Tactical_Inst     | 20           | 20          | Idle      | -              | 99
 Tank_Center       | 33           | 33          | Idle      | -              | 99
 Tavern            | 16           | 16          | Idle      | -              | 99
-Tech_Center_1     | 32           | 33          | Upgrading | 26d 22:00:00   | 02
+Tech_Center_1     | 32           | 33          | Upgrading | 18d 05:00:00   | 02
 Tech_Center_2     | 05           | 06          | Idle      | -              | 99
 Tech_Center_3     | 24           | 25          | Idle      | -              | 99
 Training_Base_1   | 21           | 21          | Idle      | -              | 99
@@ -79,5 +79,5 @@ Training_Base_2   | 21           | 21          | Idle      | -              | 99
 Training_Base_3   | 21           | 21          | Idle      | -              | 99
 Training_Base_4   | 21           | 21          | Idle      | -              | 99
 Training_Base_5   | 21           | 21          | Idle      | -              | 99
-Wall              | 32           | 33          | Upgrading | 26d 20:00:00   | 02
+Wall              | 32           | 33          | Upgrading | 18d 09:00:00   | 02
 Data:End
