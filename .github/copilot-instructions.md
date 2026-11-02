@@ -104,4 +104,38 @@ When sources conflict, use the following precedence:
 4. Current logs.
 5. Archive files.
 
+## Entry points
+
+Use the following files as primary navigation entry points:
+
+- Repository root index: `index.txt`
+- Schema index: `schema/schema_index.txt`
+- Player index: `players/player_index.txt`
+- Log index: `logs/log_index.txt`
+
+When searching for information:
+
+1. Start at the most relevant index.
+2. Follow index references before searching unrelated files.
+3. Use indexes to locate authoritative source documents.
+4. Prefer indexed files over inferred repository structure.
+5. Follow referenced indexes recursively until the authoritative source file is located.
+
+### Index precedence
+
+When multiple indexes may apply:
+
+1. Use the most specific index available.
+2. For player-specific questions, start with `players/player_index.txt`.
+3. For game mechanics, requirements, costs, or formulas, start with the relevant files under `global/`.
+4. For file formats and interpretations, start with `schema/schema_index.txt`.
+5. For operational status and recent activity, start with `logs/log_index.txt`.
+
+### File discovery
+
+- Treat indexes as the authoritative discovery mechanism.
+- Do not assume file locations when an index is available.
+- Prefer indexed files over directory traversal.
+- If a file cannot be located through the indexes, report which index was consulted and what information was missing.
+
 Document any conflicts encountered.
