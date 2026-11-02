@@ -104,6 +104,8 @@ When sources conflict, use the following precedence:
 4. Current logs.
 5. Archive files.
 
+Document any conflicts encountered.
+
 ## Entry points
 
 Use the following files as primary navigation entry points:
@@ -138,4 +140,3 @@ When multiple indexes may apply:
 - Prefer indexed files over directory traversal.
 - If a file cannot be located through the indexes, report which index was consulted and what information was missing.
 
-Document any conflicts encountered.
